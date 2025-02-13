@@ -34,7 +34,7 @@ const Navbar = () => {
               <a href="#about" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
               <a href="#services" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
               <a href="#pricing" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-              <button className="bg-[#3498db] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#2980b9] transition-colors">
+              <button className="bg-[#0A2647] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#3498db] transition-colors">
                 Contact Us
               </button>
             </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">About</a>
             <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Services</a>
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Pricing</a>
-            <button className="w-full text-left bg-[#3498db] text-white px-3 py-2 rounded-md text-base font-medium hover:bg-[#2980b9]">
+            <button className="w-full text-left bg-[#0A2647] text-white px-3 py-2 rounded-md text-base font-medium hover:bg-[#3498db]">
               Contact Us
             </button>
           </div>

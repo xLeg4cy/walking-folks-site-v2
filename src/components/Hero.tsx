@@ -32,7 +32,7 @@ const Hero = () => {
         
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           <span className="block">Innovative Solutions for</span>
-          <span className="block text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #000 0%, #333 100%)' }}>
+          <span className="block text-gradient">
             Modern Businesses
           </span>
         </h1>
@@ -42,10 +42,10 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+          <button className="bg-[#0A2647] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#3498db] transition-all transform hover:-translate-y-1">
             Get Started
           </button>
-          <button className="bg-white text-black px-8 py-4 rounded-lg font-medium border border-gray-200 hover:border-gray-300 transition-all transform hover:-translate-y-1">
+          <button className="bg-white text-[#0A2647] px-8 py-4 rounded-lg font-medium border border-gray-200 hover:border-[#3498db] transition-all transform hover:-translate-y-1">
             Learn More
           </button>
         </div>
