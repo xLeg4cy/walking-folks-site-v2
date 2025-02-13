@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Rocket } from 'lucide-react';
+import TechnologyCarousel from './TechnologyCarousel';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -41,7 +42,7 @@ const Hero = () => {
           We deliver cutting-edge technology solutions with transparency, efficiency, and unmatched support
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <button className="bg-[#0A2647] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#3498db] transition-all transform hover:-translate-y-1">
             Get Started
           </button>
@@ -49,6 +50,8 @@ const Hero = () => {
             Learn More
           </button>
         </div>
+
+        <TechnologyCarousel />
       </div>
     </div>
   );
