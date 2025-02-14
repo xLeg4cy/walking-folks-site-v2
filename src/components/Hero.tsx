@@ -1,11 +1,8 @@
-
 import { useEffect, useRef } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
 import TechnologyCarousel from './TechnologyCarousel';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -14,23 +11,19 @@ const Hero = () => {
     }, {
       threshold: 0.1
     });
-    
     if (heroRef.current) {
       observer.observe(heroRef.current);
     }
-    
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <div id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-16 relative overflow-hidden">
+  return <div id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-16 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3498db,transparent)]" />
         <div className="grid grid-cols-6 gap-4 rotate-45 scale-150">
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div key={i} className="h-24 bg-[#0A2647] opacity-5 rounded-full blur-xl transform -translate-y-1/2" />
-          ))}
+          {Array.from({
+          length: 24
+        }).map((_, i) => <div key={i} className="h-24 bg-[#0A2647] opacity-5 rounded-full blur-xl transform -translate-y-1/2" />)}
         </div>
       </div>
 
@@ -79,25 +72,13 @@ const Hero = () => {
             </div>
 
             {/* Trusted By Section */}
-            <div className="text-left">
-              <p className="text-sm text-gray-500 mb-4">Trusted by leading companies</p>
-              <div className="flex flex-wrap gap-8 items-center opacity-50">
-                <img src="/placeholder.svg" alt="Company 1" className="h-8" />
-                <img src="/placeholder.svg" alt="Company 2" className="h-8" />
-                <img src="/placeholder.svg" alt="Company 3" className="h-8" />
-                <img src="/placeholder.svg" alt="Company 4" className="h-8" />
-              </div>
-            </div>
+            
           </div>
 
           {/* Hero Image */}
           <div className="flex-1 relative">
             <div className="relative z-10 bg-white rounded-2xl shadow-xl p-4 transform transition-transform hover:scale-105">
-              <img 
-                src="/placeholder.svg" 
-                alt="Hero" 
-                className="w-full h-auto rounded-xl"
-              />
+              <img src="/placeholder.svg" alt="Hero" className="w-full h-auto rounded-xl" />
               {/* Feature Highlights */}
               <div className="absolute -left-4 top-1/4 bg-white rounded-lg shadow-lg p-3 transform -translate-x-1/2 animate-bounce">
                 <CheckCircle2 className="text-green-500" size={24} />
@@ -116,8 +97,6 @@ const Hero = () => {
           <ArrowDown className="text-gray-400" size={24} />
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
