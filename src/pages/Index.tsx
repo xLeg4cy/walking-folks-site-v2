@@ -1,13 +1,16 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Pricing from '@/components/Pricing';
 import TechnologyStack from '@/components/TechnologyStack';
+import Contact from '@/components/Contact';
 
 const Index = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.section');
@@ -28,12 +31,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <Navbar onContactClick={() => setIsContactOpen(true)} />
       <Hero />
       <About />
       <TechnologyStack />
       <Services />
       <Pricing />
+      {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
     </div>
   );
 };
