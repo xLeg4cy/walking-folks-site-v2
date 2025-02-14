@@ -71,6 +71,10 @@
   .hover\:pause:hover {
     animation-play-state: paused;
   }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
 }
 
 @keyframes slideLeft {
