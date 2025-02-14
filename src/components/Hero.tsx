@@ -1,6 +1,7 @@
+
 import { useEffect, useRef } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
-import TechnologyCarousel from './TechnologyCarousel';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -16,6 +17,7 @@ const Hero = () => {
     }
     return () => observer.disconnect();
   }, []);
+
   return <div id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-16 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -70,9 +72,6 @@ const Hero = () => {
                 <div className="text-gray-600">Support Available</div>
               </div>
             </div>
-
-            {/* Trusted By Section */}
-            
           </div>
 
           {/* Hero Image */}
@@ -90,8 +89,6 @@ const Hero = () => {
           </div>
         </div>
 
-        <TechnologyCarousel />
-
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ArrowDown className="text-gray-400" size={24} />
@@ -99,4 +96,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
