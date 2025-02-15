@@ -21,10 +21,10 @@ export default function Contact({ onClose }: ContactProps) {
       <div className="relative w-full max-w-3xl mx-4">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          className="absolute -right-2 -top-2 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors z-50"
           aria-label="Close contact form"
         >
-          <X className="text-white" size={24} />
+          <X className="text-gray-800" size={24} />
         </button>
         
         <section className="bg-white rounded-2xl shadow-xl">
