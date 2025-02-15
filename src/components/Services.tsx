@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Computer, Users, Database, Shield, Building2, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -109,14 +108,6 @@ const Services = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-brand-purple-light/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <button className="bg-brand-purple-medium text-white px-8 py-3 rounded-lg font-medium hover:bg-brand-purple-dark transition-colors inline-flex items-center gap-2">
-            Get Started
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </div>

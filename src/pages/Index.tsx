@@ -15,6 +15,7 @@ import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
 import TopProgressBar from '@/components/TopProgressBar';
 import LiveChat from '@/components/LiveChat';
+import Team from '@/components/Team';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -63,9 +64,10 @@ const Index = () => {
         <About />
         <TechnologyStack />
         <Services />
+        <Team />
         <Testimonials />
-        <FAQ />
         <Pricing />
+        <FAQ />
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
       <Footer />
