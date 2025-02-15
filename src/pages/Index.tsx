@@ -56,7 +56,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-purple-50 via-white to-purple-50">
       <TopProgressBar />
       <Navbar onContactClick={() => setIsContactOpen(true)} />
       <div className="space-y-12">

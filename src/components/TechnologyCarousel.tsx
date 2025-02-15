@@ -96,10 +96,10 @@ const TechnologyCarousel = () => {
           {[...technologies1, ...technologies1].map((tech, index) => (
             <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <a href={tech.url} className="flex flex-col items-center">
-                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
+                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-white rounded-lg shadow-sm p-2 group-hover:shadow-md transition-all">
                   {tech.icon}
                 </div>
-                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors whitespace-nowrap">{tech.name}</span>
+                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-[#7E69AB] transition-colors whitespace-nowrap">{tech.name}</span>
               </a>
             </li>
           ))}
@@ -110,10 +110,10 @@ const TechnologyCarousel = () => {
           {[...technologies2, ...technologies2].map((tech, index) => (
             <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <a href={tech.url} className="flex flex-col items-center">
-                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
+                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center bg-white rounded-lg shadow-sm p-2 group-hover:shadow-md transition-all">
                   {tech.icon}
                 </div>
-                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors whitespace-nowrap">{tech.name}</span>
+                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-[#7E69AB] transition-colors whitespace-nowrap">{tech.name}</span>
               </a>
             </li>
           ))}
