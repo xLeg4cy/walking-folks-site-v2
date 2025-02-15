@@ -19,21 +19,28 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ErrorBoundary>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-        </TooltipProvider>
+      <ThemeProvider 
+        attribute="class" 
+        defaultTheme="system" 
+        enableSystem 
+        disableTransitionOnChange
+      >
+        <div className="min-h-screen bg-background font-sans antialiased">
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+          </TooltipProvider>
+        </div>
       </ThemeProvider>
     </ErrorBoundary>
   </QueryClientProvider>
