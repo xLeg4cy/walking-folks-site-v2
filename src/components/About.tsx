@@ -32,35 +32,47 @@ const About = () => {
               With over 10 years in the software and infrastructure field, we focus on delivering technology solutions that are cost-efficient, minimalist, and innovative while maintaining transparency and high-quality development support.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="flex flex-col gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-brand-purple-dark" />
+                <div className="flex gap-4 items-start">
+                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
+                    <Users className="w-6 h-6 text-brand-purple-dark" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
+                    <p className="text-gray-600">
+                      Our experienced professionals bring extensive knowledge to every project.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
-                <p className="text-gray-600">
-                  Our experienced professionals bring extensive knowledge to every project.
-                </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center mb-4">
-                  <Globe className="w-6 h-6 text-brand-purple-dark" />
+                <div className="flex gap-4 items-start">
+                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
+                    <Globe className="w-6 h-6 text-brand-purple-dark" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Global Reach</h3>
+                    <p className="text-gray-600">
+                      Strong presence in US and Latin America markets.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Global Reach</h3>
-                <p className="text-gray-600">
-                  Strong presence in US and Latin America markets.
-                </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-brand-purple-dark" />
+                <div className="flex gap-4 items-start">
+                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
+                    <Shield className="w-6 h-6 text-brand-purple-dark" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
+                    <p className="text-gray-600">
+                      Committed to delivering high-quality solutions.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
-                <p className="text-gray-600">
-                  Committed to delivering high-quality solutions.
-                </p>
               </div>
             </div>
           </div>
