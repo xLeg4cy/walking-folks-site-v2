@@ -7,6 +7,7 @@ import Services from '@/components/Services';
 import Pricing from '@/components/Pricing';
 import TechnologyStack from '@/components/TechnologyStack';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -32,12 +33,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar onContactClick={() => setIsContactOpen(true)} />
-      <Hero />
-      <About />
-      <TechnologyStack />
-      <Services />
-      <Pricing />
+      <div className="space-y-20">
+        <Hero />
+        <About />
+        <TechnologyStack />
+        <Services />
+        <Pricing />
+      </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
+      <Footer />
     </div>
   );
 };
