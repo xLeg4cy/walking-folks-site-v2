@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
 import {
   Form,
   FormControl,
@@ -36,11 +37,19 @@ export function ContactForm() {
   });
 
   const { isSubmitting } = form.formState;
+  const [submissionCount, setSubmissionCount] = useState(0);
 
   async function onSubmit(data: FormValues) {
     try {
-      // Here you would typically send the data to your backend
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated API call
+      if (submissionCount >= 5) {
+        toast.error("Too many attempts. Please try again later.");
+        return;
+      }
+
+      // Simulated API call with rate limiting
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setSubmissionCount(prev => prev + 1);
+      
       toast.success("Message sent successfully!");
       form.reset();
     } catch (error) {
@@ -49,7 +58,11 @@ export function ContactForm() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm">
+    <div 
+      className="max-w-2xl mx-auto p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm"
+      role="form"
+      aria-label="Contact form"
+    >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)} 
@@ -130,12 +143,13 @@ export function ContactForm() {
 
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || submissionCount >= 5}
             className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none dark:bg-brand-purple-dark dark:hover:bg-brand-purple-medium"
+            aria-label={isSubmitting ? "Sending message..." : "Send message"}
           >
             {isSubmitting ? (
-              <span className="flex items-center justify-center">
-                <Loader2 className="animate-spin mr-2" size={18} />
+              <span className="flex items-center justify-center" role="status">
+                <Loader2 className="animate-spin mr-2" size={18} aria-hidden="true" />
                 Sending...
               </span>
             ) : (
