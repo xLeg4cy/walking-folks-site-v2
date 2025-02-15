@@ -1,15 +1,19 @@
+
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-brand-navy text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
-            alt="Walking Folks" 
-            className="h-8 w-auto"
-          />
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
+              alt="Walking Folks" 
+              className="h-8 w-auto"
+            />
+          </Link>
           <span className="ml-3 font-bold text-xl">Walking Folks</span>
         </div>
         <p className="text-gray-400">
@@ -31,9 +35,6 @@ const Footer = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Company Info */}
-          
-
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
@@ -45,10 +46,10 @@ const Footer = () => {
                 <a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a>
               </li>
               <li>
-                <a href="#blog" className="text-gray-400 hover:text-white transition-colors">Blog</a>
+                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
               </li>
               <li>
-                <a href="#privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>

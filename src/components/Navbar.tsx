@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   onContactClick: () => void;
@@ -24,20 +25,22 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <img 
-              src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
-              alt="Walking Folks" 
-              className="h-8 w-auto"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
+                alt="Walking Folks" 
+                className="h-8 w-auto"
+              />
+            </Link>
             <span className="ml-3 font-bold text-xl text-[#0A2647]">Walking Folks</span>
           </div>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#home" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+              <Link to="/" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
               <a href="#about" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
               <a href="#services" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
-              <a href="#blog" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+              <Link to="/blog" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</Link>
               <a href="#pricing" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
               <button 
                 onClick={onContactClick}
@@ -62,10 +65,10 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       {isOpen && (
         <div className="md:hidden absolute w-full bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#home" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Home</a>
+            <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Home</Link>
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">About</a>
             <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Services</a>
-            <a href="#blog" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Blog</a>
+            <Link to="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Blog</Link>
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Pricing</a>
             <button 
               onClick={() => {
