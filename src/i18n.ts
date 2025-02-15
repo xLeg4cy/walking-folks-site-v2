@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -77,6 +76,32 @@ const resources = {
           "title": "Milestone-based",
           "description": "Flexible pricing based on project milestones or time"
         }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "description": "Find answers to common questions about our services and process.",
+        "items": [
+          {
+            "question": "What services do you provide?",
+            "answer": "We offer a comprehensive range of services including web development, mobile app development, cloud solutions, and digital transformation consulting. Our team specializes in creating custom solutions tailored to your specific needs."
+          },
+          {
+            "question": "How long does a typical project take?",
+            "answer": "Project timelines vary depending on complexity and scope. A simple website might take 4-6 weeks, while more complex applications can take 3-6 months. We'll provide a detailed timeline during our initial consultation."
+          },
+          {
+            "question": "Do you provide ongoing support?",
+            "answer": "Yes, we offer various support and maintenance packages to ensure your solution continues to perform optimally. Our team is available for updates, bug fixes, and improvements post-launch."
+          },
+          {
+            "question": "What technologies do you work with?",
+            "answer": "We work with a wide range of modern technologies including React, Node.js, Python, AWS, and more. We choose the best tech stack based on your project's specific requirements and goals."
+          },
+          {
+            "question": "How do you handle project communication?",
+            "answer": "We maintain clear communication through regular meetings, progress reports, and dedicated project management tools. You'll have a direct line to your project team and regular updates on milestones."
+          }
+        ]
       }
     }
   },
@@ -153,6 +178,32 @@ const resources = {
           "title": "Basado en Hitos",
           "description": "Precios flexibles basados en hitos del proyecto o tiempo"
         }
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "description": "Encuentra respuestas a preguntas comunes sobre nuestros servicios y procesos.",
+        "items": [
+          {
+            "question": "¿Qué servicios ofrecen?",
+            "answer": "Ofrecemos una amplia gama de servicios que incluyen desarrollo web, desarrollo de aplicaciones móviles, soluciones en la nube y consultoría en transformación digital. Nuestro equipo se especializa en crear soluciones personalizadas adaptadas a sus necesidades específicas."
+          },
+          {
+            "question": "¿Cuánto tiempo toma un proyecto típico?",
+            "answer": "Los tiempos del proyecto varían según la complejidad y el alcance. Un sitio web simple puede tomar de 4 a 6 semanas, mientras que las aplicaciones más complejas pueden tomar de 3 a 6 meses. Proporcionaremos un cronograma detallado durante nuestra consulta inicial."
+          },
+          {
+            "question": "¿Proporcionan soporte continuo?",
+            "answer": "Sí, ofrecemos varios paquetes de soporte y mantenimiento para asegurar que su solución continúe funcionando de manera óptima. Nuestro equipo está disponible para actualizaciones, corrección de errores y mejoras después del lanzamiento."
+          },
+          {
+            "question": "¿Con qué tecnologías trabajan?",
+            "answer": "Trabajamos con una amplia gama de tecnologías modernas incluyendo React, Node.js, Python, AWS y más. Elegimos la mejor pila tecnológica según los requisitos y objetivos específicos de su proyecto."
+          },
+          {
+            "question": "¿Cómo manejan la comunicación del proyecto?",
+            "answer": "Mantenemos una comunicación clara a través de reuniones regulares, informes de progreso y herramientas dedicadas de gestión de proyectos. Tendrá una línea directa con su equipo de proyecto y actualizaciones regulares sobre los hitos."
+          }
+        ]
       }
     }
   }

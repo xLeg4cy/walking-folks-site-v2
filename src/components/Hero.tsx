@@ -1,9 +1,12 @@
 
 import { useEffect, useRef } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -34,26 +37,26 @@ const Hero = () => {
           <div className="flex-1 text-left">
             <div className="inline-flex items-center bg-purple-100 rounded-full px-6 py-2 text-sm font-medium mb-8 animate-fade-in text-[#6E59A5]">
               <Rocket size={16} className="mr-2" />
-              Transforming Ideas into Reality
+              {t('hero.subtitle')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left">
-              <span className="block">Innovative Solutions for</span>
+              <span className="block">{t('hero.title.part1')}</span>
               <span className="block bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] bg-clip-text text-transparent">
-                Modern Businesses
+                {t('hero.title.part2')}
               </span>
             </h1>
             
             <p className="text-gray-600 text-lg md:text-xl mb-8 text-left">
-              We deliver cutting-edge technology solutions with transparency, efficiency, and unmatched support
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button className="bg-[#7E69AB] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                Get Started
+                {t('hero.cta.start')}
               </button>
               <button className="bg-white text-[#7E69AB] px-8 py-4 rounded-lg font-medium border border-gray-200 hover:border-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                Learn More
+                {t('hero.cta.learn')}
               </button>
             </div>
 
@@ -61,15 +64,15 @@ const Hero = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">500+</div>
-                <div className="text-gray-600">Projects Delivered</div>
+                <div className="text-gray-600">{t('stats.projects')}</div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">98%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
+                <div className="text-gray-600">{t('stats.satisfaction')}</div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">24/7</div>
-                <div className="text-gray-600">Support Available</div>
+                <div className="text-gray-600">{t('stats.support')}</div>
               </div>
             </div>
           </div>

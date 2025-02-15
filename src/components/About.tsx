@@ -1,9 +1,11 @@
 
 import { useEffect, useRef } from 'react';
 import { Users, Globe, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,9 +29,9 @@ const About = () => {
       <div ref={aboutRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl font-bold mb-6">About Us</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('about.title')}</h2>
             <p className="text-gray-600 mb-8 text-lg">
-              With over 10 years in the software and infrastructure field, we focus on delivering technology solutions that are cost-efficient, minimalist, and innovative while maintaining transparency and high-quality development support.
+              {t('about.description')}
             </p>
 
             <div className="flex flex-col gap-6">
@@ -39,9 +41,9 @@ const About = () => {
                     <Users className="w-6 h-6 text-brand-purple-dark" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t('about.expertTeam.title')}</h3>
                     <p className="text-gray-600">
-                      Our experienced professionals bring extensive knowledge to every project.
+                      {t('about.expertTeam.description')}
                     </p>
                   </div>
                 </div>
@@ -53,9 +55,9 @@ const About = () => {
                     <Globe className="w-6 h-6 text-brand-purple-dark" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Global Reach</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t('about.globalReach.title')}</h3>
                     <p className="text-gray-600">
-                      Strong presence in US and Latin America markets.
+                      {t('about.globalReach.description')}
                     </p>
                   </div>
                 </div>
@@ -67,9 +69,9 @@ const About = () => {
                     <Shield className="w-6 h-6 text-brand-purple-dark" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t('about.quality.title')}</h3>
                     <p className="text-gray-600">
-                      Committed to delivering high-quality solutions.
+                      {t('about.quality.description')}
                     </p>
                   </div>
                 </div>
