@@ -8,6 +8,8 @@ import Pricing from '@/components/Pricing';
 import TechnologyStack from '@/components/TechnologyStack';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -38,6 +40,8 @@ const Index = () => {
         <About />
         <TechnologyStack />
         <Services />
+        <Testimonials />
+        <FAQ />
         <Pricing />
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
