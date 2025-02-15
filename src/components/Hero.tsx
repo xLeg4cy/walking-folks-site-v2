@@ -89,8 +89,8 @@ const Hero = ({ onContactClick }: HeroProps) => {
           <div className="flex-1 relative">
             <div className="relative z-10 bg-white rounded-2xl shadow-xl p-4 transform transition-transform hover:scale-105">
               <img 
-                src="/lovable-uploads/1581554e-9bcc-4b34-acc2-9aff908acdee.png" 
-                alt="Woman working on laptop"
+                src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
+                alt="Illustration of person working"
                 loading="lazy"
                 className="w-full h-auto rounded-xl"
               />
