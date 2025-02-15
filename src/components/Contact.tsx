@@ -7,12 +7,22 @@ interface ContactProps {
 }
 
 export default function Contact({ onClose }: ContactProps) {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      onClick={handleBackdropClick}
+    >
       <div className="relative w-full max-w-3xl mx-4">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          aria-label="Close contact form"
         >
           <X className="text-white" size={24} />
         </button>
