@@ -49,7 +49,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 rounded-xl bg-white/50 backdrop-blur-sm shadow-sm">
+    <div className="max-w-2xl mx-auto p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm">
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)} 
@@ -60,12 +60,12 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-gray-700 dark:text-gray-200">Name</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Your name" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
+                    className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -78,13 +78,13 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-gray-700 dark:text-gray-200">Email</FormLabel>
                 <FormControl>
                   <Input 
                     type="email" 
                     placeholder="your.email@example.com" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
+                    className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -97,12 +97,12 @@ export function ContactForm() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel className="text-gray-700 dark:text-gray-200">Subject</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="What's this about?" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
+                    className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -115,11 +115,11 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-gray-700 dark:text-gray-200">Message</FormLabel>
                 <FormControl>
                   <Textarea 
                     placeholder="Your message..."
-                    className="min-h-[120px] transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
+                    className="min-h-[120px] bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                     {...field}
                   />
                 </FormControl>
@@ -131,7 +131,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none dark:bg-brand-purple-dark dark:hover:bg-brand-purple-medium"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
