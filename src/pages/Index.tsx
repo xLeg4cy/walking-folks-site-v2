@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import Privacy from '@/components/Privacy';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -66,6 +67,7 @@ const Index = () => {
         <Testimonials />
         <FAQ />
         <Pricing />
+        <Privacy />
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
       <Footer />

@@ -37,6 +37,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
               <a href="#home" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
               <a href="#about" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
               <a href="#services" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+              <a href="#blog" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
               <a href="#pricing" className="text-[#2c3e50] hover:text-[#3498db] px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
               <button 
                 onClick={onContactClick}
@@ -64,6 +65,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             <a href="#home" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Home</a>
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">About</a>
             <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Services</a>
+            <a href="#blog" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Blog</a>
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-[#2c3e50] hover:bg-[#f8f9fa] hover:text-[#3498db]">Pricing</a>
             <button 
               onClick={() => {
