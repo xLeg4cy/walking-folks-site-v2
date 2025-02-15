@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-purple-darker text-white pt-20 pb-8">
+    <footer className="bg-background dark:bg-gray-900 text-foreground pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
@@ -14,6 +14,8 @@ const Footer = () => {
                 src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
                 alt="Walking Folks" 
                 className="h-8 w-auto"
+                width="32"
+                height="32"
               />
               <span className="ml-3 font-bold text-xl">Walking Folks</span>
             </Link>
@@ -21,16 +23,16 @@ const Footer = () => {
               Creating innovative solutions for tomorrow's challenges.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
             </div>
