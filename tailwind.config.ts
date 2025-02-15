@@ -92,7 +92,12 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
       },
+      boxShadow: {
+        'light': '0 2px 8px rgba(0, 0, 0, 0.05)',
+        'light-md': '0 4px 12px rgba(0, 0, 0, 0.08)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
