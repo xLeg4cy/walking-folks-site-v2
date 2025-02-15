@@ -21,6 +21,20 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleContactClick = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLearnMoreClick = () => {
+    const aboutElement = document.getElementById('about');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <div id="home" className="min-h-screen flex items-center justify-center bg-white pt-16 relative">
       <div ref={heroRef} className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -42,10 +56,16 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="bg-[#7E69AB] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg">
+              <button 
+                onClick={handleContactClick}
+                className="bg-[#7E69AB] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 {t('hero.cta.start')}
               </button>
-              <button className="bg-white text-[#7E69AB] px-8 py-4 rounded-lg font-medium border border-gray-200 hover:border-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg">
+              <button 
+                onClick={handleLearnMoreClick}
+                className="bg-white text-[#7E69AB] px-8 py-4 rounded-lg font-medium border border-gray-200 hover:border-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 {t('hero.cta.learn')}
               </button>
             </div>
@@ -54,15 +74,15 @@ const Hero = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">500+</div>
-                <div className="text-gray-600">{t('stats.projects')}</div>
+                <div className="text-gray-600 text-sm">{t('hero.stats.projects')}</div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">98%</div>
-                <div className="text-gray-600">{t('stats.satisfaction')}</div>
+                <div className="text-gray-600 text-sm">{t('hero.stats.satisfaction')}</div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transform transition-transform hover:-translate-y-1">
                 <div className="text-3xl font-bold text-[#7E69AB] mb-2">24/7</div>
-                <div className="text-gray-600">{t('stats.support')}</div>
+                <div className="text-gray-600 text-sm">{t('hero.stats.support')}</div>
               </div>
             </div>
           </div>

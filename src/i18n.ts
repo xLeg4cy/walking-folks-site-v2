@@ -21,8 +21,13 @@ const resources = {
         },
         "description": "We deliver cutting-edge technology solutions with transparency, efficiency, and unmatched support",
         "cta": {
-          "start": "Get Started",
+          "start": "Contact Us",
           "learn": "Learn More"
+        },
+        "stats": {
+          "projects": "Completed Projects",
+          "satisfaction": "Customer Satisfaction",
+          "support": "Support Available"
         }
       },
       "about": {
@@ -123,8 +128,13 @@ const resources = {
         },
         "description": "Ofrecemos soluciones tecnológicas de vanguardia con transparencia, eficiencia y soporte inigualable",
         "cta": {
-          "start": "Empezar",
+          "start": "Contáctanos",
           "learn": "Más Info"
+        },
+        "stats": {
+          "projects": "Proyectos Completados",
+          "satisfaction": "Satisfacción del Cliente",
+          "support": "Soporte Disponible"
         }
       },
       "about": {
