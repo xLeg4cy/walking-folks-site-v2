@@ -21,17 +21,7 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
-  return <div id="home" className="min-h-screen flex items-center justify-center bg-white pt-16 relative isolate">
-      {/* Background Pattern - Now with proper z-index */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#9b87f5,transparent)]" />
-        <div className="grid grid-cols-6 gap-4 rotate-45 scale-150 opacity-10">
-          {Array.from({length: 24}).map((_, i) => (
-            <div key={i} className="h-24 bg-[#7E69AB] opacity-5 rounded-full blur-xl transform -translate-y-1/2" />
-          ))}
-        </div>
-      </div>
-
+  return <div id="home" className="min-h-screen flex items-center justify-center bg-white pt-16 relative">
       <div ref={heroRef} className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-left">
