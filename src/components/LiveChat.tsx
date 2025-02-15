@@ -56,6 +56,7 @@ const LiveChat = () => {
         <button
           onClick={toggleChat}
           className="bg-brand-navy hover:bg-brand-blue text-white p-4 rounded-full shadow-lg transition-all hover:-translate-y-1"
+          aria-label="Open live chat"
         >
           <MessageSquare size={24} />
         </button>

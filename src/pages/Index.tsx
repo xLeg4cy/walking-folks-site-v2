@@ -66,7 +66,7 @@ const Index = () => {
         <Services />
         <Team />
         <Testimonials />
-        <Pricing />
+        <Pricing onContactClick={() => setIsContactOpen(true)} />
         <FAQ />
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
