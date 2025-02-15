@@ -3,7 +3,11 @@ import { useEffect, useRef } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-const Hero = () => {
+interface HeroProps {
+  onContactClick: () => void;
+}
+
+const Hero = ({ onContactClick }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
 
@@ -21,13 +25,6 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleContactClick = () => {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleLearnMoreClick = () => {
     const aboutElement = document.getElementById('about');
     if (aboutElement) {
@@ -35,7 +32,8 @@ const Hero = () => {
     }
   };
 
-  return <div id="home" className="min-h-screen flex items-center justify-center bg-white pt-16 relative">
+  return (
+    <div id="home" className="min-h-screen flex items-center justify-center bg-white pt-16 relative">
       <div ref={heroRef} className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-left">
@@ -57,7 +55,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
-                onClick={handleContactClick}
+                onClick={onContactClick}
                 className="bg-[#7E69AB] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg"
               >
                 {t('hero.cta.start')}
@@ -87,12 +85,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image with lazy loading */}
           <div className="flex-1 relative">
             <div className="relative z-10 bg-white rounded-2xl shadow-xl p-4 transform transition-transform hover:scale-105">
               <img 
-                src="/lovable-uploads/0cf2fbf1-6f9e-4500-961e-b7fd60f2c975.png" 
-                alt="Woman working on laptop" 
+                src="/lovable-uploads/0cf2fbf1-6f9e-4500-961e-b7fd60f5c975.png" 
+                alt="Woman working on laptop"
+                loading="lazy"
                 className="w-full h-auto rounded-xl"
               />
               {/* Feature Highlights */}
@@ -111,7 +110,8 @@ const Hero = () => {
           <ArrowDown className="text-[#7E69AB]" size={24} />
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default Hero;

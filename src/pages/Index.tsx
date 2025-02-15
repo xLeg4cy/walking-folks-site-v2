@@ -60,7 +60,7 @@ const Index = () => {
       <TopProgressBar />
       <Navbar onContactClick={() => setIsContactOpen(true)} />
       <div className="space-y-12">
-        <Hero />
+        <Hero onContactClick={() => setIsContactOpen(true)} />
         <About />
         <TechnologyStack />
         <Services />
