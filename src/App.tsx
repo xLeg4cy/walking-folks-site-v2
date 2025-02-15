@@ -14,7 +14,15 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Blog = lazy(() => import("./pages/Blog"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -22,10 +30,10 @@ const App = () => (
       <ThemeProvider 
         attribute="class" 
         defaultTheme="system" 
-        enableSystem 
+        enableSystem
         disableTransitionOnChange
       >
-        <div className="min-h-screen bg-background font-sans antialiased">
+        <div className="min-h-screen bg-background font-sans antialiased dark:bg-gray-900">
           <TooltipProvider>
             <Toaster />
             <Sonner />
