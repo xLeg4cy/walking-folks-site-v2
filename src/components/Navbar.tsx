@@ -24,23 +24,31 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const homeElement = document.getElementById('home');
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/">
+            <a href="#home" onClick={scrollToHome}>
               <img 
                 src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
                 alt="Walking Folks" 
                 className="h-8 w-auto"
               />
-            </Link>
+            </a>
             <span className="ml-3 font-bold text-xl text-[#0A2647] dark:text-white">Walking Folks</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.home')}</Link>
+            <a href="#home" onClick={scrollToHome} className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.home')}</a>
             <a href="#about" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.about')}</a>
             <a href="#services" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.services')}</a>
             <Link to="/blog" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.blog')}</Link>
@@ -71,7 +79,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       {isOpen && (
         <div className="md:hidden absolute w-full bg-white dark:bg-gray-900 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.home')}</Link>
+            <a href="#home" onClick={scrollToHome} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.home')}</a>
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.about')}</a>
             <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.services')}</a>
             <Link to="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.blog')}</Link>
