@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Computer, Users, Database, Shield, Building2 } from 'lucide-react';
 
@@ -55,28 +56,6 @@ const Services = () => {
         "Legacy System Migration",
         "Backup & Disaster Recovery"
       ]
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Cybersecurity",
-      description: "Comprehensive security solutions for your business.",
-      features: [
-        "Real-Time Monitoring",
-        "Threat Detection",
-        "Risk Mitigation",
-        "Identity Access Management"
-      ]
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Outsourcing & Team Augmentation",
-      description: "Skilled professionals for your team.",
-      features: [
-        "Software Developers",
-        "Cloud Engineers",
-        "Cybersecurity Analysts",
-        "QA Engineers"
-      ]
     }
   ];
 
@@ -90,27 +69,36 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-8 rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center mb-6 shadow-sm">
-                {service.icon}
+        <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
+          <div className="lg:w-1/2">
+            <img 
+              src="/lovable-uploads/f2ebe6d5-009c-4b05-8cd9-e382156663f0.png"
+              alt="Working remotely"
+              className="w-full max-w-md mx-auto"
+            />
+          </div>
+          <div className="lg:w-1/2 grid gap-8">
+            {services.slice(0, 3).map((service, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-purple-light transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="w-12 h-12 bg-brand-purple-light/10 rounded-lg flex items-center justify-center mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-gray-600 mb-6">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="text-sm text-gray-600 flex items-center">
+                      <span className="w-1.5 h-1.5 bg-brand-purple-medium rounded-full mr-2"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="text-sm text-gray-600 flex items-center">
-                    <span className="w-1.5 h-1.5 bg-black rounded-full mr-2"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,66 +1,72 @@
 
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-navy text-white pt-16 pb-8">
+    <footer className="bg-brand-purple-darker text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center">
-          <Link to="/">
-            <img 
-              src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
-              alt="Walking Folks" 
-              className="h-8 w-auto"
-            />
-          </Link>
-          <span className="ml-3 font-bold text-xl">Walking Folks</span>
-        </div>
-        <p className="text-gray-400">
-          Creating innovative solutions for tomorrow's challenges.
-        </p>
-        <div className="flex space-x-4">
-          <a href="#" className="hover:text-brand-blue transition-colors">
-            <Facebook size={20} />
-          </a>
-          <a href="#" className="hover:text-brand-blue transition-colors">
-            <Twitter size={20} />
-          </a>
-          <a href="#" className="hover:text-brand-blue transition-colors">
-            <Instagram size={20} />
-          </a>
-          <a href="#" className="hover:text-brand-blue transition-colors">
-            <Linkedin size={20} />
-          </a>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
+                alt="Walking Folks" 
+                className="h-8 w-auto"
+              />
+              <span className="ml-3 font-bold text-xl">Walking Folks</span>
+            </Link>
+            <p className="text-gray-400 text-sm">
+              Creating innovative solutions for tomorrow's challenges.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
+            <ul className="space-y-4">
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a>
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  About Us
+                </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  Services
+                </a>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
+                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+                <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-lg mb-6">Services</h3>
+            <ul className="space-y-4">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Web Development</a>
               </li>
@@ -75,10 +81,29 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-semibold text-lg mb-6">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center text-gray-400">
+                <MapPin className="w-5 h-5 mr-3" />
+                <span>123 Business Ave, Suite 100<br/>Boston, MA 02110</span>
+              </li>
+              <li className="flex items-center text-gray-400">
+                <Phone className="w-5 h-5 mr-3" />
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li className="flex items-center text-gray-400">
+                <Mail className="w-5 h-5 mr-3" />
+                <span>contact@walkingfolks.com</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-white/10 text-center text-gray-400">
+        <div className="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Walking Folks. All rights reserved.</p>
         </div>
       </div>
