@@ -59,14 +59,14 @@ export function ContactForm() {
 
   return (
     <div 
-      className="max-w-2xl mx-auto p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm"
+      className="max-w-2xl mx-auto rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
       role="form"
       aria-label="Contact form"
     >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)} 
-          className="space-y-6 animate-fade-in"
+          className="space-y-4 animate-fade-in"
         >
           <FormField
             control={form.control}
