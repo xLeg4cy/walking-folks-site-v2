@@ -10,11 +10,19 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import CookieConsent from '@/components/CookieConsent';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
     const handleScroll = () => {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
@@ -29,8 +37,15 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check initial visibility
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="min-h-screen">
@@ -46,6 +61,7 @@ const Index = () => {
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
