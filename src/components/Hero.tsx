@@ -14,7 +14,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('animate-fade-in');
       }
     }, {
       threshold: 0.1
@@ -23,6 +23,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
     const currentRef = heroRef.current;
     if (currentRef) {
       observer.observe(currentRef);
+      // Add visible class immediately to prevent initial jump
+      currentRef.classList.add('visible');
     }
 
     return () => {
@@ -42,7 +44,10 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
 
   return (
     <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative">
-      <div ref={heroRef} className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative">
+      <div 
+        ref={heroRef} 
+        className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative opacity-100 transition-opacity duration-300"
+      >
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-left">
             <div className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-6 py-2 text-sm font-medium mb-8 animate-fade-in text-[#6E59A5] dark:text-purple-300">
@@ -100,7 +105,6 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               <img 
                 src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
                 alt="Illustration of person working"
-                loading="lazy"
                 width="600"
                 height="400"
                 className="w-full h-auto rounded-xl"
