@@ -33,7 +33,8 @@ const Services = () => {
         "QA Testing & Automation",
         "UI & UX Design",
         "Software Architecture"
-      ]
+      ],
+      gradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
       icon: <Building2 className="w-6 h-6" />,
@@ -44,7 +45,8 @@ const Services = () => {
         "Risk Management",
         "Resource Allocation",
         "Project Planning"
-      ]
+      ],
+      gradient: "from-purple-500/20 to-pink-500/20"
     },
     {
       icon: <Database className="w-6 h-6" />,
@@ -55,7 +57,8 @@ const Services = () => {
         "DevOps & SRE",
         "Legacy System Migration",
         "Backup & Disaster Recovery"
-      ]
+      ],
+      gradient: "from-green-500/20 to-emerald-500/20"
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -66,7 +69,8 @@ const Services = () => {
         "Threat Detection",
         "Risk Mitigation",
         "Identity Access Management"
-      ]
+      ],
+      gradient: "from-red-500/20 to-orange-500/20"
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -77,7 +81,8 @@ const Services = () => {
         "Cloud Engineers",
         "Cybersecurity Analysts",
         "QA Engineers"
-      ]
+      ],
+      gradient: "from-yellow-500/20 to-amber-500/20"
     }
   ];
 
@@ -93,8 +98,11 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:-translate-y-1">
-              <div className="w-12 h-12 bg-black/5 rounded-lg flex items-center justify-center mb-6">
+            <div 
+              key={index} 
+              className={`bg-gradient-to-br ${service.gradient} p-8 rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:-translate-y-1 hover:shadow-lg`}
+            >
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
