@@ -46,11 +46,11 @@ const Team = () => {
   ];
 
   return (
-    <div id="team" className="py-24 bg-gradient-to-b from-brand-purple-light/5 to-white">
+    <div id="team" className="py-24 bg-background text-foreground dark:bg-gray-900">
       <div ref={teamRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">{t('team.title')}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <h2 className="text-4xl font-bold mb-4 dark:text-white">{t('team.title')}</h2>
+          <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto text-lg">
             {t('team.description')}
           </p>
         </div>
@@ -59,14 +59,14 @@ const Team = () => {
           {team.map((member, index) => (
             <div 
               key={index}
-              className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-brand-purple-light transition-all hover:-translate-y-1 hover:shadow-lg text-center"
+              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-brand-purple-light dark:hover:border-brand-purple-light transition-all hover:-translate-y-1 hover:shadow-lg text-center"
             >
               <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-brand-purple-light/10 flex items-center justify-center">
                 <User className="w-12 h-12 text-brand-purple-medium" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+              <h3 className="text-xl font-semibold mb-2 dark:text-white">{member.name}</h3>
               <p className="text-brand-purple-medium font-medium mb-4">{member.role}</p>
-              <p className="text-gray-600">{member.bio}</p>
+              <p className="text-muted-foreground dark:text-gray-300">{member.bio}</p>
             </div>
           ))}
         </div>

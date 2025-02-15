@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next';
 import {
   Accordion,
@@ -34,24 +33,24 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section py-20 bg-white">
+    <section className="section py-20 bg-background text-foreground dark:bg-gray-900">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-navy mb-4">
+          <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4">
             {t('faq.title')}
           </h2>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground dark:text-gray-300">
             {t('faq.description')}
           </p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-brand-navy hover:text-brand-blue">
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 dark:border-gray-700">
+              <AccordionTrigger className="text-left text-foreground dark:text-white hover:text-brand-purple-medium dark:hover:text-brand-purple-light">
                 {t(`faq.items.${index}.question`)}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
+              <AccordionContent className="text-muted-foreground dark:text-gray-300">
                 {t(`faq.items.${index}.answer`)}
               </AccordionContent>
             </AccordionItem>

@@ -64,13 +64,13 @@ const Services = () => {
   ];
 
   return (
-    <div id="services" className="py-24 bg-gradient-to-b from-white to-brand-purple-light/5">
+    <div id="services" className="py-24 bg-background text-foreground dark:bg-gray-900">
       <div ref={servicesRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 dark:text-white">
             {t('services.title')}
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto text-lg">
             {t('services.description')}
           </p>
         </div>
@@ -79,7 +79,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-brand-purple-light transition-all hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
+              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-brand-purple-light dark:hover:border-brand-purple-light transition-all hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
             >
               {/* Decorative background pattern */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-purple-light/5 rounded-full -translate-x-16 -translate-y-16"></div>
@@ -90,14 +90,14 @@ const Services = () => {
                 <div className="w-12 h-12 bg-brand-purple-light/10 rounded-xl flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 group-hover:text-brand-purple-medium transition-colors">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 group-hover:text-brand-purple-medium transition-colors dark:text-white">
                   {service.title}
                   <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                 </h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <p className="text-muted-foreground dark:text-gray-300 mb-6">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="text-sm text-gray-600 flex items-center group">
+                    <li key={fIndex} className="text-sm text-muted-foreground dark:text-gray-400 flex items-center group">
                       <CheckCircle2 className="w-4 h-4 mr-2 text-brand-purple-medium opacity-0 group-hover:opacity-100 transition-opacity" />
                       <span className="group-hover:translate-x-1 transition-transform">
                         {feature}
