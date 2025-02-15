@@ -3,11 +3,11 @@ import TechnologyCarousel from './TechnologyCarousel';
 
 const TechnologyStack = () => {
   return (
-    <div className="py-16 bg-gradient-to-b from-purple-50 to-white">
+    <div className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#7E69AB]">Our Technology Stack</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">Our Technology Stack</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms.
           </p>
         </div>
