@@ -10,7 +10,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
-import Blog from '@/components/Blog';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -65,7 +64,6 @@ const Index = () => {
         <TechnologyStack />
         <Services />
         <Testimonials />
-        <Blog />
         <FAQ />
         <Pricing />
       </div>

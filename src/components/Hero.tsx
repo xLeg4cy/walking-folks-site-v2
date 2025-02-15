@@ -23,9 +23,9 @@ const Hero = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3498db,transparent)]" />
         <div className="grid grid-cols-6 gap-4 rotate-45 scale-150">
-          {Array.from({
-          length: 24
-        }).map((_, i) => <div key={i} className="h-24 bg-[#0A2647] opacity-5 rounded-full blur-xl transform -translate-y-1/2" />)}
+          {Array.from({length: 24}).map((_, i) => (
+            <div key={i} className="h-24 bg-[#0A2647] opacity-5 rounded-full blur-xl transform -translate-y-1/2" />
+          ))}
         </div>
       </div>
 
