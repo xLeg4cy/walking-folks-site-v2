@@ -10,9 +10,12 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import Blog from '@/components/Blog';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
+import TopProgressBar from '@/components/TopProgressBar';
+import LiveChat from '@/components/LiveChat';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -54,6 +57,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <TopProgressBar />
       <Navbar onContactClick={() => setIsContactOpen(true)} />
       <div className="space-y-20">
         <Hero />
@@ -61,6 +65,7 @@ const Index = () => {
         <TechnologyStack />
         <Services />
         <Testimonials />
+        <Blog />
         <FAQ />
         <Pricing />
       </div>
@@ -68,6 +73,7 @@ const Index = () => {
       <Footer />
       <ScrollToTop />
       <CookieConsent />
+      <LiveChat />
     </div>
   );
 };
