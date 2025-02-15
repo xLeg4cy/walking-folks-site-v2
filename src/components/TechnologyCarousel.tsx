@@ -90,26 +90,30 @@ const technologies2 = [
 
 const TechnologyCarousel = () => {
   return (
-    <div className="mb-14 flex w-full flex-col gap-8 md:gap-3 xl:mb-11 xl:gap-1">
-      <div className="relative h-16 overflow-hidden md:h-24">
+    <div className="mb-8 flex w-full flex-col gap-4 md:gap-3 xl:gap-1">
+      <div className="relative h-20 overflow-hidden md:h-24">
         <ul className="absolute flex min-w-[200%] justify-around animate-slide-left hover:pause">
           {[...technologies1, ...technologies1].map((tech, index) => (
-            <li key={index} className="group hover:scale-110 pr-7 md:pr-9 transition-all duration-300">
+            <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <a href={tech.url} className="flex flex-col items-center">
-                {tech.icon}
-                <span className="text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors">{tech.name}</span>
+                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
+                  {tech.icon}
+                </div>
+                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors whitespace-nowrap">{tech.name}</span>
               </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="relative h-16 overflow-hidden md:h-24">
+      <div className="relative h-20 overflow-hidden md:h-24">
         <ul className="absolute flex min-w-[200%] justify-around animate-slide-right hover:pause">
           {[...technologies2, ...technologies2].map((tech, index) => (
-            <li key={index} className="group hover:scale-110 pr-7 md:pr-9 transition-all duration-300">
+            <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <a href={tech.url} className="flex flex-col items-center">
-                {tech.icon}
-                <span className="text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors">{tech.name}</span>
+                <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
+                  {tech.icon}
+                </div>
+                <span className="text-xs md:text-sm mt-2 text-gray-600 group-hover:text-brand-purple-medium transition-colors whitespace-nowrap">{tech.name}</span>
               </a>
             </li>
           ))}

@@ -59,7 +59,7 @@ const Index = () => {
     <div className="min-h-screen">
       <TopProgressBar />
       <Navbar onContactClick={() => setIsContactOpen(true)} />
-      <div className="space-y-20">
+      <div className="space-y-12">
         <Hero />
         <About />
         <TechnologyStack />
