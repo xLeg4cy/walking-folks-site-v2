@@ -12,12 +12,16 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CookieConsent from '@/components/CookieConsent';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Enable smooth scrolling
+    document.documentElement.style.scrollBehavior = 'smooth';
+
     // Simulate initial loading
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -40,6 +44,7 @@ const Index = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(timer);
+      document.documentElement.style.scrollBehavior = '';
     };
   }, []);
 
@@ -61,6 +66,7 @@ const Index = () => {
       </div>
       {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
       <Footer />
+      <ScrollToTop />
       <CookieConsent />
     </div>
   );
