@@ -23,16 +23,16 @@ const Footer = () => {
               Creating innovative solutions for tomorrow's challenges.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Twitter">
+              <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -43,22 +43,22 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                <a href="#about" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors flex items-center">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                <a href="#services" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors flex items-center">
                   Services
                 </a>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                <Link to="/blog" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors flex items-center">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                <Link to="/privacy" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors flex items-center">
                   Privacy Policy
                 </Link>
               </li>
@@ -70,16 +70,16 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-6">Services</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Web Development</a>
+                <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors">Web Development</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Mobile Apps</a>
+                <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors">Mobile Apps</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a>
+                <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors">Cloud Solutions</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Consulting</a>
+                <a href="#" className="text-gray-400 hover:text-[#9b87f5] dark:hover:text-[#D6BCFA] transition-colors">Consulting</a>
               </li>
             </ul>
           </div>
