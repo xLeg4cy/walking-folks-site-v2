@@ -1,8 +1,10 @@
 
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Pricing = () => {
   const pricingRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,17 +27,17 @@ const Pricing = () => {
     <div id="pricing" className="py-24 bg-gray-50">
       <div ref={pricingRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Flexible Pricing Options</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('pricing.title')}</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Choose the pricing model that best suits your project needs
+            {t('pricing.description')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-            <h3 className="text-xl font-semibold mb-4">Fixed Price</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('pricing.fixed.title')}</h3>
             <p className="text-gray-600 mb-6">
-              Perfect for projects with well-defined scope and requirements
+              {t('pricing.fixed.description')}
             </p>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center text-gray-600">
@@ -63,9 +65,9 @@ const Pricing = () => {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-            <h3 className="text-xl font-semibold mb-4">Milestone-based</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('pricing.milestone.title')}</h3>
             <p className="text-gray-600 mb-6">
-              Flexible pricing based on project milestones or time
+              {t('pricing.milestone.description')}
             </p>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center text-gray-600">

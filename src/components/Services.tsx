@@ -1,8 +1,11 @@
+
 import { useEffect, useRef } from 'react';
 import { Computer, Users, Database, Shield, Building2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,8 +27,8 @@ const Services = () => {
   const services = [
     {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Software Development",
-      description: "Full-stack development including bots, mobile apps, API integration, and more.",
+      title: t('services.webdev.title'),
+      description: t('services.webdev.description'),
       features: [
         "Full-Stack Software Development",
         "Bots & API Integration",
@@ -36,8 +39,8 @@ const Services = () => {
     },
     {
       icon: <Building2 className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Project Management",
-      description: "Comprehensive project management with an agile approach.",
+      title: t('services.mobile.title'),
+      description: t('services.mobile.description'),
       features: [
         "Agile Approach",
         "Risk Management",
@@ -48,8 +51,8 @@ const Services = () => {
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Infrastructure",
-      description: "Expert cloud services and DevOps solutions.",
+      title: t('services.cloud.title'),
+      description: t('services.cloud.description'),
       features: [
         "Cloud Services (GCP, Oracle & AWS)",
         "DevOps & SRE",
@@ -65,10 +68,10 @@ const Services = () => {
       <div ref={servicesRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Comprehensive technology solutions tailored to your business needs
+            {t('services.description')}
           </p>
         </div>
 

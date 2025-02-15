@@ -1,9 +1,11 @@
 
 import { useRef, useEffect } from 'react';
 import { User } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Team = () => {
   const teamRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,9 +49,9 @@ const Team = () => {
     <div id="team" className="py-24 bg-gradient-to-b from-brand-purple-light/5 to-white">
       <div ref={teamRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('team.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Expert professionals driving innovation and excellence
+            {t('team.description')}
           </p>
         </div>
 
