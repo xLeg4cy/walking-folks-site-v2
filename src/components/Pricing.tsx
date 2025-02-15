@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
   const pricingRef = useRef<HTMLDivElement>(null);
@@ -41,27 +42,30 @@ const Pricing = () => {
             </p>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Predictable costs
               </li>
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Clear timeline
               </li>
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Defined deliverables
               </li>
             </ul>
-            <button className="w-full bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
+            <Button 
+              className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white dark:text-white" 
+              size="lg"
+            >
               Get Quote
-            </button>
+            </Button>
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
@@ -71,27 +75,30 @@ const Pricing = () => {
             </p>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Per hour rates
               </li>
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Per developer pricing
               </li>
               <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Flexible engagement
               </li>
             </ul>
-            <button className="w-full bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
+            <Button 
+              className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white dark:text-white" 
+              size="lg"
+            >
               Contact Us
-            </button>
+            </Button>
           </div>
         </div>
       </div>
