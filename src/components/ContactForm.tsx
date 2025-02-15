@@ -65,7 +65,7 @@ export function ContactForm() {
                   <Input 
                     placeholder="Your name" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-blue/20"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -84,7 +84,7 @@ export function ContactForm() {
                     type="email" 
                     placeholder="your.email@example.com" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-blue/20"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -102,7 +102,7 @@ export function ContactForm() {
                   <Input 
                     placeholder="What's this about?" 
                     {...field}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-blue/20"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                   />
                 </FormControl>
                 <FormMessage />
@@ -119,7 +119,7 @@ export function ContactForm() {
                 <FormControl>
                   <Textarea 
                     placeholder="Your message..."
-                    className="min-h-[120px] transition-all duration-200 focus:ring-2 focus:ring-brand-blue/20"
+                    className="min-h-[120px] transition-all duration-200 focus:ring-2 focus:ring-brand-purple-medium/20"
                     {...field}
                   />
                 </FormControl>
@@ -131,7 +131,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-brand-navy hover:bg-brand-blue text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
