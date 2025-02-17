@@ -2,6 +2,7 @@
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Particles from './Particles';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -23,7 +24,6 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
     const currentRef = heroRef.current;
     if (currentRef) {
       observer.observe(currentRef);
-      // Add visible class immediately to prevent initial jump
       currentRef.classList.add('visible');
     }
 
@@ -43,7 +43,21 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
   };
 
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative">
+    <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative overflow-hidden">
+      <Particles
+        className="absolute inset-0 pointer-events-none"
+        particleCount={150}
+        particleSpread={15}
+        speed={0.05}
+        particleColors={['#D6BCFA', '#9b87f5', '#7E69AB']}
+        moveParticlesOnHover={true}
+        particleHoverFactor={2}
+        alphaParticles={true}
+        particleBaseSize={80}
+        sizeRandomness={0.5}
+        cameraDistance={25}
+      />
+      
       <div 
         ref={heroRef} 
         className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative opacity-100 transition-opacity duration-300"
