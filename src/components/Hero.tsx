@@ -2,6 +2,7 @@
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Particles from './Particles';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -42,7 +43,21 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
   };
 
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative">
+    <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative overflow-hidden">
+      <Particles
+        className="absolute inset-0 pointer-events-none"
+        particleCount={150}
+        particleSpread={15}
+        speed={0.05}
+        particleColors={['#D6BCFA', '#9b87f5', '#7E69AB']}
+        moveParticlesOnHover={true}
+        particleHoverFactor={2}
+        alphaParticles={true}
+        particleBaseSize={80}
+        sizeRandomness={0.5}
+        cameraDistance={25}
+      />
+      
       <div 
         ref={heroRef} 
         className="section max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 text-center relative opacity-100 transition-opacity duration-300"
@@ -54,13 +69,9 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               {t('hero.subtitle')}
             </div>
             
-            <div className="overflow-hidden whitespace-nowrap mb-6">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left text-foreground animate-typing border-r-4 border-[#7E69AB]">
-                {t('hero.title.part1')}
-              </h1>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left">
-              <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left text-foreground">
+              <span className="block">{t('hero.title.part1')}</span>
+              <span className="block bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] dark:from-purple-400 dark:to-purple-600 bg-clip-text text-transparent">
                 {t('hero.title.part2')}
               </span>
             </h1>
