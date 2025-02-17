@@ -41,21 +41,6 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
     }
   };
 
-  const animateCharacters = (text: string, baseDelay: number = 0) => {
-    return text.split('').map((char, i) => (
-      <span
-        key={i}
-        className="inline-block opacity-0 animate-characters"
-        style={{ 
-          animationDelay: `${baseDelay + (i * 0.05)}s`,
-          animationFillMode: 'forwards'
-        }}
-      >
-        {char}
-      </span>
-    ));
-  };
-
   return (
     <div id="home" className="min-h-screen flex items-center justify-center bg-background dark:bg-gray-900 pt-16 relative">
       <div 
@@ -69,19 +54,16 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               {t('hero.subtitle')}
             </div>
             
-            <div className="mb-6">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left text-foreground">
-                {animateCharacters(t('hero.title.part1'))}
+            <div className="overflow-hidden whitespace-nowrap mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left text-foreground animate-typing border-r-4 border-[#7E69AB]">
+                {t('hero.title.part1')}
               </h1>
             </div>
-            
-            <div className="mb-6">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left">
-                <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent">
-                  {animateCharacters(t('hero.title.part2'), 1.5)}
-                </span>
-              </h1>
-            </div>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left">
+              <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
+                {t('hero.title.part2')}
+              </span>
+            </h1>
             
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl mb-8 text-left">
               {t('hero.description')}

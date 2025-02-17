@@ -95,23 +95,26 @@ export default {
             "background-position": "right center",
           },
         },
-        characterFadeIn: {
-          "0%": { 
-            opacity: "0",
-            transform: "translateY(8px)",
+        typing: {
+          "0%": {
+            width: "0",
           },
-          "100%": { 
-            opacity: "1",
-            transform: "translateY(0)",
-          }
-        }
+          "100%": {
+            width: "100%",
+          },
+        },
+        blink: {
+          "50%": {
+            borderColor: "transparent",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
         gradient: "gradient 8s ease infinite",
-        characters: "characterFadeIn 0.4s ease-out forwards",
+        typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
       },
       boxShadow: {
         'light': '0 2px 8px rgba(0, 0, 0, 0.05)',
