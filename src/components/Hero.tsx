@@ -23,7 +23,6 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
     const currentRef = heroRef.current;
     if (currentRef) {
       observer.observe(currentRef);
-      // Add visible class immediately to prevent initial jump
       currentRef.classList.add('visible');
     }
 
@@ -55,9 +54,13 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               {t('hero.subtitle')}
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left text-foreground">
-              <span className="block">{t('hero.title.part1')}</span>
-              <span className="block bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] dark:from-purple-400 dark:to-purple-600 bg-clip-text text-transparent">
+            <div className="overflow-hidden whitespace-nowrap mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left text-foreground animate-typing border-r-4 border-[#7E69AB]">
+                {t('hero.title.part1')}
+              </h1>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left">
+              <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
                 {t('hero.title.part2')}
               </span>
             </h1>
