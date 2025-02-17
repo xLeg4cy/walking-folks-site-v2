@@ -83,7 +83,7 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="min-h-screen bg-background text-foreground"
+        className="min-h-screen bg-background text-foreground dark:bg-gray-900"
       >
         <Helmet>
           <title>Lovable - Modern Web Solutions</title>
@@ -113,7 +113,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-12"
+            className="space-y-8" // Reduced from space-y-12
           >
             <About />
             <TechnologyStack />
