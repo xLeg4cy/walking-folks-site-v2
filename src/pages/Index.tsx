@@ -113,7 +113,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8" // Reduced from space-y-12
+            className="space-y-4" // Reduced from space-y-8
           >
             <About />
             <TechnologyStack />
