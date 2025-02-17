@@ -103,6 +103,14 @@ export default {
             width: "100%",
           },
         },
+        "typing-delayed": {
+          "0%, 50%": {
+            width: "0",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
         blink: {
           "50%": {
             borderColor: "transparent",
@@ -115,6 +123,7 @@ export default {
         fadeIn: "fadeIn 0.5s ease-out forwards",
         gradient: "gradient 8s ease infinite",
         typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
+        "typing-delayed": "typing-delayed 7s steps(40, end), blink 1s step-end infinite",
       },
       boxShadow: {
         'light': '0 2px 8px rgba(0, 0, 0, 0.05)',

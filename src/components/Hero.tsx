@@ -59,13 +59,15 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 {t('hero.title.part1')}
               </h1>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-left">
-              <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
-                {t('hero.title.part2')}
-              </span>
-            </h1>
+            <div className="overflow-hidden whitespace-nowrap">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-left">
+                <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-typing-delayed border-r-4 border-[#7E69AB]">
+                  {t('hero.title.part2')}
+                </span>
+              </h1>
+            </div>
             
-            <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl mb-8 text-left">
+            <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl mb-8 mt-6 text-left">
               {t('hero.description')}
             </p>
             
