@@ -105,25 +105,29 @@ const Index = () => {
         <TopProgressBar />
         <Navbar onContactClick={() => setIsContactOpen(true)} />
         
-        <Hero onContactClick={() => setIsContactOpen(true)} />
+        <div className="-mt-16"> {/* Negative margin to reduce space */}
+          <Hero onContactClick={() => setIsContactOpen(true)} />
+        </div>
 
-        <Suspense fallback={<SkeletonLoader />}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4" // Reduced from space-y-8
-          >
-            <About />
-            <TechnologyStack />
-            <Services />
-            <Team />
-            <Testimonials />
-            <Pricing onContactClick={() => setIsContactOpen(true)} />
-            <FAQ />
-          </motion.div>
-        </Suspense>
+        <div className="-mt-32"> {/* Negative margin to pull content up */}
+          <Suspense fallback={<SkeletonLoader />}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <About />
+              <TechnologyStack />
+              <Services />
+              <Team />
+              <Testimonials />
+              <Pricing onContactClick={() => setIsContactOpen(true)} />
+              <FAQ />
+            </motion.div>
+          </Suspense>
+        </div>
 
         {isContactOpen && (
           <Suspense fallback={<SkeletonLoader />}>
