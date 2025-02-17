@@ -45,8 +45,11 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
     return text.split('').map((char, i) => (
       <span
         key={i}
-        className="animate-characters inline-block opacity-0"
-        style={{ animationDelay: `${delay + (i * 0.1)}s` }}
+        className="inline-block opacity-0 animate-characters"
+        style={{ 
+          animationDelay: `${delay + (i * 0.1)}s`,
+          animationFillMode: 'forwards'
+        }}
       >
         {char}
       </span>
