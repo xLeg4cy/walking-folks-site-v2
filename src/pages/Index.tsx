@@ -105,8 +105,8 @@ const Index = () => {
         <TopProgressBar />
         <Navbar onContactClick={() => setIsContactOpen(true)} />
         
-        <main className="flex flex-col gap-16 pb-16"> {/* Standard large section gap */}
-          <section className="pt-16">
+        <main className="flex flex-col gap-8 md:gap-16 pb-8 md:pb-16"> {/* Adjusted gaps for mobile */}
+          <section className="pt-8 md:pt-16"> {/* Adjusted padding for mobile */}
             <Hero onContactClick={() => setIsContactOpen(true)} />
           </section>
 
@@ -116,34 +116,48 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-16" // Standard large section gap
+              className="flex flex-col gap-8 md:gap-16" // Adjusted gaps for mobile
             >
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <About />
+                <div className="py-4 md:py-0"> {/* Added padding control for mobile */}
+                  <About />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <TechnologyStack />
+                <div className="py-4 md:py-0">
+                  <TechnologyStack />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Services />
+                <div className="py-4 md:py-0">
+                  <Services />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Team />
+                <div className="py-4 md:py-0">
+                  <Team />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Testimonials />
+                <div className="py-4 md:py-0">
+                  <Testimonials />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Pricing onContactClick={() => setIsContactOpen(true)} />
+                <div className="py-4 md:py-0">
+                  <Pricing onContactClick={() => setIsContactOpen(true)} />
+                </div>
               </section>
               
               <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <FAQ />
+                <div className="py-4 md:py-0">
+                  <FAQ />
+                </div>
               </section>
             </motion.div>
           </Suspense>
