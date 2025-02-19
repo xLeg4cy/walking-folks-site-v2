@@ -138,8 +138,20 @@
   }
 
   /* Dark mode border color consistency */
-  .dark [class*="border"] {
-    border-color: rgb(31 41 55); /* Equivalent to gray-800 */
+  .dark .border {
+    @apply border-gray-800;
+  }
+
+  .dark .divide-y > * {
+    @apply border-gray-800;
+  }
+
+  .dark .border-t {
+    @apply border-gray-800;
+  }
+
+  .dark .border-b {
+    @apply border-gray-800;
   }
 }
 
@@ -214,3 +226,4 @@
 @keyframes blink {
   50% { border-color: transparent }
 }
+
