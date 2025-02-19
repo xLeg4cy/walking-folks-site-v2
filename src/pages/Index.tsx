@@ -105,55 +105,35 @@ const Index = () => {
         <TopProgressBar />
         <Navbar onContactClick={() => setIsContactOpen(true)} />
         
-        <main className="flex flex-col gap-16 pb-16"> {/* Standard large section gap */}
-          <section className="pt-16">
-            <Hero onContactClick={() => setIsContactOpen(true)} />
-          </section>
+        <div className="-mt-16"> {/* Negative margin to reduce space */}
+          <Hero onContactClick={() => setIsContactOpen(true)} />
+        </div>
 
+        <div className="-mt-32"> {/* Negative margin to pull content up */}
           <Suspense fallback={<SkeletonLoader />}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-16" // Standard large section gap
+              className="space-y-4"
             >
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <About />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <TechnologyStack />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Services />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Team />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Testimonials />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <Pricing onContactClick={() => setIsContactOpen(true)} />
-              </section>
-              
-              <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-                <FAQ />
-              </section>
+              <About />
+              <TechnologyStack />
+              <Services />
+              <Team />
+              <Testimonials />
+              <Pricing onContactClick={() => setIsContactOpen(true)} />
+              <FAQ />
             </motion.div>
           </Suspense>
+        </div>
 
-          {isContactOpen && (
-            <Suspense fallback={<SkeletonLoader />}>
-              <Contact onClose={() => setIsContactOpen(false)} />
-            </Suspense>
-          )}
-        </main>
+        {isContactOpen && (
+          <Suspense fallback={<SkeletonLoader />}>
+            <Contact onClose={() => setIsContactOpen(false)} />
+          </Suspense>
+        )}
 
         <Suspense fallback={<SkeletonLoader />}>
           <Footer />
