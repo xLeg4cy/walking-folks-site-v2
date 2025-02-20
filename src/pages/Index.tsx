@@ -1,4 +1,3 @@
-
 import { Suspense, useEffect, useState, lazy } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +18,6 @@ const FAQ = lazy(() => import('@/components/FAQ'));
 const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
-const Team = lazy(() => import('@/components/Team'));
 
 // Skeleton loader component
 const SkeletonLoader = () => (
@@ -113,12 +111,11 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8" // Reduced from space-y-12
+            className="space-y-8"
           >
             <About />
             <TechnologyStack />
             <Services />
-            <Team />
             <Testimonials />
             <Pricing onContactClick={() => setIsContactOpen(true)} />
             <FAQ />
