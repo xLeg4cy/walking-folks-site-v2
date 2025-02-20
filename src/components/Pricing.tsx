@@ -47,7 +47,7 @@ const Pricing = ({ onContactClick }: PricingProps) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="max-w-lg mx-auto">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
             <h3 className="text-xl font-semibold mb-4 dark:text-white">{t('pricing.fixed.title')}</h3>
             <p className="text-muted-foreground dark:text-gray-300 mb-6">
@@ -79,40 +79,6 @@ const Pricing = ({ onContactClick }: PricingProps) => {
               onClick={handleChatOpen}
             >
               Get Quote
-            </Button>
-          </div>
-
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-            <h3 className="text-xl font-semibold mb-4 dark:text-white">{t('pricing.milestone.title')}</h3>
-            <p className="text-muted-foreground dark:text-gray-300 mb-6">
-              {t('pricing.milestone.description')}
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Per hour rates
-              </li>
-              <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Per developer pricing
-              </li>
-              <li className="flex items-center text-muted-foreground dark:text-gray-300">
-                <svg className="w-5 h-5 mr-2 text-brand-purple-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Flexible engagement
-              </li>
-            </ul>
-            <Button 
-              className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white dark:text-white" 
-              size="lg"
-              onClick={onContactClick}
-            >
-              Contact Us
             </Button>
           </div>
         </div>
