@@ -71,15 +71,11 @@ const resources = {
         "description": "Expert professionals driving innovation and excellence"
       },
       "pricing": {
-        "title": "Flexible Pricing Options",
-        "description": "Choose the pricing model that best suits your project needs",
+        "title": "Simple, Transparent Pricing",
+        "description": "Clear pricing for your project needs",
         "fixed": {
           "title": "Fixed Price",
           "description": "Perfect for projects with well-defined scope and requirements"
-        },
-        "milestone": {
-          "title": "Milestone-based",
-          "description": "Flexible pricing based on project milestones or time"
         }
       },
       "faq": {
@@ -183,10 +179,6 @@ const resources = {
         "fixed": {
           "title": "Precio Fijo",
           "description": "Perfecto para proyectos con alcance y requisitos bien definidos"
-        },
-        "milestone": {
-          "title": "Basado en Hitos",
-          "description": "Precios flexibles basados en hitos del proyecto o tiempo"
         }
       },
       "faq": {
