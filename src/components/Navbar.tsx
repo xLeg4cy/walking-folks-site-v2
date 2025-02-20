@@ -52,7 +52,6 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             <a href="#about" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.about')}</a>
             <a href="#services" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.services')}</a>
             <Link to="/blog" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.blog')}</Link>
-            <a href="#pricing" className="text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light px-3 py-2 rounded-md text-sm font-medium transition-colors">{t('nav.pricing')}</a>
             <ThemeToggle />
             <LanguageToggle />
             <button 
@@ -83,7 +82,6 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.about')}</a>
             <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.services')}</a>
             <Link to="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.blog')}</Link>
-            <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-brand-purple-medium dark:hover:text-brand-purple-light">{t('nav.pricing')}</a>
             <button 
               onClick={() => {
                 onContactClick();

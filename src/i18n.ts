@@ -10,7 +10,6 @@ const resources = {
         "about": "About",
         "services": "Services",
         "blog": "Blog",
-        "pricing": "Pricing",
         "contact": "Contact Us"
       },
       "hero": {
@@ -113,7 +112,6 @@ const resources = {
         "about": "Nosotros",
         "services": "Servicios",
         "blog": "Blog",
-        "pricing": "Precios",
         "contact": "Contáctanos"
       },
       "hero": {
