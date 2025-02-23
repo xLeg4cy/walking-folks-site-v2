@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Computer, Users, Database, Shield, Building2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Computer, Users, Database, Shield, UserPlus, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {
@@ -27,38 +27,65 @@ const Services = () => {
   const services = [
     {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
-      title: t('services.webdev.title'),
-      description: t('services.webdev.description'),
+      title: "Software Development",
+      description: "We build the future, end-to-end. Our full-stack expertise delivers:",
       features: [
-        "Full-Stack Software Development",
-        "Bots & API Integration",
-        "QA Testing & Automation",
-        "UI & UX Design",
-        "Software Architecture"
+        "Bots that automate with precision",
+        "Back-end, front-end, and mobile apps that perform seamlessly",
+        "API integration for a connected world",
+        "QA testing and automation to ensure flawless execution",
+        "UI & UX design that captivates and converts",
+        "Scalable, high-performance software architecture"
       ]
     },
     {
-      icon: <Building2 className="w-6 h-6 text-brand-purple-medium" />,
-      title: t('services.mobile.title'),
-      description: t('services.mobile.description'),
+      icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
+      title: "Project Management",
+      description: "We don't just manage—we accelerate. Expect:",
       features: [
-        "Agile Approach",
-        "Risk Management",
-        "Resource Allocation",
-        "Project Planning",
-        "Quality Assurance"
+        "Agile workflows that adapt and thrive",
+        "Risk management that stays ahead of the curve",
+        "Smart resource allocation for maximum impact",
+        "Precision project planning that hits every mark"
       ]
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
-      title: t('services.cloud.title'),
-      description: t('services.cloud.description'),
+      title: "Infrastructure",
+      description: "We've mastered the backbone of tech:",
       features: [
-        "Cloud Services (GCP, Oracle & AWS)",
-        "DevOps & SRE",
-        "Legacy System Migration",
-        "Backup & Disaster Recovery",
-        "Security Management"
+        "Cloud services across GCP, Oracle, and AWS",
+        "Frictionless cloud migration and ongoing support",
+        "DevOps that streamlines and scales",
+        "Site Reliability Engineering (SRE) for unbreakable systems",
+        "Legacy system upgrades and migrations",
+        "Backup and disaster recovery you can count on"
+      ]
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
+      title: "Cybersecurity",
+      description: "Your security is our obsession:",
+      features: [
+        "Real-time monitoring that never sleeps",
+        "Threat detection that outpaces risks",
+        "Risk mitigation with proactive edge",
+        "Identity Access Management (IAM) locked tight",
+        "Rapid incident response and recovery",
+        "Application and cloud security that sets the standard"
+      ]
+    },
+    {
+      icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
+      title: "Outsourcing & Team Augmentation",
+      description: "Need elite talent? We've got you:",
+      features: [
+        "Software developers who code the extraordinary",
+        "Cloud engineers who build the skies",
+        "Cybersecurity analysts who guard the gates",
+        "QA engineers who perfect the details",
+        "Network engineers and system admins who keep it running",
+        "IT support (L1, L2, L3) that resolves fast"
       ]
     }
   ];
