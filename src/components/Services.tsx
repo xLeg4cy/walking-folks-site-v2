@@ -52,9 +52,10 @@ const Services = () => {
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
       title: "Infrastructure",
-      description: "We've mastered the backbone of tech:",
+      description: "We've mastered the backbone of tech—and we bring it all to you:",
       features: [
         "Cloud services across GCP, Oracle, and AWS",
+        "Our own cutting-edge infrastructure—enterprise-grade, cost-effective, and built for agility",
         "Frictionless cloud migration and ongoing support",
         "DevOps that streamlines and scales",
         "Site Reliability Engineering (SRE) for unbreakable systems",
