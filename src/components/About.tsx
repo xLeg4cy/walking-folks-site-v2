@@ -31,7 +31,7 @@ const About = () => {
           <div className="lg:w-1/2">
             <h2 className="text-3xl font-bold mb-6 dark:text-white">{t('about.title')}</h2>
             <p className="text-muted-foreground dark:text-gray-300 mb-8 text-lg">
-              {t('about.description')}
+              We've got over a decade of real skill in software, infrastructure, and cybersecurity, offering tech fixes that are simple, cheap, and ahead of their time. We shoot for fresh innovation - see it as open workflows and pro-level development support - producing top-quality, standout tech with no high bills, no sneaky charges, or junk you don't want, all geared to win in a fast-moving field.
             </p>
 
             <div className="flex flex-col gap-6">
