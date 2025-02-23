@@ -1,3 +1,4 @@
+
 import { Suspense, useEffect, useState, lazy } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,7 +10,6 @@ import TopProgressBar from '@/components/TopProgressBar';
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
 const Services = lazy(() => import('@/components/Services'));
-const Pricing = lazy(() => import('@/components/Pricing'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
 const Contact = lazy(() => import('@/components/Contact'));
 const Footer = lazy(() => import('@/components/Footer'));
@@ -117,7 +117,6 @@ const Index = () => {
             <TechnologyStack />
             <Services />
             <Testimonials />
-            <Pricing onContactClick={() => setIsContactOpen(true)} />
             <FAQ />
           </motion.div>
         </Suspense>
