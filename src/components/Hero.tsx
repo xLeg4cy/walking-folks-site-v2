@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -5,6 +6,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -13,6 +15,8 @@ interface HeroProps {
 const Hero = memo(({ onContactClick }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, 50]);
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -50,6 +54,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
 
   return (
     <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 to-transparent dark:from-purple-900/10 dark:to-transparent" />
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -79,7 +84,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 default: "bounce",
               },
               random: false,
-              speed: 1,
+              speed: 1.5,
               straight: false,
             },
             number: {
@@ -87,10 +92,10 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 enable: true,
                 area: 800,
               },
-              value: 80,
+              value: 100,
             },
             opacity: {
-              value: 0.2,
+              value: 0.3,
             },
             shape: {
               type: "circle",
@@ -110,62 +115,114 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
       >
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-center w-full">
-            <div className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#6E59A5] dark:text-purple-300">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#6E59A5] dark:text-purple-300 hover:scale-105 transition-transform"
+            >
               <Rocket size={16} className="mr-2" />
               {t('hero.subtitle')}
-            </div>
+            </motion.div>
             
             <div className="overflow-hidden mb-4 md:mb-6">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-center text-foreground animate-typing border-r-4 border-[#7E69AB]">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-center text-foreground animate-typing border-r-4 border-[#7E69AB]"
+              >
                 {t('hero.title.part1')}
-              </h1>
+              </motion.h1>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-center"
+            >
               <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
                 {t('hero.title.part2')}
               </span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-center max-w-3xl mx-auto">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-center max-w-3xl mx-auto"
+            >
               {t('hero.description')}
-            </p>
+            </motion.p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 justify-center">
-              <button 
+              <motion.button 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={onContactClick}
                 className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700"
                 type="button"
                 rel="noopener noreferrer"
               >
                 {t('hero.cta.start')}
-              </button>
-              <button 
+              </motion.button>
+              <motion.button 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={handleLearnMoreClick}
                 className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#7E69AB] dark:text-purple-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#9b87f5] dark:hover:border-purple-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
                 type="button"
               >
                 {t('hero.cta.learn')}
-              </button>
+              </motion.button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 md:mb-12">
-              <div className="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">500+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.projects')}</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">98%</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.satisfaction')}</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">24/7</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.support')}</div>
-              </div>
+              </motion.div>
             </div>
           </div>
 
-          <div className="flex-1 relative w-full px-4 sm:px-0">
-            <div className="relative z-10 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-3 md:p-4 transform transition-transform hover:scale-105">
+          <motion.div 
+            style={{ y }}
+            className="flex-1 relative w-full px-4 sm:px-0"
+          >
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative z-10 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl p-3 md:p-4 transform transition-all hover:scale-[1.02] duration-300 ease-out"
+            >
               <img 
                 src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
                 alt="Illustration of person working"
@@ -173,19 +230,34 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 height="400"
                 className="w-full h-auto rounded-xl"
               />
-              <div className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 animate-bounce">
+              <motion.div 
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 hover:scale-110 transition-transform"
+              >
                 <Laptop className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
-              </div>
-              <div className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 animate-bounce delay-150">
+              </motion.div>
+              <motion.div 
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 hover:scale-110 transition-transform"
+              >
                 <Smartphone className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.4 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
+        >
           <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
