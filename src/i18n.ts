@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -19,7 +18,7 @@ const resources = {
           "part1": "Innovative Solutions for",
           "part2": "Modern Businesses"
         },
-        "description": "Tired of complex tech solutions? We simplify. Delivering cost-efficient, minimalist, and innovative software, cloud, and cybersecurity solutions. Designed for growth in the US and Latin America, with transparent workflows and unwavering support",
+        "description": "Tired of complex tech solutions? We simplify. Delivering cost-efficient, minimalist, and innovative software, cloud, and cybersecurity solutions.",
         "cta": {
           "start": "Contact Us",
           "learn": "Learn More"
