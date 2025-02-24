@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import { QuoteIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -32,11 +32,10 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const [loadedTestimonials, setLoadedTestimonials] = useState(testimonials);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loadedTestimonials] = useState(testimonials);
 
   return (
-    <section className="section py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
+    <section id="testimonials" className="py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50/10 via-transparent to-purple-50/10 dark:from-purple-900/5 dark:via-transparent dark:to-purple-900/5" />
       
       <motion.div 
