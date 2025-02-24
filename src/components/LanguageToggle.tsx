@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-export function LanguageToggle() {
+const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
   return (
@@ -30,4 +30,7 @@ export function LanguageToggle() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export default LanguageToggle;
+
