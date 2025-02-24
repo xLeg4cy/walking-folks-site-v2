@@ -1,31 +1,25 @@
-
 import { useEffect, useRef } from 'react';
 import { Users, Globe, Shield } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
-
+  const {
+    t
+  } = useTranslation();
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    }, {
+      threshold: 0.1
+    });
     if (aboutRef.current) {
       observer.observe(aboutRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <div id="about" className="py-24 bg-background dark:bg-gray-900">
+  return <div id="about" className="py-24 bg-background dark:bg-gray-900">
       <div ref={aboutRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
@@ -80,16 +74,10 @@ const About = () => {
           </div>
 
           <div className="lg:w-1/2">
-            <img 
-              src="/lovable-uploads/1581554e-9bcc-4b34-acc2-9aff908acdee.png"
-              alt="Data analytics"
-              className="w-full max-w-md mx-auto"
-            />
+            <img src="/lovable-uploads/1581554e-9bcc-4b34-acc2-9aff908acdee.png" alt="Data analytics" className="w-full h-auto rounded-xl" />
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
