@@ -2,10 +2,6 @@
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -14,10 +10,6 @@ interface HeroProps {
 const Hero = memo(({ onContactClick }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -50,61 +42,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
   };
 
   return (
-    <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          fullScreen: false,
-          background: {
-            color: {
-              value: "transparent",
-            },
-          },
-          fpsLimit: 120,
-          particles: {
-            color: {
-              value: "#7E69AB",
-            },
-            links: {
-              color: "#7E69AB",
-              distance: 150,
-              enable: true,
-              opacity: 0.2,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              direction: "none",
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.2,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 3 },
-            },
-          },
-          detectRetina: true,
-        }}
-        className="absolute inset-0 -z-0"
-      />
-      
+    <div id="home" className="min-h-[90vh] flex items-center justify-center bg-transparent py-8 md:py-16 relative overflow-hidden">
       <div 
         ref={heroRef} 
         className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full opacity-100 transition-opacity duration-300 relative z-10"
