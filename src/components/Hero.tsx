@@ -118,7 +118,7 @@ const Hero = memo(({
               </span>
             </h1>
             
-            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-justify">
+            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-center">
               {t('hero.description')}
             </p>
             
