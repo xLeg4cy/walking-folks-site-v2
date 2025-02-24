@@ -110,28 +110,28 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
         className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full opacity-100 transition-opacity duration-300 relative z-10"
       >
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          <div className="flex-1 text-left w-full">
+          <div className="flex-1 text-center w-full">
             <div className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#6E59A5] dark:text-purple-300">
               <Rocket size={16} className="mr-2" />
               {t('hero.subtitle')}
             </div>
             
             <div className="overflow-hidden mb-4 md:mb-6">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-left text-foreground animate-typing border-r-4 border-[#7E69AB]">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-center text-foreground animate-typing border-r-4 border-[#7E69AB]">
                 {t('hero.title.part1')}
               </h1>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-left">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-center">
               <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
                 {t('hero.title.part2')}
               </span>
             </h1>
             
-            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-left">
+            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-center">
               {t('hero.description')}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 justify-center">
               <button 
                 onClick={onContactClick}
                 className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700"
