@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -5,19 +6,19 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
+
 interface HeroProps {
   onContactClick: () => void;
 }
-const Hero = memo(({
-  onContactClick
-}: HeroProps) => {
+
+const Hero = memo(({ onContactClick }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -26,80 +27,88 @@ const Hero = memo(({
     }, {
       threshold: 0.1
     });
+    
     const currentRef = heroRef.current;
     if (currentRef) {
       observer.observe(currentRef);
       currentRef.classList.add('visible');
     }
+
     return () => {
       if (currentRef) {
         observer.disconnect();
       }
     };
   }, []);
+
   const handleLearnMoreClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const aboutElement = document.getElementById('about');
     if (aboutElement) {
-      aboutElement.scrollIntoView({
-        behavior: 'smooth'
-      });
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  return <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
-      <Particles id="tsparticles" init={particlesInit} options={{
-      fullScreen: false,
-      background: {
-        color: {
-          value: "transparent"
-        }
-      },
-      fpsLimit: 120,
-      particles: {
-        color: {
-          value: "#7E69AB"
-        },
-        links: {
-          color: "#7E69AB",
-          distance: 150,
-          enable: true,
-          opacity: 0.2,
-          width: 1
-        },
-        move: {
-          enable: true,
-          direction: "none",
-          outModes: {
-            default: "bounce"
+
+  return (
+    <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: false,
+          background: {
+            color: {
+              value: "transparent",
+            },
           },
-          random: false,
-          speed: 1,
-          straight: false
-        },
-        number: {
-          density: {
-            enable: true,
-            area: 800
+          fpsLimit: 120,
+          particles: {
+            color: {
+              value: "#7E69AB",
+            },
+            links: {
+              color: "#7E69AB",
+              distance: 150,
+              enable: true,
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              direction: "none",
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              speed: 1,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.2,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
           },
-          value: 80
-        },
-        opacity: {
-          value: 0.2
-        },
-        shape: {
-          type: "circle"
-        },
-        size: {
-          value: {
-            min: 1,
-            max: 3
-          }
-        }
-      },
-      detectRetina: true
-    }} className="absolute inset-0 -z-0" />
+          detectRetina: true,
+        }}
+        className="absolute inset-0 -z-0"
+      />
       
-      <div ref={heroRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full opacity-100 transition-opacity duration-300 relative z-10">
+      <div 
+        ref={heroRef} 
+        className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full opacity-100 transition-opacity duration-300 relative z-10"
+      >
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-left w-full">
             <div className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#6E59A5] dark:text-purple-300">
@@ -118,15 +127,24 @@ const Hero = memo(({
               </span>
             </h1>
             
-            <p className="text-base md:text-lg mb-6 md:mb-8 text-slate-950 font-normal lg:text-xl text-justify">
+            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-left">
               {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12">
-              <button onClick={onContactClick} className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700" type="button" rel="noopener noreferrer">
+              <button 
+                onClick={onContactClick}
+                className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700"
+                type="button"
+                rel="noopener noreferrer"
+              >
                 {t('hero.cta.start')}
               </button>
-              <button onClick={handleLearnMoreClick} className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#7E69AB] dark:text-purple-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#9b87f5] dark:hover:border-purple-500 transition-all transform hover:-translate-y-1 hover:shadow-lg" type="button">
+              <button 
+                onClick={handleLearnMoreClick}
+                className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#7E69AB] dark:text-purple-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#9b87f5] dark:hover:border-purple-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                type="button"
+              >
                 {t('hero.cta.learn')}
               </button>
             </div>
@@ -149,7 +167,13 @@ const Hero = memo(({
 
           <div className="flex-1 relative w-full px-4 sm:px-0">
             <div className="relative z-10 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-3 md:p-4 transform transition-transform hover:scale-105">
-              <img src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" alt="Illustration of person working" width="600" height="400" className="w-full h-auto rounded-xl" />
+              <img 
+                src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
+                alt="Illustration of person working"
+                width="600"
+                height="400"
+                className="w-full h-auto rounded-xl"
+              />
               <div className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 animate-bounce">
                 <Laptop className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
               </div>
@@ -164,7 +188,10 @@ const Hero = memo(({
           <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
         </div>
       </div>
-    </div>;
+    </div>
+  );
 });
+
 Hero.displayName = 'Hero';
+
 export default Hero;
