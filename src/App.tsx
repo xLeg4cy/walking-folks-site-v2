@@ -49,6 +49,10 @@ const App = () => {
                 id="tsparticles"
                 init={particlesInit}
                 options={{
+                  fullScreen: {
+                    enable: true,
+                    zIndex: -1
+                  },
                   background: {
                     color: {
                       value: "transparent",
@@ -117,7 +121,7 @@ const App = () => {
                   },
                   detectRetina: true,
                 }}
-                className="absolute inset-0 -z-0"
+                className="absolute inset-0"
               />
               <div className="relative z-10">
                 <TooltipProvider>
