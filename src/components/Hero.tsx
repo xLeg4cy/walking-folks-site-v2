@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

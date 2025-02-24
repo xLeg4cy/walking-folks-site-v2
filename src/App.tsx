@@ -49,16 +49,34 @@ const App = () => {
                 id="tsparticles"
                 init={particlesInit}
                 options={{
-                  fullScreen: {
-                    enable: true,
-                    zIndex: 0
-                  },
                   background: {
                     color: {
                       value: "transparent",
                     },
                   },
                   fpsLimit: 120,
+                  interactivity: {
+                    events: {
+                      onClick: {
+                        enable: true,
+                        mode: "push",
+                      },
+                      onHover: {
+                        enable: true,
+                        mode: "repulse",
+                      },
+                      resize: true,
+                    },
+                    modes: {
+                      push: {
+                        quantity: 4,
+                      },
+                      repulse: {
+                        distance: 100,
+                        duration: 0.4,
+                      },
+                    },
+                  },
                   particles: {
                     color: {
                       value: "#7E69AB",
@@ -71,8 +89,8 @@ const App = () => {
                       width: 1,
                     },
                     move: {
-                      enable: true,
                       direction: "none",
+                      enable: true,
                       outModes: {
                         default: "bounce",
                       },
@@ -99,6 +117,7 @@ const App = () => {
                   },
                   detectRetina: true,
                 }}
+                className="absolute inset-0 -z-0"
               />
               <div className="relative z-10">
                 <TooltipProvider>
