@@ -11,7 +11,7 @@ import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import { lazy } from 'react';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
@@ -27,6 +27,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const loadingRef = useRef(null);
   const { toast } = useToast();
 
@@ -53,27 +54,31 @@ const Index = () => {
 
   const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
     const [target] = entries;
-    if (target.isIntersecting && hasMore) {
-      setPage(prev => {
-        if (prev >= 3) { // Limit to 3 pages for demo
-          setHasMore(false);
-          toast({
-            title: "You've reached the end!",
-            description: "No more content to load.",
-            duration: 3000,
-          });
-          return prev;
-        }
-        return prev + 1;
-      });
+    if (target.isIntersecting && hasMore && !isLoadingMore) {
+      setIsLoadingMore(true);
+      setTimeout(() => {
+        setPage(prev => {
+          if (prev >= 3) { // Limit to 3 pages for demo
+            setHasMore(false);
+            toast({
+              title: "You've reached the end!",
+              description: "No more content to load.",
+              duration: 3000,
+            });
+            return prev;
+          }
+          return prev + 1;
+        });
+        setIsLoadingMore(false);
+      }, 1000); // Add a slight delay to prevent rapid loading
     }
-  }, [hasMore, toast]);
+  }, [hasMore, isLoadingMore, toast]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
       rootMargin: '20px',
-      threshold: 1.0,
+      threshold: 0.1,
     });
 
     if (loadingRef.current) {
@@ -157,7 +162,7 @@ const Index = () => {
               ref={loadingRef}
               className="flex justify-center items-center py-10"
             >
-              <LoadingSpinner />
+              {isLoadingMore ? <LoadingSpinner /> : null}
             </div>
           )}
 
