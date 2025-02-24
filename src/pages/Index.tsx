@@ -78,40 +78,40 @@ const Index = () => {
         <TopProgressBar />
         <Navbar onContactClick={() => setIsContactOpen(true)} />
         
-        <Suspense fallback={<HeroSkeleton />}>
-          <Hero onContactClick={() => setIsContactOpen(true)} />
-        </Suspense>
-
-        <Suspense fallback={<LoadingSpinner />}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-20"
-          >
-            <About />
-            <TechnologyStack />
-            
-            <Suspense fallback={<ServicesSkeleton />}>
-              <Services />
-            </Suspense>
-
-            <Suspense fallback={<TestimonialSkeleton />}>
-              <Testimonials />
-            </Suspense>
-
-            <Suspense fallback={<LoadingSpinner />}>
-              <FAQ />
-            </Suspense>
-          </motion.div>
-        </Suspense>
-
-        {isContactOpen && (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Contact onClose={() => setIsContactOpen(false)} />
+        <main>
+          <Suspense fallback={<HeroSkeleton />}>
+            <Hero onContactClick={() => setIsContactOpen(true)} />
           </Suspense>
-        )}
+
+          <Suspense fallback={<LoadingSpinner />}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-20"
+            >
+              <About />
+              <TechnologyStack />
+              
+              <Suspense fallback={<ServicesSkeleton />}>
+                <Services />
+              </Suspense>
+
+              <Suspense fallback={<TestimonialSkeleton />}>
+                <Testimonials />
+              </Suspense>
+
+              <FAQ />
+            </motion.div>
+          </Suspense>
+
+          {isContactOpen && (
+            <Suspense fallback={<LoadingSpinner />}>
+              <Contact onClose={() => setIsContactOpen(false)} />
+            </Suspense>
+          )}
+        </main>
 
         <Suspense fallback={null}>
           <Footer />

@@ -1,5 +1,4 @@
 
-import { useTranslation } from 'react-i18next';
 import {
   Accordion,
   AccordionContent,
@@ -8,9 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 
-const FAQ = () => {
-  const { t } = useTranslation();
-  
+const FAQ = () => {  
   const faqs = [
     {
       question: "What services do you provide?",
@@ -35,7 +32,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section py-20 bg-background text-foreground dark:bg-gray-900">
+    <section id="faq" className="py-20 bg-background text-foreground dark:bg-gray-900">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +41,7 @@ const FAQ = () => {
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7E69AB] to-[#D6BCFA]">
+          <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7E69AB] to-[#D6BCFA]">
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground dark:text-gray-300">
@@ -52,24 +49,12 @@ const FAQ = () => {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible>
           {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <AccordionItem value={`item-${index}`} className="border-b border-gray-200 dark:border-gray-700">
-                <AccordionTrigger className="text-left text-foreground dark:text-white hover:text-brand-purple-medium dark:hover:text-brand-purple-light">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground dark:text-gray-300">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            </motion.div>
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
       </motion.div>
