@@ -7,16 +7,14 @@ import Hero from '@/components/Hero';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import TopProgressBar from '@/components/TopProgressBar';
 import { HeroSkeleton, ServicesSkeleton, TestimonialSkeleton } from '@/components/SkeletonLoaders';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import Services from '@/components/Services';
+import Testimonials from '@/components/Testimonials';
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
-const Services = lazy(() => import('@/components/Services'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
 const Contact = lazy(() => import('@/components/Contact'));
 const Footer = lazy(() => import('@/components/Footer'));
-const Testimonials = lazy(() => import('@/components/Testimonials'));
 const FAQ = lazy(() => import('@/components/FAQ'));
 const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
@@ -25,11 +23,6 @@ const LiveChat = lazy(() => import('@/components/LiveChat'));
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
-  const servicesRef = useRef(null);
-  const testimonialsRef = useRef(null);
-  const isServicesInView = useInView(servicesRef, { once: true, amount: 0.2 });
-  const isTestimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.2 });
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -45,22 +38,7 @@ const Index = () => {
       setIsLoading(false);
     }, 1000);
 
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        const isVisible = rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0;
-        if (isVisible) {
-          section.classList.add('visible');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       clearTimeout(timer);
       document.documentElement.style.scrollBehavior = '';
       document.head.removeChild(fontPreloadLink);
@@ -109,22 +87,18 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-20"
           >
             <About />
             <TechnologyStack />
             
-            <div ref={servicesRef}>
-              <Suspense fallback={<ServicesSkeleton />}>
-                {isServicesInView && <Services />}
-              </Suspense>
-            </div>
+            <Suspense fallback={<ServicesSkeleton />}>
+              <Services />
+            </Suspense>
 
-            <div ref={testimonialsRef}>
-              <Suspense fallback={<TestimonialSkeleton />}>
-                {isTestimonialsInView && <Testimonials />}
-              </Suspense>
-            </div>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <Testimonials />
+            </Suspense>
 
             <FAQ />
           </motion.div>
