@@ -1,5 +1,6 @@
+
 import { useEffect, useRef } from 'react';
-import { Computer, Users, Database, Shield, UserPlus, ArrowRight, CheckCircle2, ArrowDown } from 'lucide-react';
+import { Computer, Users, Database, Shield, UserPlus, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {
@@ -139,9 +140,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
-        <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
       </div>
     </div>
   );
