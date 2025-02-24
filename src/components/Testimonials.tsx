@@ -14,7 +14,7 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, TechStart",
-    content: "Working with Walking Folks has been transformative for our business. Their innovative solutions helped us scale rapidly.",
+    content: "Working with Lovable has been transformative for our business. Their innovative solutions helped us scale rapidly.",
     image: "https://i.pravatar.cc/150?img=1"
   },
   {
@@ -26,51 +26,14 @@ const testimonials = [
   {
     name: "Emma Williams",
     role: "Founder, DesignPro",
-    content: "Exceptional service and outstanding results. Walking Folks truly understands modern web development.",
+    content: "Exceptional service and outstanding results. Lovable truly understands modern web development.",
     image: "https://i.pravatar.cc/150?img=3"
   }
 ];
 
 const Testimonials = () => {
-  const [loadedTestimonials, setLoadedTestimonials] = useState(testimonials.slice(0, 3));
+  const [loadedTestimonials, setLoadedTestimonials] = useState(testimonials);
   const [isLoading, setIsLoading] = useState(false);
-
-  const loadMoreTestimonials = async () => {
-    if (isLoading) return;
-    
-    setIsLoading(true);
-    // Simulate API call to fetch more testimonials
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const newTestimonials = [
-      ...loadedTestimonials,
-      ...testimonials.map(t => ({
-        ...t,
-        name: t.name + ' ' + (loadedTestimonials.length + 1),
-        image: t.image + '?' + Date.now() // Ensure unique image URLs
-      }))
-    ];
-    
-    setLoadedTestimonials(newTestimonials);
-    setIsLoading(false);
-  };
-
-  // Intersection Observer for infinite scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting && !isLoading) {
-          loadMoreTestimonials();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    const sentinel = document.querySelector('#scroll-sentinel');
-    if (sentinel) observer.observe(sentinel);
-
-    return () => observer.disconnect();
-  }, [isLoading, loadedTestimonials]);
 
   return (
     <section className="section py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
@@ -101,13 +64,13 @@ const Testimonials = () => {
         <Carousel className="w-full max-w-4xl mx-auto">
           <CarouselContent>
             {loadedTestimonials.map((testimonial, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden group"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden group h-full"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-purple-light/5 to-transparent dark:from-brand-purple-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
@@ -152,15 +115,6 @@ const Testimonials = () => {
           <CarouselPrevious className="hidden sm:flex -left-12" />
           <CarouselNext className="hidden sm:flex -right-12" />
         </Carousel>
-
-        {/* Infinite scroll sentinel */}
-        <div id="scroll-sentinel" className="h-20 mt-8">
-          {isLoading && (
-            <div className="flex justify-center items-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-purple-medium"></div>
-            </div>
-          )}
-        </div>
       </motion.div>
     </section>
   );
