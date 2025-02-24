@@ -112,10 +112,10 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 height="400"
                 className="w-full h-auto rounded-xl"
               />
-              <div className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2">
+              <div className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 animate-bounce">
                 <Laptop className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
               </div>
-              <div className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2">
+              <div className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 animate-bounce delay-150">
                 <Smartphone className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
               </div>
             </div>
