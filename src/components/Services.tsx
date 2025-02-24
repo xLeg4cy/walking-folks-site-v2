@@ -28,31 +28,31 @@ const Services = () => {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
       title: "Software Development",
       description: "We build the future, end-to-end. Our full-stack expertise delivers:",
-      features: ["Bots that automate with precision", "Back-end, front-end, and mobile apps that perform seamlessly", "API integration for a connected world", "QA testing and automation to ensure flawless execution", "UI & UX design that captivates and converts", "Scalable, high-performance software architecture"]
+      features: ["Bots that automate with precision", "Back-end, front-end, and mobile apps", "API integration for connectivity", "QA testing and automation", "UI & UX design that converts", "Scalable software architecture"]
     },
     {
       icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
       title: "Project Management",
       description: "We don't just manage—we accelerate. Expect:",
-      features: ["Agile workflows that adapt and thrive", "Risk management that stays ahead of the curve", "Smart resource allocation for maximum impact", "Precision project planning that hits every mark"]
+      features: ["Agile workflows that adapt", "Risk management that excels", "Smart resource allocation", "Precision project planning"]
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
       title: "Infrastructure",
       description: "We've mastered the backbone of tech - and we bring it all to you:",
-      features: ["Cloud services across GCP, Oracle, and AWS", "Our own cutting-edge infrastructure - enterprise-grade, cost-effective, and built for agility", "Frictionless cloud migration and ongoing support", "DevOps that streamlines and scales", "Site Reliability Engineering (SRE) for unbreakable systems", "Legacy system upgrades and migrations", "Backup and disaster recovery you can count on"]
+      features: ["Cloud services across major platforms", "Enterprise-grade infrastructure", "Seamless cloud migration", "DevOps that streamlines", "Site Reliability Engineering", "Legacy system upgrades", "Backup and disaster recovery"]
     },
     {
       icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
       title: "Cybersecurity",
       description: "Your security is our obsession:",
-      features: ["Real-time monitoring that never sleeps", "Threat detection that outpaces risks", "Risk mitigation with proactive edge", "Identity Access Management (IAM) locked tight", "Rapid incident response and recovery", "Application and cloud security that sets the standard"]
+      features: ["24/7 system monitoring", "Advanced threat detection", "Proactive risk mitigation", "Secure identity management", "Rapid incident response", "Enterprise-grade security"]
     },
     {
       icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
       title: "Outsourcing & Team Augmentation",
       description: "Need elite talent? We've got you:",
-      features: ["Software developers who code the extraordinary", "Cloud engineers who build the skies", "Cybersecurity analysts who guard the gates", "QA engineers who perfect the details", "Network engineers and system admins who keep it running", "IT support (L1, L2, L3) that resolves fast"]
+      features: ["Expert software developers", "Skilled cloud engineers", "Security specialists", "Quality assurance experts", "System administrators", "Multi-tier IT support"]
     }
   ];
 
@@ -86,8 +86,8 @@ const Services = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature, fIndex) => (
                     <li key={fIndex} className="text-sm text-muted-foreground dark:text-gray-400 flex items-center group">
-                      <CheckCircle2 className="w-4 h-4 mr-2 text-brand-purple-medium opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform">
+                      <CheckCircle2 className="w-4 h-4 mr-2 text-brand-purple-medium opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      <span className="group-hover:translate-x-1 transition-transform line-clamp-1">
                         {feature}
                       </span>
                     </li>
