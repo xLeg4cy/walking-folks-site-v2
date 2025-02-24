@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, memo } from 'react';
-import { Rocket, ArrowDown, CheckCircle2 } from 'lucide-react';
+import { Rocket, ArrowDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface HeroProps {
@@ -113,10 +113,10 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 className="w-full h-auto rounded-xl"
               />
               <div className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 animate-bounce">
-                <CheckCircle2 className="text-[#7E69AB] dark:text-purple-400 w-5 h-5 md:w-6 md:h-6" />
+                <ArrowRight className="text-[#7E69AB] dark:text-purple-400 w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 animate-bounce delay-150">
-                <CheckCircle2 className="text-[#7E69AB] dark:text-purple-400 w-5 h-5 md:w-6 md:h-6" />
+                <ArrowRight className="text-[#7E69AB] dark:text-purple-400 w-5 h-5 md:w-6 md:h-6" />
               </div>
             </div>
           </div>
