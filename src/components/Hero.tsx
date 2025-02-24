@@ -237,7 +237,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 hover:scale-110 transition-transform"
+                className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
               >
                 <Laptop className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
@@ -245,7 +245,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 hover:scale-110 transition-transform"
+                className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
               >
                 <Smartphone className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
