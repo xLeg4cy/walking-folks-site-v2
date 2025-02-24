@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,7 +21,7 @@ const Navbar = ({ onContactClick }: NavProps) => {
       setIsScrolled(scrollPosition > 10);
 
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'services', 'tech'];
+      const sections = ['home', 'about', 'services'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -41,7 +42,6 @@ const Navbar = ({ onContactClick }: NavProps) => {
     { id: 'home', label: t('nav.home') },
     { id: 'about', label: t('nav.about') },
     { id: 'services', label: t('nav.services') },
-    { id: 'tech', label: t('nav.tech') },
   ];
 
   const scrollToSection = (id: string) => {
