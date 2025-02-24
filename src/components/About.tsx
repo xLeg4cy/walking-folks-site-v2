@@ -1,11 +1,12 @@
+
 import { useEffect, useRef } from 'react';
 import { Users, Globe, Shield } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -14,12 +15,16 @@ const About = () => {
     }, {
       threshold: 0.1
     });
+
     if (aboutRef.current) {
       observer.observe(aboutRef.current);
     }
+
     return () => observer.disconnect();
   }, []);
-  return <div id="about" className="py-24 bg-background dark:bg-gray-900">
+
+  return (
+    <div id="about" className="py-24 bg-background dark:bg-gray-900">
       <div ref={aboutRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
@@ -74,10 +79,24 @@ const About = () => {
           </div>
 
           <div className="lg:w-1/2">
-            <img src="/lovable-uploads/1581554e-9bcc-4b34-acc2-9aff908acdee.png" alt="Data analytics" className="w-full h-auto rounded-xl" />
+            <div className="relative z-10 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-3 md:p-4 transform transition-transform hover:scale-105">
+              <img 
+                src="/lovable-uploads/1581554e-9bcc-4b34-acc2-9aff908acdee.png" 
+                alt="Data analytics" 
+                className="w-full h-auto rounded-xl"
+              />
+              <div className="absolute -left-3 top-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 rotate-12 animate-bounce">
+                <Globe className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+              </div>
+              <div className="absolute -right-3 bottom-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 -rotate-12 animate-bounce delay-150">
+                <Shield className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default About;
