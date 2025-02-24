@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -162,6 +161,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={onContactClick}
                 className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 type="button"
                 rel="noopener noreferrer"
               >
@@ -173,6 +174,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={handleLearnMoreClick}
                 className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#7E69AB] dark:text-purple-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#9b87f5] dark:hover:border-purple-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 type="button"
               >
                 {t('hero.cta.learn')}
