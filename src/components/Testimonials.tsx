@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { QuoteIcon } from "lucide-react";
+import { QuoteIcon, ArrowDown } from "lucide-react";
 
 const testimonials = [
   {
@@ -71,6 +70,9 @@ const Testimonials = () => {
           <CarouselPrevious className="hidden sm:flex" />
           <CarouselNext className="hidden sm:flex" />
         </Carousel>
+      </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+        <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
       </div>
     </section>
   );

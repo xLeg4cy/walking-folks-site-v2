@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from 'react';
-import { Users, Globe, Shield } from 'lucide-react';
+import { Users, Globe, Shield, ArrowDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
@@ -87,6 +86,9 @@ const About = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+        <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
       </div>
     </div>
   );
