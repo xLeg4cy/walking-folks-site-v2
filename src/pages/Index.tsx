@@ -1,5 +1,5 @@
 
-import { Suspense, useEffect, useState, lazy } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -9,13 +9,14 @@ import TopProgressBar from '@/components/TopProgressBar';
 import { HeroSkeleton, ServicesSkeleton, TestimonialSkeleton } from '@/components/SkeletonLoaders';
 import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import { lazy } from 'react';
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
 const Contact = lazy(() => import('@/components/Contact'));
 const Footer = lazy(() => import('@/components/Footer'));
-const FAQ = lazy(() => import('@/components/FAQ'));
 const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
@@ -100,7 +101,9 @@ const Index = () => {
               <Testimonials />
             </Suspense>
 
-            <FAQ />
+            <Suspense fallback={<LoadingSpinner />}>
+              <FAQ />
+            </Suspense>
           </motion.div>
         </Suspense>
 
