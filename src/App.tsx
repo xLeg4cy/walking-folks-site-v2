@@ -30,10 +30,11 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <ErrorBoundary>
         <ThemeProvider 
-          attribute="class" 
-          defaultTheme="system" 
+          attribute="class"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          themes={["light", "dark"]}
         >
           <div className="min-h-screen bg-background font-sans antialiased dark:bg-gray-900">
             <TooltipProvider>
