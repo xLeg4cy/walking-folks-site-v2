@@ -71,11 +71,11 @@ const Navbar = ({ onContactClick }: NavProps) => {
           >
             <a href="/" className="flex items-center space-x-2">
               <img
-                src="/lovable-uploads/f2ebe6d5-009c-4b05-8cd9-e382156663f0.png"
-                alt="Logo"
+                src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png"
+                alt="Walking Folks Logo"
                 className="h-8 w-auto"
               />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">Lovable</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Walking Folks</span>
             </a>
           </motion.div>
 
