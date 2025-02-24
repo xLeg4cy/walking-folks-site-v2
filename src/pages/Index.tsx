@@ -1,5 +1,5 @@
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -11,6 +11,7 @@ import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import { lazy } from 'react';
+import { useToast } from "@/components/ui/use-toast";
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
@@ -24,6 +25,10 @@ const LiveChat = lazy(() => import('@/components/LiveChat'));
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const loadingRef = useRef(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -45,6 +50,38 @@ const Index = () => {
       document.head.removeChild(fontPreloadLink);
     };
   }, []);
+
+  const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
+    const [target] = entries;
+    if (target.isIntersecting && hasMore) {
+      setPage(prev => {
+        if (prev >= 3) { // Limit to 3 pages for demo
+          setHasMore(false);
+          toast({
+            title: "You've reached the end!",
+            description: "No more content to load.",
+            duration: 3000,
+          });
+          return prev;
+        }
+        return prev + 1;
+      });
+    }
+  }, [hasMore, toast]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      root: null,
+      rootMargin: '20px',
+      threshold: 1.0,
+    });
+
+    if (loadingRef.current) {
+      observer.observe(loadingRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [handleObserver]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -94,17 +131,35 @@ const Index = () => {
               <About />
               <TechnologyStack />
               
-              <Suspense fallback={<ServicesSkeleton />}>
-                <Services />
-              </Suspense>
+              {Array.from({ length: page }).map((_, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Suspense fallback={<ServicesSkeleton />}>
+                    <Services />
+                  </Suspense>
 
-              <Suspense fallback={<TestimonialSkeleton />}>
-                <Testimonials />
-              </Suspense>
+                  <Suspense fallback={<TestimonialSkeleton />}>
+                    <Testimonials />
+                  </Suspense>
 
-              <FAQ />
+                  <FAQ />
+                </motion.div>
+              ))}
             </motion.div>
           </Suspense>
+
+          {hasMore && (
+            <div 
+              ref={loadingRef}
+              className="flex justify-center items-center py-10"
+            >
+              <LoadingSpinner />
+            </div>
+          )}
 
           {isContactOpen && (
             <Suspense fallback={<LoadingSpinner />}>
