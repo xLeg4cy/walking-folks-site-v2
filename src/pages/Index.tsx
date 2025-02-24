@@ -6,6 +6,9 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import TopProgressBar from '@/components/TopProgressBar';
+import { HeroSkeleton, ServicesSkeleton, TestimonialSkeleton } from '@/components/SkeletonLoaders';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
@@ -19,24 +22,18 @@ const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
 
-// Skeleton loader component
-const SkeletonLoader = () => (
-  <div className="animate-pulse space-y-4 p-4">
-    <div className="h-48 bg-gray-200 dark:bg-gray-700 rounded-lg"></div>
-    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
-    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-  </div>
-);
-
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const servicesRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const isServicesInView = useInView(servicesRef, { once: true, amount: 0.2 });
+  const isTestimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.2 });
+
   useEffect(() => {
-    // Enable smooth scrolling
     document.documentElement.style.scrollBehavior = 'smooth';
 
-    // Preload critical fonts
     const fontPreloadLink = document.createElement('link');
     fontPreloadLink.rel = 'preload';
     fontPreloadLink.as = 'font';
@@ -44,7 +41,6 @@ const Index = () => {
     fontPreloadLink.crossOrigin = 'anonymous';
     document.head.appendChild(fontPreloadLink);
 
-    // Simulate initial loading with a minimum duration
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -103,9 +99,11 @@ const Index = () => {
         <TopProgressBar />
         <Navbar onContactClick={() => setIsContactOpen(true)} />
         
-        <Hero onContactClick={() => setIsContactOpen(true)} />
+        <Suspense fallback={<HeroSkeleton />}>
+          <Hero onContactClick={() => setIsContactOpen(true)} />
+        </Suspense>
 
-        <Suspense fallback={<SkeletonLoader />}>
+        <Suspense fallback={<LoadingSpinner />}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,19 +113,30 @@ const Index = () => {
           >
             <About />
             <TechnologyStack />
-            <Services />
-            <Testimonials />
+            
+            <div ref={servicesRef}>
+              <Suspense fallback={<ServicesSkeleton />}>
+                {isServicesInView && <Services />}
+              </Suspense>
+            </div>
+
+            <div ref={testimonialsRef}>
+              <Suspense fallback={<TestimonialSkeleton />}>
+                {isTestimonialsInView && <Testimonials />}
+              </Suspense>
+            </div>
+
             <FAQ />
           </motion.div>
         </Suspense>
 
         {isContactOpen && (
-          <Suspense fallback={<SkeletonLoader />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Contact onClose={() => setIsContactOpen(false)} />
           </Suspense>
         )}
 
-        <Suspense fallback={<SkeletonLoader />}>
+        <Suspense fallback={null}>
           <Footer />
         </Suspense>
 

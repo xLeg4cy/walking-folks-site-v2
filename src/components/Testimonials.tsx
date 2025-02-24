@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import { QuoteIcon } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -31,6 +32,46 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [loadedTestimonials, setLoadedTestimonials] = useState(testimonials.slice(0, 3));
+  const [isLoading, setIsLoading] = useState(false);
+
+  const loadMoreTestimonials = async () => {
+    if (isLoading) return;
+    
+    setIsLoading(true);
+    // Simulate API call to fetch more testimonials
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    const newTestimonials = [
+      ...loadedTestimonials,
+      ...testimonials.map(t => ({
+        ...t,
+        name: t.name + ' ' + (loadedTestimonials.length + 1),
+        image: t.image + '?' + Date.now() // Ensure unique image URLs
+      }))
+    ];
+    
+    setLoadedTestimonials(newTestimonials);
+    setIsLoading(false);
+  };
+
+  // Intersection Observer for infinite scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && !isLoading) {
+          loadMoreTestimonials();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const sentinel = document.querySelector('#scroll-sentinel');
+    if (sentinel) observer.observe(sentinel);
+
+    return () => observer.disconnect();
+  }, [isLoading, loadedTestimonials]);
+
   return (
     <section className="section py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50/10 via-transparent to-purple-50/10 dark:from-purple-900/5 dark:via-transparent dark:to-purple-900/5" />
@@ -59,7 +100,7 @@ const Testimonials = () => {
 
         <Carousel className="w-full max-w-4xl mx-auto">
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
+            {loadedTestimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -93,6 +134,7 @@ const Testimonials = () => {
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-purple-light/20 group-hover:ring-brand-purple-light/40 transition-all duration-300"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-purple-light/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -110,6 +152,15 @@ const Testimonials = () => {
           <CarouselPrevious className="hidden sm:flex -left-12" />
           <CarouselNext className="hidden sm:flex -right-12" />
         </Carousel>
+
+        {/* Infinite scroll sentinel */}
+        <div id="scroll-sentinel" className="h-20 mt-8">
+          {isLoading && (
+            <div className="flex justify-center items-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-purple-medium"></div>
+            </div>
+          )}
+        </div>
       </motion.div>
     </section>
   );
