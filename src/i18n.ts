@@ -102,6 +102,28 @@ const resources = {
             "answer": "We maintain clear communication through regular meetings, progress reports, and dedicated project management tools. You'll have a direct line to your project team and regular updates on milestones."
           }
         ]
+      },
+      "footer": {
+        "slogan": "Creating innovative solutions for tomorrow's challenges",
+        "quickLinks": "Quick Links",
+        "aboutUs": "About Us",
+        "services": "Services",
+        "blog": "Blog",
+        "privacyPolicy": "Privacy Policy",
+        "servicesSection": {
+          "title": "Services",
+          "webDev": "Web Development",
+          "mobileApps": "Mobile Apps",
+          "cloudSolutions": "Cloud Solutions",
+          "consulting": "Consulting"
+        },
+        "contactUs": {
+          "title": "Contact Us",
+          "address": "300 Canal Street, Lawrence, MA 01840",
+          "phone": "1 (978) 943-2457",
+          "email": "contact@walkingfolks.com"
+        },
+        "copyright": "All rights reserved."
       }
     }
   },
@@ -204,6 +226,28 @@ const resources = {
             "answer": "Mantenemos una comunicación clara a través de reuniones regulares, informes de progreso y herramientas dedicadas de gestión de proyectos. Tendrá una línea directa con su equipo de proyecto y actualizaciones regulares sobre los hitos."
           }
         ]
+      },
+      "footer": {
+        "slogan": "Creando soluciones innovadoras para los desafíos del mañana",
+        "quickLinks": "Enlaces Rápidos",
+        "aboutUs": "Nosotros",
+        "services": "Servicios",
+        "blog": "Blog",
+        "privacyPolicy": "Política de Privacidad",
+        "servicesSection": {
+          "title": "Servicios",
+          "webDev": "Desarrollo Web",
+          "mobileApps": "Aplicaciones Móviles",
+          "cloudSolutions": "Soluciones en la Nube",
+          "consulting": "Consultoría"
+        },
+        "contactUs": {
+          "title": "Contáctenos",
+          "address": "300 Canal Street, Lawrence, MA 01840",
+          "phone": "1 (978) 943-2457",
+          "email": "contact@walkingfolks.com"
+        },
+        "copyright": "Todos los derechos reservados."
       }
     }
   }

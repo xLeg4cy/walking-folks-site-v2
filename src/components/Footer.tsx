@@ -1,6 +1,11 @@
+
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return <footer className="bg-background dark:bg-gray-900 text-gray-900 dark:text-gray-200 pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -11,7 +16,7 @@ const Footer = () => {
               <span className="ml-3 font-bold text-xl text-gray-900 dark:text-white">Walking Folks</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Creating innovative solutions for tomorrow's challenges.
+              {t('footer.slogan')}
             </p>
             <div className="flex space-x-4">
               {/* Social media links with updated text color */}
@@ -32,26 +37,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">{t('footer.quickLinks')}</h3>
             <ul className="space-y-4">
               <li>
                 <a href="#about" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
-                  About Us
+                  {t('footer.aboutUs')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
-                  Services
+                  {t('footer.services')}
                 </a>
               </li>
               <li>
                 <Link to="/blog" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
-                  Blog
+                  {t('footer.blog')}
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
-                  Privacy Policy
+                  {t('footer.privacyPolicy')}
                 </Link>
               </li>
             </ul>
@@ -59,38 +64,38 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">Services</h3>
+            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">{t('footer.servicesSection.title')}</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">Web Development</a>
+                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">{t('footer.servicesSection.webDev')}</a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">Mobile Apps</a>
+                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">{t('footer.servicesSection.mobileApps')}</a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">Cloud Solutions</a>
+                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">{t('footer.servicesSection.cloudSolutions')}</a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">Consulting</a>
+                <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors">{t('footer.servicesSection.consulting')}</a>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-6 text-gray-900 dark:text-white">{t('footer.contactUs.title')}</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <MapPin className="w-5 h-5 mr-3" />
-                <span>300 Canal Street<br />Lawrence, MA 01840</span>
+                <span>{t('footer.contactUs.address')}</span>
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <Phone className="w-5 h-5 mr-3" />
-                <span>1 (978) 943-2457</span>
+                <span>{t('footer.contactUs.phone')}</span>
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <Mail className="w-5 h-5 mr-3" />
-                <span>contact@walkingfolks.com</span>
+                <span>{t('footer.contactUs.email')}</span>
               </li>
             </ul>
           </div>
@@ -98,9 +103,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Walking Folks. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Walking Folks. {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>;
 };
+
 export default Footer;
