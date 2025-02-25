@@ -39,31 +39,31 @@ const Services = () => {
 
   const services = [
     {
-      icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
+      icon: <Computer className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.software.title'),
       description: t('services.sections.software.description'),
       features: t('services.sections.software.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
+      icon: <Users className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.projectManagement.title'),
       description: t('services.sections.projectManagement.description'),
       features: t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
+      icon: <Database className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
       features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
+      icon: <Shield className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
       features: t('services.sections.security.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
+      icon: <UserPlus className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.outsourcing.title'),
       description: t('services.sections.outsourcing.description'),
       features: t('services.sections.outsourcing.features', { returnObjects: true }) as string[]
@@ -76,7 +76,7 @@ const Services = () => {
       id="services" 
       className="py-24 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/10 via-transparent to-purple-50/10 dark:from-purple-900/5 dark:via-transparent dark:to-purple-900/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
       
       <motion.div
         ref={servicesRef}
@@ -112,20 +112,20 @@ const Services = () => {
                 rotateY: 5,
                 transition: { duration: 0.2 }
               }}
-              className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-brand-purple-light dark:hover:border-brand-purple-light transition-all hover:shadow-xl"
+              className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-[#818CF8] dark:hover:border-[#818CF8] transition-all hover:shadow-xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple-light/5 to-transparent dark:from-brand-purple-light/10 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/5 to-transparent dark:from-indigo-900/10 rounded-2xl" />
               <div className="absolute inset-0 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
               
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="w-12 h-12 bg-brand-purple-light/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-purple-light/20 transition-colors"
+                  className="w-12 h-12 bg-indigo-50/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-100/50 transition-colors dark:bg-indigo-900/20 dark:group-hover:bg-indigo-900/30"
                 >
                   {service.icon}
                 </motion.div>
                 
-                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 group-hover:text-brand-purple-medium transition-colors dark:text-white">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 group-hover:text-[#4338CA] transition-colors dark:text-white">
                   {service.title}
                   <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                 </h3>
@@ -142,7 +142,7 @@ const Services = () => {
                       viewport={{ once: true }}
                       className="text-sm text-muted-foreground dark:text-gray-400 flex items-center group/item"
                     >
-                      <CheckCircle2 className="w-4 h-4 mr-2 text-brand-purple-medium opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 mr-2 text-[#4338CA] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                       <span className="group-hover/item:translate-x-1 transition-transform line-clamp-1">
                         {feature}
                       </span>

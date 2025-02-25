@@ -36,8 +36,8 @@ const About = () => {
             <div className="flex flex-col gap-6">
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-4 items-start">
-                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
-                    <Users className="w-6 h-6 text-brand-purple-dark dark:text-brand-purple-light" />
+                  <div className="w-12 h-12 bg-indigo-50/50 rounded-lg flex items-center justify-center shrink-0">
+                    <Users className="w-6 h-6 text-[#4338CA] dark:text-indigo-300" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2 dark:text-white">{t('about.expertTeam.title')}</h3>
@@ -50,8 +50,8 @@ const About = () => {
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-4 items-start">
-                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
-                    <Globe className="w-6 h-6 text-brand-purple-dark dark:text-brand-purple-light" />
+                  <div className="w-12 h-12 bg-indigo-50/50 rounded-lg flex items-center justify-center shrink-0">
+                    <Globe className="w-6 h-6 text-[#4338CA] dark:text-indigo-300" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2 dark:text-white">{t('about.globalReach.title')}</h3>
@@ -64,8 +64,8 @@ const About = () => {
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-4 items-start">
-                  <div className="w-12 h-12 bg-brand-purple-light/20 rounded-lg flex items-center justify-center shrink-0">
-                    <Shield className="w-6 h-6 text-brand-purple-dark dark:text-brand-purple-light" />
+                  <div className="w-12 h-12 bg-indigo-50/50 rounded-lg flex items-center justify-center shrink-0">
+                    <Shield className="w-6 h-6 text-[#4338CA] dark:text-indigo-300" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2 dark:text-white">{t('about.quality.title')}</h3>
@@ -86,10 +86,10 @@ const About = () => {
                 className="w-full h-auto rounded-xl"
               />
               <div className="absolute -left-3 top-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 rotate-12 animate-bounce">
-                <Globe className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+                <Globe className="text-[#4338CA] dark:text-indigo-300 w-6 h-6 md:w-8 md:h-8" />
               </div>
               <div className="absolute -right-3 bottom-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 -rotate-12 animate-bounce delay-150">
-                <Shield className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+                <Shield className="text-[#4338CA] dark:text-indigo-300 w-6 h-6 md:w-8 md:h-8" />
               </div>
             </div>
           </div>
