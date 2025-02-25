@@ -1,22 +1,13 @@
-
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="bg-background dark:bg-gray-900 text-gray-900 dark:text-gray-200 pt-20 pb-8">
+  return <footer className="bg-background dark:bg-gray-900 text-gray-900 dark:text-gray-200 pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" 
-                alt="Walking Folks" 
-                className="h-8 w-auto"
-                width="32"
-                height="32"
-              />
+              <img src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" alt="Walking Folks" className="h-8 w-auto" width="32" height="32" />
               <span className="ml-3 font-bold text-xl text-gray-900 dark:text-white">Walking Folks</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -91,11 +82,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <MapPin className="w-5 h-5 mr-3" />
-                <span>300 Canal Street<br/>Lawrence, MA 01840</span>
+                <span>300 Canal Street<br />Lawrence, MA 01840</span>
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <Phone className="w-5 h-5 mr-3" />
-                <span>978-943-2457</span>
+                <span>1 (978) 943-2457</span>
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <Mail className="w-5 h-5 mr-3" />
@@ -110,8 +101,6 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Walking Folks. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
