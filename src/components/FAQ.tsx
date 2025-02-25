@@ -21,7 +21,7 @@ const FAQ = () => {
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7E69AB] to-[#D6BCFA]">
+          <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
             {t('faq.title')}
           </h2>
           <p className="text-muted-foreground dark:text-gray-300">

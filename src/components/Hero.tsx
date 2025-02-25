@@ -53,7 +53,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
 
   return (
     <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 to-transparent dark:from-purple-900/10 dark:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/30 to-transparent dark:from-indigo-900/10 dark:to-transparent" />
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -67,10 +67,10 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
           fpsLimit: 120,
           particles: {
             color: {
-              value: "#7E69AB",
+              value: "#4338CA",
             },
             links: {
-              color: "#7E69AB",
+              color: "#4338CA",
               distance: 150,
               enable: true,
               opacity: 0.2,
@@ -118,7 +118,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#6E59A5] dark:text-purple-300 hover:scale-105 transition-transform"
+              className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 hover:scale-105 transition-transform"
             >
               <Rocket size={16} className="mr-2" />
               {t('hero.subtitle')}
@@ -129,7 +129,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-center text-foreground animate-typing border-r-4 border-[#7E69AB]"
+                className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-center text-foreground animate-typing border-r-4 border-[#4338CA]"
               >
                 {t('hero.title.part1')}
               </motion.h1>
@@ -140,7 +140,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-center"
             >
-              <span className="block bg-gradient-to-r from-[#7E69AB] via-[#9b87f5] to-[#D6BCFA] bg-clip-text text-transparent animate-gradient">
+              <span className="block bg-gradient-to-r from-[#4338CA] via-[#6366F1] to-[#818CF8] bg-clip-text text-transparent animate-gradient">
                 {t('hero.title.part2')}
               </span>
             </motion.h1>
@@ -160,7 +160,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={onContactClick}
-                className="w-full sm:w-auto bg-[#7E69AB] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9b87f5] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-purple-600 dark:hover:bg-purple-700"
+                className="w-full sm:w-auto bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#6366F1] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-indigo-600 dark:hover:bg-indigo-700"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
@@ -173,7 +173,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={handleLearnMoreClick}
-                className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#7E69AB] dark:text-purple-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#9b87f5] dark:hover:border-purple-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#4338CA] dark:text-indigo-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#6366F1] dark:hover:border-indigo-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
@@ -190,7 +190,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">500+</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">500+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.projects')}</div>
               </motion.div>
               <motion.div 
@@ -200,7 +200,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">98%</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">98%</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.satisfaction')}</div>
               </motion.div>
               <motion.div 
@@ -210,7 +210,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#7E69AB] dark:text-purple-400 mb-2">24/7</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">24/7</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.support')}</div>
               </motion.div>
             </div>
@@ -239,7 +239,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 transition={{ duration: 0.5, delay: 1 }}
                 className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
               >
-                <Laptop className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+                <Laptop className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
               <motion.div 
                 initial={{ x: 20, opacity: 0 }}
@@ -247,7 +247,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 transition={{ duration: 0.5, delay: 1.2 }}
                 className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
               >
-                <Smartphone className="text-[#7E69AB] dark:text-purple-400 w-6 h-6 md:w-8 md:h-8" />
+                <Smartphone className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -259,7 +259,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
           transition={{ duration: 0.5, delay: 1.4 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
         >
-          <ArrowDown className="text-[#7E69AB] dark:text-purple-400" size={24} />
+          <ArrowDown className="text-[#4338CA] dark:text-indigo-400" size={24} />
         </motion.div>
       </div>
     </div>
