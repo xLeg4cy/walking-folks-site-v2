@@ -1,15 +1,12 @@
 
 import { ContactForm } from "./ContactForm";
 import { MessageSquare, X } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 interface ContactProps {
   onClose: () => void;
 }
 
 export default function Contact({ onClose }: ContactProps) {
-  const { t } = useTranslation();
-
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -35,15 +32,15 @@ export default function Contact({ onClose }: ContactProps) {
             <div className="text-center mb-8">
               <div className="inline-flex items-center bg-black/5 dark:bg-white/5 rounded-full px-4 py-2 text-sm font-medium mb-4">
                 <MessageSquare size={16} className="mr-2" />
-                {t('contact.subtitle')}
+                Get in Touch
               </div>
               
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white px-4">
-                {t('contact.title')}
+                Let's Start a <span className="text-gradient">Conversation</span>
               </h2>
               
               <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto px-4">
-                {t('contact.description')}
+                Have a project in mind or just want to learn more? We'd love to hear from you.
               </p>
             </div>
 
