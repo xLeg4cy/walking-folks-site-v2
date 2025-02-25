@@ -1,4 +1,3 @@
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -47,7 +46,6 @@ export function ContactForm() {
 
   const { isSubmitting, isDirty } = form.formState;
 
-  // Load saved form data on mount
   useEffect(() => {
     const savedData = localStorage.getItem(STORAGE_KEY);
     if (savedData) {
@@ -58,7 +56,6 @@ export function ContactForm() {
     }
   }, [form]);
 
-  // Auto-save form data
   useEffect(() => {
     if (!isDirty) return;
 
@@ -72,7 +69,6 @@ export function ContactForm() {
     return () => clearTimeout(timer);
   }, [form.watch(), isDirty]);
 
-  // Format phone number as user types
   const formatPhoneNumber = (value: string) => {
     const phone = value.replace(/\D/g, '');
     const match = phone.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
@@ -89,13 +85,12 @@ export function ContactForm() {
         return;
       }
 
-      // Simulated API call with rate limiting
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmissionCount(prev => prev + 1);
       
       toast.success("Message sent successfully!");
       form.reset();
-      localStorage.removeItem(STORAGE_KEY); // Clear saved form data after successful submission
+      localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
     }
@@ -107,7 +102,6 @@ export function ContactForm() {
       role="form"
       aria-label="Contact form"
     >
-      {/* Autosave Indicator */}
       <AnimatePresence>
         {isAutosaving && (
           <motion.div
@@ -241,7 +235,7 @@ export function ContactForm() {
           <motion.button
             type="submit"
             disabled={isSubmitting || submissionCount >= 5}
-            className="w-full bg-brand-purple-medium hover:bg-brand-purple-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none dark:bg-brand-purple-dark dark:hover:bg-brand-purple-medium"
+            className="w-full bg-[#4338CA] hover:bg-[#818CF8] text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none dark:bg-[#818CF8] dark:hover:bg-[#4338CA]"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             aria-label={isSubmitting ? "Sending message..." : "Send message"}
@@ -261,7 +255,6 @@ export function ContactForm() {
   );
 }
 
-// Validation icon component
 const ValidationIcon = ({ field, isValid }: { field: string; isValid: boolean }) => {
   if (!field) return null;
 
