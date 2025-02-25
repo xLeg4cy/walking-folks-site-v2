@@ -36,7 +36,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/10 via-transparent to-purple-50/10 dark:from-purple-900/5 dark:via-transparent dark:to-purple-900/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
       
       <motion.div 
         initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7E69AB] to-[#D6BCFA]">
+          <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
@@ -71,14 +71,14 @@ const Testimonials = () => {
                   viewport={{ once: true }}
                   className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden group h-full"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-purple-light/5 to-transparent dark:from-brand-purple-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/5 to-transparent dark:from-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    <QuoteIcon className="h-8 w-8 text-brand-purple-medium dark:text-brand-purple-light mb-4 transform transition-transform group-hover:scale-110 duration-300" />
+                    <QuoteIcon className="h-8 w-8 text-[#4338CA] dark:text-indigo-300 mb-4 transform transition-transform group-hover:scale-110 duration-300" />
                   </motion.div>
                   
                   <p className="text-muted-foreground dark:text-gray-300 mb-6 text-lg italic relative z-10">
@@ -95,13 +95,13 @@ const Testimonials = () => {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-purple-light/20 group-hover:ring-brand-purple-light/40 transition-all duration-300"
+                        className="w-12 h-12 rounded-full object-cover ring-2 ring-indigo-200/20 group-hover:ring-indigo-300/40 transition-all duration-300"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-purple-light/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground dark:text-white group-hover:text-brand-purple-medium transition-colors duration-300">
+                      <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
                         {testimonial.name}
                       </h4>
                       <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>

@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -108,6 +107,10 @@ const resources = {
               "System administrators",
               "Multi-tier IT support"
             ]
+          },
+          "tech": {
+            "title": "Our Technology Stack",
+            "description": "We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms."
           }
         }
       },
@@ -270,6 +273,10 @@ const resources = {
               "Administradores de sistemas",
               "Soporte IT multinivel"
             ]
+          },
+          "tech": {
+            "title": "Nuestro Stack Tecnológico",
+            "description": "Llevamos a cabo tecnologías de vanguardia y marcos para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
           }
         }
       },

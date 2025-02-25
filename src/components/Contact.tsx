@@ -33,12 +33,12 @@ export default function Contact({ onClose }: ContactProps) {
         <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-y-auto max-h-[90vh]">
           <div className="p-4 sm:p-8">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center bg-black/5 dark:bg-white/5 rounded-full px-4 py-2 text-sm font-medium mb-4">
-                <MessageSquare size={16} className="mr-2" />
-                {t('contact.subtitle')}
+              <div className="inline-flex items-center bg-indigo-50 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-4">
+                <MessageSquare size={16} className="mr-2 text-[#4338CA] dark:text-indigo-300" />
+                <span className="text-[#4338CA] dark:text-indigo-300">{t('contact.subtitle')}</span>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white px-4">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8] px-4">
                 {t('contact.title')}
               </h2>
               
