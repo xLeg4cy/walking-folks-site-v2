@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -48,33 +49,66 @@ const resources = {
       "services": {
         "title": "Our Services",
         "description": "Comprehensive solutions tailored to your needs",
-        "webdev": {
-          "title": "Web Development",
-          "description": "Custom web applications and responsive designs"
-        },
-        "mobile": {
-          "title": "Mobile Development",
-          "description": "Native and cross-platform mobile solutions"
-        },
-        "cloud": {
-          "title": "Cloud Solutions",
-          "description": "Scalable and secure cloud infrastructure"
-        }
-      },
-      "tech": {
-        "title": "Our Technology Stack",
-        "description": "We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms."
-      },
-      "team": {
-        "title": "Meet Our Team",
-        "description": "Expert professionals driving innovation and excellence"
-      },
-      "pricing": {
-        "title": "Simple, Transparent Pricing",
-        "description": "Clear pricing for your project needs",
-        "fixed": {
-          "title": "Fixed Price",
-          "description": "Perfect for projects with well-defined scope and requirements"
+        "sections": {
+          "software": {
+            "title": "Software Development",
+            "description": "We build the future, end-to-end. Our full-stack expertise delivers:",
+            "features": [
+              "Bots that automate with precision",
+              "Back-end, front-end, and mobile apps",
+              "API integration for connectivity",
+              "QA testing and automation",
+              "UI & UX design that converts",
+              "Scalable software architecture"
+            ]
+          },
+          "projectManagement": {
+            "title": "Project Management",
+            "description": "We don't just manage—we accelerate. Expect:",
+            "features": [
+              "Agile workflows that adapt",
+              "Risk management that excels",
+              "Smart resource allocation",
+              "Precision project planning"
+            ]
+          },
+          "infrastructure": {
+            "title": "Infrastructure",
+            "description": "We've mastered the backbone of tech - and we bring it all to you:",
+            "features": [
+              "Cloud services across major platforms",
+              "Enterprise-grade infrastructure",
+              "Seamless cloud migration",
+              "DevOps that streamlines",
+              "Site Reliability Engineering",
+              "Legacy system upgrades",
+              "Backup and disaster recovery"
+            ]
+          },
+          "security": {
+            "title": "Cybersecurity",
+            "description": "Your security is our obsession:",
+            "features": [
+              "24/7 system monitoring",
+              "Advanced threat detection",
+              "Proactive risk mitigation",
+              "Secure identity management",
+              "Rapid incident response",
+              "Enterprise-grade security"
+            ]
+          },
+          "outsourcing": {
+            "title": "Outsourcing & Team Augmentation",
+            "description": "Need elite talent? We've got you:",
+            "features": [
+              "Expert software developers",
+              "Skilled cloud engineers",
+              "Security specialists",
+              "Quality assurance experts",
+              "System administrators",
+              "Multi-tier IT support"
+            ]
+          }
         }
       },
       "faq": {
@@ -124,6 +158,11 @@ const resources = {
           "email": "contact@walkingfolks.com"
         },
         "copyright": "All rights reserved."
+      },
+      "contact": {
+        "title": "Let's Start a Conversation",
+        "subtitle": "Get in Touch",
+        "description": "Have a project in mind or just want to learn more? We'd love to hear from you."
       }
     }
   },
@@ -142,7 +181,7 @@ const resources = {
           "part1": "Soluciones Innovadoras para",
           "part2": "Empresas Modernas"
         },
-        "description": "Ofrecemos soluciones tecnológicas de vanguardia con transparencia, eficiencia y soporte inigualable",
+        "description": "¿Cansado de soluciones tecnológicas complejas? Nosotros simplificamos. Entregamos soluciones de software, nube y ciberseguridad rentables, minimalistas e innovadoras.",
         "cta": {
           "start": "Contáctanos",
           "learn": "Más Info"
@@ -172,33 +211,66 @@ const resources = {
       "services": {
         "title": "Nuestros Servicios",
         "description": "Soluciones integrales adaptadas a sus necesidades",
-        "webdev": {
-          "title": "Desarrollo Web",
-          "description": "Aplicaciones web personalizadas y diseños responsivos"
-        },
-        "mobile": {
-          "title": "Desarrollo Móvil",
-          "description": "Soluciones móviles nativas y multiplataforma"
-        },
-        "cloud": {
-          "title": "Soluciones en la Nube",
-          "description": "Infraestructura en la nube escalable y segura"
-        }
-      },
-      "tech": {
-        "title": "Nuestra Tecnología",
-        "description": "Utilizamos tecnologías y frameworks de vanguardia para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
-      },
-      "team": {
-        "title": "Conoce a Nuestro Equipo",
-        "description": "Profesionales expertos impulsando la innovación y la excelencia"
-      },
-      "pricing": {
-        "title": "Opciones de Precios Flexibles",
-        "description": "Elige el modelo de precios que mejor se adapte a las necesidades de tu proyecto",
-        "fixed": {
-          "title": "Precio Fijo",
-          "description": "Perfecto para proyectos con alcance y requisitos bien definidos"
+        "sections": {
+          "software": {
+            "title": "Desarrollo de Software",
+            "description": "Construimos el futuro, de principio a fin. Nuestra experiencia full-stack ofrece:",
+            "features": [
+              "Bots que automatizan con precisión",
+              "Aplicaciones back-end, front-end y móviles",
+              "Integración de APIs para conectividad",
+              "Pruebas QA y automatización",
+              "Diseño UI & UX que convierte",
+              "Arquitectura de software escalable"
+            ]
+          },
+          "projectManagement": {
+            "title": "Gestión de Proyectos",
+            "description": "No solo gestionamos—aceleramos. Espere:",
+            "features": [
+              "Flujos de trabajo ágiles que se adaptan",
+              "Gestión de riesgos que sobresale",
+              "Asignación inteligente de recursos",
+              "Planificación precisa de proyectos"
+            ]
+          },
+          "infrastructure": {
+            "title": "Infraestructura",
+            "description": "Hemos dominado la columna vertebral de la tecnología - y se la traemos toda:",
+            "features": [
+              "Servicios en la nube en principales plataformas",
+              "Infraestructura de nivel empresarial",
+              "Migración perfecta a la nube",
+              "DevOps que optimiza",
+              "Ingeniería de Confiabilidad del Sitio",
+              "Actualizaciones de sistemas heredados",
+              "Respaldo y recuperación ante desastres"
+            ]
+          },
+          "security": {
+            "title": "Ciberseguridad",
+            "description": "Su seguridad es nuestra obsesión:",
+            "features": [
+              "Monitoreo 24/7 de sistemas",
+              "Detección avanzada de amenazas",
+              "Mitigación proactiva de riesgos",
+              "Gestión segura de identidad",
+              "Respuesta rápida a incidentes",
+              "Seguridad de nivel empresarial"
+            ]
+          },
+          "outsourcing": {
+            "title": "Tercerización y Ampliación de Equipos",
+            "description": "¿Necesita talento elite? Lo tenemos:",
+            "features": [
+              "Desarrolladores de software expertos",
+              "Ingenieros en la nube calificados",
+              "Especialistas en seguridad",
+              "Expertos en garantía de calidad",
+              "Administradores de sistemas",
+              "Soporte IT multinivel"
+            ]
+          }
         }
       },
       "faq": {
@@ -248,6 +320,11 @@ const resources = {
           "email": "contact@walkingfolks.com"
         },
         "copyright": "Todos los derechos reservados."
+      },
+      "contact": {
+        "title": "Iniciemos una Conversación",
+        "subtitle": "Contáctanos",
+        "description": "¿Tienes un proyecto en mente o quieres saber más? Nos encantaría escucharte."
       }
     }
   }
