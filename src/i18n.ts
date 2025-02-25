@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -29,6 +28,10 @@ const resources = {
           "satisfaction": "Customer Satisfaction",
           "support": "Support Available"
         }
+      },
+      "tech": {
+        "title": "Our Technology Stack",
+        "description": "We use cutting-edge technologies to build modern, scalable, and reliable solutions"
       },
       "about": {
         "title": "About Us",
@@ -191,6 +194,10 @@ const resources = {
           "satisfaction": "Satisfacción del Cliente",
           "support": "Soporte Disponible"
         }
+      },
+      "tech": {
+        "title": "Nuestra Pila Tecnológica",
+        "description": "Utilizamos tecnologías de vanguardia para construir soluciones modernas, escalables y confiables"
       },
       "about": {
         "title": "Sobre Nosotros",
