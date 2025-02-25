@@ -34,33 +34,33 @@ const Services = () => {
   const services = [
     {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Software Development",
-      description: "We build the future, end-to-end. Our full-stack expertise delivers:",
-      features: ["Bots that automate with precision", "Back-end, front-end, and mobile apps", "API integration for connectivity", "QA testing and automation", "UI & UX design that converts", "Scalable software architecture"]
+      title: t('services.sections.software.title'),
+      description: t('services.sections.software.description'),
+      features: t('services.sections.software.features', { returnObjects: true })
     },
     {
       icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Project Management",
-      description: "We don't just manage—we accelerate. Expect:",
-      features: ["Agile workflows that adapt", "Risk management that excels", "Smart resource allocation", "Precision project planning"]
+      title: t('services.sections.projectManagement.title'),
+      description: t('services.sections.projectManagement.description'),
+      features: t('services.sections.projectManagement.features', { returnObjects: true })
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Infrastructure",
-      description: "We've mastered the backbone of tech - and we bring it all to you:",
-      features: ["Cloud services across major platforms", "Enterprise-grade infrastructure", "Seamless cloud migration", "DevOps that streamlines", "Site Reliability Engineering", "Legacy system upgrades", "Backup and disaster recovery"]
+      title: t('services.sections.infrastructure.title'),
+      description: t('services.sections.infrastructure.description'),
+      features: t('services.sections.infrastructure.features', { returnObjects: true })
     },
     {
       icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Cybersecurity",
-      description: "Your security is our obsession:",
-      features: ["24/7 system monitoring", "Advanced threat detection", "Proactive risk mitigation", "Secure identity management", "Rapid incident response", "Enterprise-grade security"]
+      title: t('services.sections.security.title'),
+      description: t('services.sections.security.description'),
+      features: t('services.sections.security.features', { returnObjects: true })
     },
     {
       icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
-      title: "Outsourcing & Team Augmentation",
-      description: "Need elite talent? We've got you:",
-      features: ["Expert software developers", "Skilled cloud engineers", "Security specialists", "Quality assurance experts", "System administrators", "Multi-tier IT support"]
+      title: t('services.sections.outsourcing.title'),
+      description: t('services.sections.outsourcing.description'),
+      features: t('services.sections.outsourcing.features', { returnObjects: true })
     }
   ];
 
@@ -127,7 +127,7 @@ const Services = () => {
                 <p className="text-muted-foreground dark:text-gray-300 mb-6">{service.description}</p>
                 
                 <ul className="space-y-3">
-                  {service.features.map((feature, fIndex) => (
+                  {service.features.map((feature: string, fIndex: number) => (
                     <motion.li
                       key={fIndex}
                       initial={{ opacity: 0, x: -10 }}
