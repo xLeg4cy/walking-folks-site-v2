@@ -25,10 +25,10 @@ const TechnologyStack = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8] dark:from-indigo-300 dark:to-indigo-500">
-            {t('tech.title')}
+            {t('services.sections.tech.title')}
           </h2>
           <p className="text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-lg">
-            {t('tech.description')}
+            {t('services.sections.tech.description')}
           </p>
         </motion.div>
         
