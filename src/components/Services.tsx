@@ -4,6 +4,12 @@ import { Computer, Users, Database, Shield, UserPlus, ArrowRight, CheckCircle2 }
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+interface ServiceSection {
+  title: string;
+  description: string;
+  features: string[];
+}
+
 const Services = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
@@ -36,31 +42,31 @@ const Services = () => {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.software.title'),
       description: t('services.sections.software.description'),
-      features: t('services.sections.software.features', { returnObjects: true })
+      features: t('services.sections.software.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.projectManagement.title'),
       description: t('services.sections.projectManagement.description'),
-      features: t('services.sections.projectManagement.features', { returnObjects: true })
+      features: t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
-      features: t('services.sections.infrastructure.features', { returnObjects: true })
+      features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
-      features: t('services.sections.security.features', { returnObjects: true })
+      features: t('services.sections.security.features', { returnObjects: true }) as string[]
     },
     {
       icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.outsourcing.title'),
       description: t('services.sections.outsourcing.description'),
-      features: t('services.sections.outsourcing.features', { returnObjects: true })
+      features: t('services.sections.outsourcing.features', { returnObjects: true }) as string[]
     }
   ];
 
@@ -84,7 +90,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#7E69AB] to-[#D6BCFA]">
+          <h2 className="text-4xl font-bold mb-4 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
             {t('services.title')}
           </h2>
           <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto text-lg">
