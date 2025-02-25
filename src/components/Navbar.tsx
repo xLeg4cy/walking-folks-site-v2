@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -103,8 +104,8 @@ const Navbar = ({ onContactClick }: NavProps) => {
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                   activeSection === item.id
-                    ? "text-brand-purple-medium dark:text-purple-300"
-                    : "text-gray-600 hover:text-brand-purple-medium dark:text-gray-300 dark:hover:text-purple-300"
+                    ? "text-[#4338CA] dark:text-indigo-300"
+                    : "text-gray-600 hover:text-[#4338CA] dark:text-gray-300 dark:hover:text-indigo-300"
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -113,7 +114,7 @@ const Navbar = ({ onContactClick }: NavProps) => {
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-purple-medium dark:bg-purple-300"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4338CA] dark:bg-indigo-300"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -131,7 +132,7 @@ const Navbar = ({ onContactClick }: NavProps) => {
             <LanguageToggle />
             <motion.button
               onClick={onContactClick}
-              className="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-brand-purple-medium hover:bg-brand-purple-dark transition-colors"
+              className="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-[#4338CA] hover:bg-[#818CF8] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -143,7 +144,7 @@ const Navbar = ({ onContactClick }: NavProps) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-brand-purple-medium dark:text-gray-300 dark:hover:text-purple-300"
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-[#4338CA] dark:text-gray-300 dark:hover:text-indigo-300"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
@@ -173,8 +174,8 @@ const Navbar = ({ onContactClick }: NavProps) => {
                     className={cn(
                       "w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-colors",
                       activeSection === item.id
-                        ? "text-brand-purple-medium dark:text-purple-300 bg-gray-100 dark:bg-gray-800"
-                        : "text-gray-600 hover:text-brand-purple-medium dark:text-gray-300 dark:hover:text-purple-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                        ? "text-[#4338CA] dark:text-indigo-300 bg-gray-100 dark:bg-gray-800"
+                        : "text-gray-600 hover:text-[#4338CA] dark:text-gray-300 dark:hover:text-indigo-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                     )}
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.98 }}
@@ -187,7 +188,7 @@ const Navbar = ({ onContactClick }: NavProps) => {
                     onContactClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 text-base font-medium rounded-lg text-white bg-brand-purple-medium hover:bg-brand-purple-dark transition-colors"
+                  className="w-full px-4 py-3 text-base font-medium rounded-lg text-white bg-[#4338CA] hover:bg-[#818CF8] transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.98 }}
                 >
