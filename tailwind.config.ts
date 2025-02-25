@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,19 +53,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        brand: {
-          navy: "#0A2647",
-          blue: "#3498db",
-          gray: "#2c3e50",
-          lightBlue: "#00b4d8",
-          lightGray: "#f8f9fa",
-          purple: {
-            light: "#D6BCFA",
-            DEFAULT: "#9b87f5",
-            medium: "#7E69AB",
-            dark: "#6E59A5",
-            darker: "#1A1F2C"
-          }
+        mono: {
+          background: "#fbf7ef",
+          card: "#f2f2f2",
+          text: "#070707",
+          accent: "#2C2E33",
+          white: "#ffffff",
+        },
+        gradient: {
+          start: "#4338CA",
+          end: "#2C2E33",
         }
       },
       borderRadius: {
@@ -95,40 +93,13 @@ export default {
             "background-position": "right center",
           },
         },
-        typing: {
-          "0%": {
-            width: "0",
-          },
-          "100%": {
-            width: "100%",
-          },
-        },
-        blink: {
-          "50%": {
-            borderColor: "transparent",
-          },
-        },
-        "bounce-slow": {
-          "0%, 100%": {
-            transform: "translateY(0)",
-          },
-          "50%": {
-            transform: "translateY(-10px)",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
         gradient: "gradient 8s ease infinite",
-        typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
-        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
       },
-      boxShadow: {
-        'light': '0 2px 8px rgba(0, 0, 0, 0.05)',
-        'light-md': '0 4px 12px rgba(0, 0, 0, 0.08)',
-      }
     },
   },
   plugins: [require("tailwindcss-animate")],
