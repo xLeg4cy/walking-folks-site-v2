@@ -8,6 +8,11 @@ import {
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 const FAQ = () => {  
   const { t } = useTranslation();
 
@@ -30,7 +35,7 @@ const FAQ = () => {
         </div>
 
         <Accordion type="single" collapsible>
-          {t('faq.items', { returnObjects: true }).map((faq: any, index: number) => (
+          {(t('faq.items', { returnObjects: true }) as FAQItem[]).map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>{faq.question}</AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>

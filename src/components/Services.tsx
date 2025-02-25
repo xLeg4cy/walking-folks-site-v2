@@ -36,31 +36,31 @@ const Services = () => {
       icon: <Computer className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.software.title'),
       description: t('services.sections.software.description'),
-      features: t('services.sections.software.features', { returnObjects: true })
+      features: t('services.sections.software.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Users className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.projectManagement.title'),
       description: t('services.sections.projectManagement.description'),
-      features: t('services.sections.projectManagement.features', { returnObjects: true })
+      features: t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Database className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
-      features: t('services.sections.infrastructure.features', { returnObjects: true })
+      features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Shield className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
-      features: t('services.sections.security.features', { returnObjects: true })
+      features: t('services.sections.security.features', { returnObjects: true }) as string[]
     },
     {
       icon: <UserPlus className="w-6 h-6 text-brand-purple-medium" />,
       title: t('services.sections.outsourcing.title'),
       description: t('services.sections.outsourcing.description'),
-      features: t('services.sections.outsourcing.features', { returnObjects: true })
+      features: t('services.sections.outsourcing.features', { returnObjects: true }) as string[]
     }
   ];
 
