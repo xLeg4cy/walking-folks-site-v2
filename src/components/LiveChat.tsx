@@ -1,67 +1,41 @@
 
-import { useState } from 'react';
-import { MessageSquare, X, Send } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const LiveChat = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState('');
-
-  const toggleChat = () => setIsOpen(!isOpen);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (message.trim()) {
-      // Here you would typically send the message to your backend
-      console.log('Message sent:', message);
-      setMessage('');
-    }
+  // Placeholder phone number - replace with your actual WhatsApp business number
+  const phoneNumber = "1234567890";
+  
+  const handleWhatsAppClick = () => {
+    // Format: https://wa.me/<number>
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
-      {isOpen ? (
-        <div className="bg-white rounded-lg shadow-lg w-80 max-h-[500px] flex flex-col animate-fade-in">
-          <div className="bg-brand-navy text-white p-4 rounded-t-lg flex justify-between items-center">
-            <h3 className="font-medium">Live Chat</h3>
-            <button onClick={toggleChat} className="hover:opacity-75 transition-opacity">
-              <X size={20} />
-            </button>
-          </div>
-          
-          <div className="flex-1 p-4 min-h-[300px] max-h-[300px] overflow-y-auto bg-gray-50">
-            <div className="text-center text-gray-500 text-sm mb-4">
-              Welcome to our live chat! How can we help you today?
-            </div>
-          </div>
-
-          <form onSubmit={handleSubmit} className="p-4 border-t">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue/50"
-              />
-              <button
-                type="submit"
-                className="bg-brand-navy hover:bg-brand-blue text-white p-2 rounded-lg transition-colors"
-              >
-                <Send size={20} />
-              </button>
-            </div>
-          </form>
-        </div>
-      ) : (
-        <button
-          onClick={toggleChat}
-          className="bg-brand-navy hover:bg-brand-blue text-white p-4 rounded-full shadow-lg transition-all hover:-translate-y-1"
-          aria-label="Open live chat"
-        >
-          <MessageSquare size={24} />
-        </button>
-      )}
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.3,
+        ease: [0, 0.71, 0.2, 1.01],
+        scale: {
+          type: "spring",
+          damping: 10,
+          stiffness: 100,
+          restDelta: 0.001
+        }
+      }}
+      className="fixed bottom-4 right-4 z-50"
+    >
+      <button
+        onClick={handleWhatsAppClick}
+        className="bg-[#4338CA] hover:bg-[#818CF8] dark:bg-[#818CF8] dark:hover:bg-[#4338CA] text-white p-4 rounded-full shadow-lg transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4338CA] dark:focus:ring-[#818CF8]"
+        aria-label="Open WhatsApp chat"
+      >
+        <MessageSquare size={24} />
+      </button>
+    </motion.div>
   );
 };
 
