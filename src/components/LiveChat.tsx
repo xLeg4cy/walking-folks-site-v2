@@ -1,5 +1,5 @@
 
-import { MessageSquare } from 'lucide-react';
+import { MessageCircleMore } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const LiveChat = () => {
@@ -33,7 +33,7 @@ const LiveChat = () => {
         className="bg-[#4338CA] hover:bg-[#818CF8] dark:bg-[#818CF8] dark:hover:bg-[#4338CA] text-white p-4 rounded-full shadow-lg transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4338CA] dark:focus:ring-[#818CF8]"
         aria-label="Open WhatsApp chat"
       >
-        <MessageSquare size={24} />
+        <MessageCircleMore size={24} />
       </button>
     </motion.div>
   );
