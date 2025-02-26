@@ -54,7 +54,10 @@ const Services = () => {
       icon: <Database className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
-      features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
+      features: [
+        ...t('services.sections.infrastructure.features', { returnObjects: true }) as string[],
+        "Infrastructure as a Service (IaaS)"
+      ]
     },
     {
       icon: <Shield className="w-6 h-6 text-[#4338CA]" />,
