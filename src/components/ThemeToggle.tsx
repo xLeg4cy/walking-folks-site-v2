@@ -14,11 +14,18 @@ export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
 
   const handleThemeChange = (newTheme: string) => {
-    // Store current scroll position
     const scrollPos = window.scrollY;
+    const root = document.documentElement;
+    const prevOverflow = root.style.overflow;
+    
+    // Prevent scroll jump
+    root.style.overflow = 'hidden';
     setTheme(newTheme);
-    // Restore scroll position
-    window.scrollTo(0, scrollPos);
+    
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollPos);
+      root.style.overflow = prevOverflow;
+    });
   };
 
   return (

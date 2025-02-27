@@ -14,11 +14,18 @@ const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
   const handleLanguageChange = (lang: string) => {
-    // Store current scroll position
     const scrollPos = window.scrollY;
+    const root = document.documentElement;
+    const prevOverflow = root.style.overflow;
+    
+    // Prevent scroll jump
+    root.style.overflow = 'hidden';
     i18n.changeLanguage(lang);
-    // Restore scroll position
-    window.scrollTo(0, scrollPos);
+    
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollPos);
+      root.style.overflow = prevOverflow;
+    });
   };
 
   return (
