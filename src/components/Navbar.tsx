@@ -18,18 +18,6 @@ const Navbar = ({ onContactClick }: NavProps) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    // Add padding-right when mobile menu is open to prevent layout shift
-    if (isMobileMenuOpen) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.paddingRight = '';
-      document.body.style.overflow = '';
-    }
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 10);
