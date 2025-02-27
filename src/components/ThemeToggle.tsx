@@ -8,29 +8,44 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { motion } from "framer-motion";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
 
+  const handleThemeChange = (newTheme: string) => {
+    // Store current scroll position
+    const scrollPos = window.scrollY;
+    setTheme(newTheme);
+    // Restore scroll position
+    window.scrollTo(0, scrollPos);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative w-10 h-10 text-foreground dark:text-white">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
+          <Button variant="ghost" size="icon" className="relative w-10 h-10 text-foreground dark:text-white hover:bg-[#818CF8]/10">
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </motion.div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem 
-          onClick={() => setTheme("light")}
-          className={theme === "light" ? "bg-accent" : ""}
+          onClick={() => handleThemeChange("light")}
+          className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => setTheme("dark")}
-          className={theme === "dark" ? "bg-accent" : ""}
+          onClick={() => handleThemeChange("dark")}
+          className={`${theme === "dark" ? "bg-accent" : ""} cursor-pointer`}
         >
           Dark
         </DropdownMenuItem>
