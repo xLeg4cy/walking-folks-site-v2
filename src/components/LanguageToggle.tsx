@@ -13,21 +13,6 @@ import { motion } from "framer-motion";
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
-  const handleLanguageChange = (lang: string) => {
-    const scrollPos = window.scrollY;
-    const root = document.documentElement;
-    const prevOverflow = root.style.overflow;
-    
-    // Prevent scroll jump
-    root.style.overflow = 'hidden';
-    i18n.changeLanguage(lang);
-    
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollPos);
-      root.style.overflow = prevOverflow;
-    });
-  };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -42,15 +27,15 @@ const LanguageToggle = () => {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="bg-background">
         <DropdownMenuItem 
-          onClick={() => handleLanguageChange('en')}
+          onClick={() => i18n.changeLanguage('en')}
           className="cursor-pointer"
         >
           English
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => handleLanguageChange('es')}
+          onClick={() => i18n.changeLanguage('es')}
           className="cursor-pointer"
         >
           Español

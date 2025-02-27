@@ -13,21 +13,6 @@ import { motion } from "framer-motion";
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
 
-  const handleThemeChange = (newTheme: string) => {
-    const scrollPos = window.scrollY;
-    const root = document.documentElement;
-    const prevOverflow = root.style.overflow;
-    
-    // Prevent scroll jump
-    root.style.overflow = 'hidden';
-    setTheme(newTheme);
-    
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollPos);
-      root.style.overflow = prevOverflow;
-    });
-  };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -43,15 +28,15 @@ export function ThemeToggle() {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="bg-background">
         <DropdownMenuItem 
-          onClick={() => handleThemeChange("light")}
+          onClick={() => setTheme("light")}
           className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => handleThemeChange("dark")}
+          onClick={() => setTheme("dark")}
           className={`${theme === "dark" ? "bg-accent" : ""} cursor-pointer`}
         >
           Dark

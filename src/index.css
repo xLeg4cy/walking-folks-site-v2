@@ -56,13 +56,14 @@
 
   html {
     @apply scroll-smooth;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
+    overflow-y: scroll;
   }
 
   body {
-    @apply bg-background text-foreground font-['Inter'];
-    @apply antialiased;
-    overflow-y: scroll !important;
+    @apply bg-background text-foreground font-['Inter'] antialiased overflow-y-scroll;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
