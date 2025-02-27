@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -61,7 +62,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-['Inter'] antialiased overflow-y-scroll;
+    @apply bg-background text-foreground font-['Inter'] antialiased;
     margin-right: 0 !important;
     padding-right: 0 !important;
   }
