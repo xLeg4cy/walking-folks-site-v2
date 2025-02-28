@@ -304,8 +304,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 <Smartphone className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
               
-              {/* Add a gradient overlay that appears on hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Updated gradient overlay with website's color scheme */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#4338CA]/20 via-[#6366F1]/20 to-[#9b87f5]/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           </motion.div>
         </div>
