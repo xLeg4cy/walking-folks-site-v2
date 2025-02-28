@@ -68,7 +68,8 @@ const DropdownMenuContent = React.forwardRef<
         className
       )}
       style={{ 
-        position: "fixed", // Use fixed positioning to prevent layout shifts
+        position: "fixed", // Use fixed positioning to ensure the dropdown doesn't affect document flow
+        zIndex: 9999, // Ensure high z-index to appear above other elements
       }}
       {...props}
     />
