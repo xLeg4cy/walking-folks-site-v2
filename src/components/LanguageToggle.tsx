@@ -9,9 +9,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
+  
+  // Apply overflow hidden to body when mounting to prevent scrollbar issues
+  useEffect(() => {
+    // Force consistent overflow behavior
+    document.documentElement.style.overflowY = "scroll";
+    document.body.style.overflowY = "auto";
+    
+    return () => {
+      // Cleanup
+      document.documentElement.style.overflowY = "";
+      document.body.style.overflowY = "";
+    };
+  }, []);
 
   return (
     <DropdownMenu>
