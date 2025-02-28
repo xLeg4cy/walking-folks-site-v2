@@ -1,5 +1,6 @@
+
 import { useEffect, useRef, memo } from 'react';
-import { Rocket, ArrowDown, Laptop, Smartphone } from 'lucide-react';
+import { Rocket, ArrowDown, Laptop, Smartphone, Star, Heart, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
@@ -118,9 +119,11 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 hover:bg-indigo-200 dark:hover:bg-indigo-800/40 cursor-pointer transition-all"
             >
-              <Rocket size={16} className="mr-2" />
+              <Rocket size={16} className="mr-2 animate-bounce-slow" />
               {t('hero.subtitle')}
             </motion.div>
             
@@ -160,25 +163,41 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={onContactClick}
-                className="w-full sm:w-auto bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#6366F1] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-indigo-600 dark:hover:bg-indigo-700"
+                className="group w-full sm:w-auto bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#6366F1] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-indigo-600 dark:hover:bg-indigo-700 relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
                 rel="noopener noreferrer"
               >
-                {t('hero.cta.start')}
+                <span className="relative z-10 flex items-center justify-center">
+                  {t('hero.cta.start')}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+                <motion.span 
+                  className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                />
               </motion.button>
               <motion.button 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={handleLearnMoreClick}
-                className="w-full sm:w-auto bg-white dark:bg-gray-800 text-[#4338CA] dark:text-indigo-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#6366F1] dark:hover:border-indigo-500 transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                className="group w-full sm:w-auto bg-white dark:bg-gray-800 text-[#4338CA] dark:text-indigo-300 px-6 py-3 rounded-lg font-medium border border-gray-200 dark:border-gray-700 hover:border-[#6366F1] dark:hover:border-indigo-500 transition-all transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
               >
-                {t('hero.cta.learn')}
+                <span className="relative z-10 flex items-center justify-center">
+                  {t('hero.cta.learn')}
+                  <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+                </span>
+                <motion.span 
+                  className="absolute inset-0 bg-indigo-50 dark:bg-indigo-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                />
               </motion.button>
             </div>
 
@@ -188,30 +207,62 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">500+</div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">500+</div>
+                  <Heart className="h-5 w-5 text-gray-400 group-hover:text-pink-500 group-hover:scale-110 transition-all duration-300" />
+                </div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.projects')}</div>
+                <div className="mt-3 h-1 w-0 bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </motion.div>
+              
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">98%</div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">98%</div>
+                  <Star className="h-5 w-5 text-gray-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300" />
+                </div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.satisfaction')}</div>
+                <div className="mt-3 h-1 w-0 bg-gradient-to-r from-yellow-400 to-orange-500 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </motion.div>
+              
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl"
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400 mb-2">24/7</div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">24/7</div>
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    className="h-5 w-5 text-gray-400 group-hover:text-blue-500"
+                  >
+                    <Rocket className="h-5 w-5" />
+                  </motion.div>
+                </div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.support')}</div>
+                <div className="mt-3 h-1 w-0 bg-gradient-to-r from-blue-500 to-cyan-500 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </motion.div>
             </div>
           </div>
@@ -224,7 +275,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative z-10 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl p-3 md:p-4 transform transition-all hover:scale-[1.02] duration-300 ease-out"
+              whileHover={{ scale: 1.05 }}
+              className="relative z-10 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl p-3 md:p-4 transform transition-all duration-500 ease-out group"
             >
               <img 
                 src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
@@ -237,7 +289,8 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="absolute -left-4 top-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform -translate-x-1/2 transition-transform animate-bounce-slow cursor-pointer"
               >
                 <Laptop className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
@@ -245,10 +298,14 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 hover:scale-110 transition-transform animate-bounce-slow"
+                whileHover={{ scale: 1.2, rotate: -5 }}
+                className="absolute -right-4 bottom-1/4 bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg p-2 md:p-3 transform translate-x-1/2 transition-transform animate-bounce-slow cursor-pointer"
               >
                 <Smartphone className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
+              
+              {/* Add a gradient overlay that appears on hover */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           </motion.div>
         </div>
@@ -258,6 +315,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.4 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
+          whileHover={{ scale: 1.2 }}
         >
           <ArrowDown className="text-[#4338CA] dark:text-indigo-400" size={24} />
         </motion.div>
