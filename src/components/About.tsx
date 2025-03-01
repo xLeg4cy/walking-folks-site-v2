@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Users, Globe, Shield } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -48,7 +47,7 @@ const About = () => {
               viewport={{ once: true }}
               className="text-muted-foreground dark:text-gray-300 mb-8 text-lg"
             >
-              We've got over a decade of real skill in software, infrastructure, and cybersecurity, offering tech fixes that are simple, cheap, and ahead of their time. We shoot for fresh innovation - see it as open workflows and pro-level development support - producing top-quality, standout tech with no high bills, no sneaky charges, or junk you don't want, all geared to win in a fast-moving field.
+              {t('about.description')}
             </motion.p>
 
             <div className="flex flex-col gap-6">
