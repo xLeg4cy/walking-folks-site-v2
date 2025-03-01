@@ -30,6 +30,14 @@ const TechnologyStack = () => {
           <p className="text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-lg">
             {t('services.sections.tech.description')}
           </p>
+          
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="h-1 bg-gradient-to-r from-[#4338CA] to-[#818CF8] mx-auto mt-6 rounded-full"
+          />
         </motion.div>
         
         <motion.div
@@ -37,6 +45,7 @@ const TechnologyStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
+          className="hover:scale-[1.02] transition-transform duration-500"
         >
           <TechnologyCarousel />
         </motion.div>

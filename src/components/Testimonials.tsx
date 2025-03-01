@@ -58,6 +58,14 @@ const Testimonials = () => {
           <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
             Don't just take our word for it - hear from some of our satisfied clients about their experience working with us.
           </p>
+          
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="h-1 bg-gradient-to-r from-[#4338CA] to-[#818CF8] mx-auto mt-6 rounded-full"
+          />
         </motion.div>
 
         <Carousel className="w-full max-w-4xl mx-auto">
@@ -69,7 +77,12 @@ const Testimonials = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden group h-full"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    borderColor: "#4338CA"
+                  }}
+                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden group h-full border border-gray-100 dark:border-gray-700 transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/5 to-transparent dark:from-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
@@ -77,6 +90,7 @@ const Testimonials = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative"
                   >
                     <QuoteIcon className="h-8 w-8 text-[#4338CA] dark:text-indigo-300 mb-4 transform transition-transform group-hover:scale-110 duration-300" />
                   </motion.div>
@@ -95,7 +109,7 @@ const Testimonials = () => {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-indigo-200/20 group-hover:ring-indigo-300/40 transition-all duration-300"
+                        className="w-12 h-12 rounded-full object-cover ring-2 ring-indigo-200/20 group-hover:ring-[#4338CA] transition-all duration-300"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -107,12 +121,14 @@ const Testimonials = () => {
                       <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>
                     </div>
                   </motion.div>
+                  
+                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#4338CA] to-[#818CF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex -left-12" />
-          <CarouselNext className="hidden sm:flex -right-12" />
+          <CarouselPrevious className="hidden sm:flex -left-12 bg-white text-[#4338CA] hover:bg-[#4338CA] hover:text-white border-[#4338CA] transition-colors" />
+          <CarouselNext className="hidden sm:flex -right-12 bg-white text-[#4338CA] hover:bg-[#4338CA] hover:text-white border-[#4338CA] transition-colors" />
         </Carousel>
       </motion.div>
     </section>

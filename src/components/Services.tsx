@@ -111,11 +111,9 @@ const Services = () => {
               viewport={{ once: true }}
               whileHover={{ 
                 scale: 1.02,
-                rotateX: 5,
-                rotateY: 5,
-                transition: { duration: 0.2 }
+                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
-              className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-[#818CF8] dark:hover:border-[#818CF8] transition-all hover:shadow-xl"
+              className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-[#4338CA] dark:hover:border-[#4338CA] transition-all"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/5 to-transparent dark:from-indigo-900/10 rounded-2xl" />
               <div className="absolute inset-0 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
@@ -145,7 +143,7 @@ const Services = () => {
                       viewport={{ once: true }}
                       className="text-sm text-muted-foreground dark:text-gray-400 flex items-center group/item"
                     >
-                      <CheckCircle2 className="w-4 h-4 mr-2 text-[#4338CA] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 mr-2 text-[#4338CA] opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                       <span className="group-hover/item:translate-x-1 transition-transform line-clamp-1">
                         {feature}
                       </span>
@@ -153,6 +151,8 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
+              
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#4338CA] to-[#818CF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl" />
             </motion.div>
           ))}
         </div>

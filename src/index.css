@@ -59,12 +59,25 @@
     @apply scroll-smooth;
     scrollbar-gutter: stable both-edges;
     overflow-y: scroll;
+    margin-right: 0 !important;
   }
 
   body {
     @apply bg-background text-foreground font-['Inter'] antialiased;
     margin-right: 0 !important;
     padding-right: 0 !important;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Improve focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-[#4338CA] dark:outline-indigo-300;
+  }
+  
+  /* Improve button and interactive element accessibility */
+  button, a, [role="button"] {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4338CA] dark:focus-visible:outline-indigo-300;
   }
 }
 
@@ -128,7 +141,7 @@
   }
 
   .section {
-    @apply py-12;
+    @apply py-12 relative;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -141,6 +154,39 @@
 
   .dark [class*="border"] {
     border-color: rgb(31 41 55);
+  }
+  
+  /* Improved hover effects for entire site */
+  .hover-gradient-border {
+    @apply relative;
+  }
+  
+  .hover-gradient-border::after {
+    @apply content-[''] absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-[#4338CA] to-[#818CF8] transition-all duration-300 rounded-full;
+  }
+  
+  .hover-gradient-border:hover::after {
+    @apply w-full;
+  }
+  
+  /* Enhanced button states */
+  .button-glow:hover {
+    box-shadow: 0 0 15px rgba(67, 56, 202, 0.5);
+  }
+  
+  /* Focus visible enhancements */
+  .focus-ring {
+    @apply outline-none ring-2 ring-offset-2 ring-[#4338CA] dark:ring-indigo-300 transition-shadow duration-200;
+  }
+  
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

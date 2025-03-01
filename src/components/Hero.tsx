@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, memo } from 'react';
 import { Rocket, ArrowDown, Laptop, Smartphone, Star, Heart, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -207,11 +206,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">500+</div>
@@ -226,11 +221,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">98%</div>
@@ -245,11 +236,7 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">24/7</div>
@@ -304,7 +291,6 @@ const Hero = memo(({ onContactClick }: HeroProps) => {
                 <Smartphone className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
               </motion.div>
               
-              {/* Updated gradient overlay with website's color scheme */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#4338CA]/20 via-[#6366F1]/20 to-[#9b87f5]/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           </motion.div>
