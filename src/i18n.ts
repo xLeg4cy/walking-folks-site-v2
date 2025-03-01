@@ -31,14 +31,14 @@ const resources = {
       },
       "about": {
         "title": "About Us",
-        "description": "With over 10 years in the software and infrastructure field, we focus on delivering technology solutions that are cost-efficient, minimalist, and innovative while maintaining transparency and high-quality development support.",
+        "description": "We've got over a decade of real-world experience from leading tech companies, bringing that expertise to deliver smart, cost-efficient solutions. As a dynamic startup, we combine seasoned knowledge with fresh innovation to create technology that makes a real difference - without the complexity.",
         "expertTeam": {
           "title": "Expert Team",
           "description": "Our experienced professionals bring extensive knowledge to every project."
         },
         "globalReach": {
           "title": "Global Reach",
-          "description": "Strong presence in US and Latin America markets."
+          "description": "Growing startup based in the Dominican Republic, expanding into the US market."
         },
         "quality": {
           "title": "Quality Assured",
@@ -197,14 +197,14 @@ const resources = {
       },
       "about": {
         "title": "Sobre Nosotros",
-        "description": "Con más de 10 años en el campo del software e infraestructura, nos enfocamos en entregar soluciones tecnológicas rentables, minimalistas e innovadoras manteniendo la transparencia y el soporte de desarrollo de alta calidad.",
+        "description": "Contamos con más de una década de experiencia real en empresas tecnológicas líderes, aportando esa experiencia para ofrecer soluciones inteligentes y rentables. Como startup dinámica, combinamos conocimiento experimentado con innovación fresca para crear tecnología que marca la diferencia - sin complejidad.",
         "expertTeam": {
           "title": "Equipo Experto",
           "description": "Nuestros profesionales experimentados aportan un amplio conocimiento a cada proyecto."
         },
         "globalReach": {
           "title": "Alcance Global",
-          "description": "Fuerte presencia en mercados de EE.UU. y América Latina."
+          "description": "Startup en crecimiento con base en República Dominicana, expandiéndose al mercado de EE.UU."
         },
         "quality": {
           "title": "Calidad Asegurada",
