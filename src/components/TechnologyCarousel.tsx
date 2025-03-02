@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Cloud, Database, Code, Server, FileCode, ShieldCheck } from 'lucide-react';
 
 const technologies1 = [
   {
@@ -132,3 +131,4 @@ const TechnologyCarousel = () => {
 };
 
 export default TechnologyCarousel;
+
