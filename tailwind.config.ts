@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -116,6 +117,14 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "slide-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
+        "slide-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +133,8 @@ export default {
         gradient: "gradient 8s ease infinite",
         typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
         "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+        "slide-left": "slide-left 30s linear infinite",
+        "slide-right": "slide-right 30s linear infinite",
       },
       boxShadow: {
         'light': '0 2px 8px rgba(0, 0, 0, 0.05)',
