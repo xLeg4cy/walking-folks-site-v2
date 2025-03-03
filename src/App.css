@@ -90,9 +90,3 @@ body {
 .relative {
   position: relative;
 }
-
-/* Custom pause animation on hover */
-.hover\:pause:hover {
-  animation-play-state: paused;
-}
-
