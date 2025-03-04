@@ -2,10 +2,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LoadingSpinner from '@/components/LoadingSpinner';
-import TopProgressBar from '@/components/TopProgressBar';
 import { HeroSkeleton, ServicesSkeleton, TestimonialSkeleton } from '@/components/SkeletonLoaders';
 import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
@@ -16,9 +14,6 @@ import { lazy } from 'react';
 const About = lazy(() => import('@/components/About'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
 const Contact = lazy(() => import('@/components/Contact'));
-const Footer = lazy(() => import('@/components/Footer'));
-const CookieConsent = lazy(() => import('@/components/CookieConsent'));
-const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
 
 const Index = () => {
@@ -38,6 +33,17 @@ const Index = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
+
+    // Check if there's a hash in the URL to scroll to that section
+    const hashId = window.location.hash.substring(1);
+    if (hashId) {
+      setTimeout(() => {
+        const element = document.getElementById(hashId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1500); // Give time for components to load
+    }
 
     return () => {
       clearTimeout(timer);
@@ -74,9 +80,6 @@ const Index = () => {
             as="style"
           />
         </Helmet>
-
-        <TopProgressBar />
-        <Navbar onContactClick={() => setIsContactOpen(true)} />
         
         <main>
           <Suspense fallback={<HeroSkeleton />}>
@@ -114,12 +117,6 @@ const Index = () => {
         </main>
 
         <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-
-        <Suspense fallback={null}>
-          <ScrollToTop />
-          <CookieConsent />
           <LiveChat />
         </Suspense>
       </motion.div>

@@ -9,9 +9,10 @@ import { Menu, X } from 'lucide-react';
 
 interface NavProps {
   onContactClick: () => void;
+  onSectionClick: (sectionId: string) => void;
 }
 
-const Navbar = ({ onContactClick }: NavProps) => {
+const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,11 +48,8 @@ const Navbar = ({ onContactClick }: NavProps) => {
   ];
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+    onSectionClick(id);
+    setIsMobileMenuOpen(false);
   };
 
   return (
