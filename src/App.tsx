@@ -9,6 +9,7 @@ import { ThemeProvider } from "next-themes";
 import { HelmetProvider } from 'react-helmet-async';
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorBoundary from "./components/ErrorBoundary";
+import MainLayout from "./layouts/MainLayout";
 
 const Index = lazy(() => import("./pages/Index"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -43,10 +44,12 @@ const App = () => (
               <BrowserRouter>
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route element={<MainLayout />}>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/privacy" element={<Privacy />} />
+                      <Route path="/blog" element={<Blog />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Route>
                   </Routes>
                 </Suspense>
               </BrowserRouter>
