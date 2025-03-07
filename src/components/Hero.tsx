@@ -1,7 +1,8 @@
-<lov-codelov-code>
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Button } from './ui/button';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -78,4 +79,3 @@ const Hero = ({ onContactClick }: HeroProps) => {
 };
 
 export default Hero;
-</lov-code>
