@@ -13,9 +13,11 @@ import { lazy } from 'react';
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
+const Contact = lazy(() => import('@/components/Contact'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
 
 const Index = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -81,7 +83,7 @@ const Index = () => {
         
         <main>
           <Suspense fallback={<HeroSkeleton />}>
-            <Hero onContactClick={() => document.dispatchEvent(new CustomEvent('open-contact-form'))} />
+            <Hero onContactClick={() => setIsContactOpen(true)} />
           </Suspense>
 
           <Suspense fallback={<LoadingSpinner />}>
@@ -106,6 +108,12 @@ const Index = () => {
               <FAQ />
             </motion.div>
           </Suspense>
+
+          {isContactOpen && (
+            <Suspense fallback={<LoadingSpinner />}>
+              <Contact onClose={() => setIsContactOpen(false)} />
+            </Suspense>
+          )}
         </main>
 
         <Suspense fallback={null}>
