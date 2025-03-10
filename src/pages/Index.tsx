@@ -1,4 +1,3 @@
-
 import { Suspense, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,7 +16,6 @@ const Contact = lazy(() => import('@/components/Contact'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
 
 const Index = () => {
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -83,7 +81,7 @@ const Index = () => {
         
         <main>
           <Suspense fallback={<HeroSkeleton />}>
-            <Hero onContactClick={() => setIsContactOpen(true)} />
+            <Hero />
           </Suspense>
 
           <Suspense fallback={<LoadingSpinner />}>
@@ -108,12 +106,6 @@ const Index = () => {
               <FAQ />
             </motion.div>
           </Suspense>
-
-          {isContactOpen && (
-            <Suspense fallback={<LoadingSpinner />}>
-              <Contact onClose={() => setIsContactOpen(false)} />
-            </Suspense>
-          )}
         </main>
 
         <Suspense fallback={null}>

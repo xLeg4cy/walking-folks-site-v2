@@ -3,15 +3,11 @@ import { Rocket, ArrowDown, Laptop, Smartphone, Star, Heart, ArrowRight } from '
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+import { loadFull } from 'tsparticles-engine';
 import type { Engine } from 'tsparticles-engine';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-interface HeroProps {
-  onContactClick: () => void;
-}
-
-const Hero = memo(({ onContactClick }: HeroProps) => {
+const Hero = memo(() => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const { scrollY } = useScroll();

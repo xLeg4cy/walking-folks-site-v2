@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
 import TopProgressBar from '@/components/TopProgressBar';
+import Contact from '@/components/Contact';
 
 interface MainLayoutProps {
   children?: React.ReactNode;
@@ -14,16 +15,10 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleContactClick = () => {
-    if (location.pathname !== '/') {
-      navigate('/#contact');
-    } else {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    setIsContactOpen(true);
   };
 
   const handleNavigation = (sectionId: string) => {
@@ -49,6 +44,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Footer />
       <CookieConsent />
       <ScrollToTop />
+      {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
     </div>
   );
 };
