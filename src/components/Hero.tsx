@@ -43,15 +43,15 @@ const Hero = memo(() => {
   }, []);
 
   const handleContactButtonClick = () => {
-    const contactDialog = document.querySelector('[role="dialog"]');
+    const newUrl = `${location.pathname}?contact=true`;
+    window.history.pushState({}, '', newUrl);
     
-    if (!contactDialog) {
-      const navbarContactButton = document.querySelector('nav button:last-child');
-      if (navbarContactButton instanceof HTMLElement) {
-        navbarContactButton.click();
-      } else {
-        navigate(`${location.pathname}?contact=true`);
-      }
+    const popStateEvent = new PopStateEvent('popstate', { state: {} });
+    window.dispatchEvent(popStateEvent);
+    
+    const navbarContactButton = document.querySelector('nav button:last-child');
+    if (navbarContactButton instanceof HTMLElement) {
+      navbarContactButton.click();
     }
   };
 
