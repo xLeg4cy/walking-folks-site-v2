@@ -3,15 +3,17 @@ import { Rocket, ArrowDown, Laptop, Smartphone, Star, Heart, ArrowRight } from '
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = memo(() => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, 50]);
+  const navigate = useNavigate();
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -38,6 +40,13 @@ const Hero = memo(() => {
       }
     };
   }, []);
+
+  const handleContactButtonClick = () => {
+    const contactDialog = document.querySelector('[role="dialog"]');
+    if (!contactDialog) {
+      navigate('/?contact=true');
+    }
+  };
 
   const handleLearnMoreClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -157,7 +166,7 @@ const Hero = memo(() => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                onClick={onContactClick}
+                onClick={handleContactButtonClick}
                 className="group w-full sm:w-auto bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#6366F1] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-indigo-600 dark:hover:bg-indigo-700 relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
