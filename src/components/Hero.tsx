@@ -42,17 +42,22 @@ const Hero = memo(() => {
     };
   }, []);
 
-  const handleContactButtonClick = () => {
+  const handleContactButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
     const newUrl = `${location.pathname}?contact=true`;
     window.history.pushState({}, '', newUrl);
     
     const popStateEvent = new PopStateEvent('popstate', { state: {} });
     window.dispatchEvent(popStateEvent);
     
-    const navbarContactButton = document.querySelector('nav button:last-child');
-    if (navbarContactButton instanceof HTMLElement) {
-      navbarContactButton.click();
-    }
+    setTimeout(() => {
+      const navbarContactButton = document.querySelector('nav button:last-child');
+      if (navbarContactButton instanceof HTMLElement) {
+        navbarContactButton.click();
+      }
+    }, 100);
   };
 
   const handleLearnMoreClick = (e: React.MouseEvent<HTMLButtonElement>) => {
