@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -16,6 +16,17 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isContactOpen, setIsContactOpen] = useState(false);
+
+  // Check for contact=true in URL query params
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('contact') === 'true') {
+      setIsContactOpen(true);
+      // Clean up the URL after opening the contact form
+      const newUrl = location.pathname;
+      window.history.replaceState({}, '', newUrl);
+    }
+  }, [location.search, location.pathname]);
 
   const handleContactClick = () => {
     setIsContactOpen(true);

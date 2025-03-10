@@ -6,7 +6,7 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Hero = memo(() => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -14,6 +14,7 @@ const Hero = memo(() => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, 50]);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -43,8 +44,14 @@ const Hero = memo(() => {
 
   const handleContactButtonClick = () => {
     const contactDialog = document.querySelector('[role="dialog"]');
+    
     if (!contactDialog) {
-      navigate('/?contact=true');
+      const navbarContactButton = document.querySelector('nav button:last-child');
+      if (navbarContactButton instanceof HTMLElement) {
+        navbarContactButton.click();
+      } else {
+        navigate(`${location.pathname}?contact=true`);
+      }
     }
   };
 
