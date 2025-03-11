@@ -71,26 +71,29 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Left side - Logo */}
           <NavLogo />
 
-          <div className="flex items-center space-x-4">
-            {/* Right side items that appear on all screen sizes */}
+          {/* Center - Navigation Items (desktop only) */}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <DesktopNav 
+              navItems={navItems}
+              activeSection={activeSection}
+              onSectionClick={scrollToSection}
+              onContactClick={onContactClick}
+            />
+          </div>
+
+          {/* Right side - Theme toggle, language toggle, and mobile menu */}
+          <div className="flex items-center space-x-2">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-center space-x-4"
+              className="flex items-center space-x-2"
             >
               <ThemeToggle />
               <LanguageToggle />
-              
-              {/* Desktop Nav elements */}
-              <DesktopNav 
-                navItems={navItems}
-                activeSection={activeSection}
-                onSectionClick={scrollToSection}
-                onContactClick={onContactClick}
-              />
               
               {/* Mobile Menu Toggle */}
               <MobileMenuToggle 
