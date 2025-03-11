@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -80,11 +79,10 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
               navItems={navItems}
               activeSection={activeSection}
               onSectionClick={scrollToSection}
-              onContactClick={onContactClick}
             />
           </div>
 
-          {/* Right side - Theme toggle, language toggle, and mobile menu */}
+          {/* Right side - Theme toggle, language toggle, contact button, and mobile menu */}
           <div className="flex items-center space-x-2">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -94,6 +92,14 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
             >
               <ThemeToggle />
               <LanguageToggle />
+              <motion.button
+                onClick={onContactClick}
+                className="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-[#4338CA] hover:bg-[#818CF8] dark:bg-[#818CF8] dark:hover:bg-[#4338CA] transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t('nav.contact')}
+              </motion.button>
               
               {/* Mobile Menu Toggle */}
               <MobileMenuToggle 
