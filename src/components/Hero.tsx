@@ -38,21 +38,35 @@ const Hero = memo(() => {
   }, []);
 
   const handleContactButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // Prevent any default behavior
     e.preventDefault();
     e.stopPropagation();
     
+    // Update URL but don't navigate/scroll
     const newUrl = `${location.pathname}?contact=true`;
     window.history.pushState({}, '', newUrl);
     
+    // Trigger popstate to notify any listeners
     const popStateEvent = new PopStateEvent('popstate', { state: {} });
     window.dispatchEvent(popStateEvent);
     
+    // Click the contact button in the navbar after a short delay
+    // but make sure we're not triggering any scroll behavior
     setTimeout(() => {
       const navbarContactButton = document.querySelector('nav button:last-child');
       if (navbarContactButton instanceof HTMLElement) {
-        navbarContactButton.click();
+        // Create and dispatch a custom click event that won't trigger scrolling
+        const clickEvent = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        });
+        navbarContactButton.dispatchEvent(clickEvent);
       }
     }, 100);
+    
+    // Explicitly return false to prevent any scrolling behavior
+    return false;
   };
 
   const handleLearnMoreClick = (e: React.MouseEvent<HTMLButtonElement>) => {

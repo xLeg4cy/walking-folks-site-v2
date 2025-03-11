@@ -12,13 +12,21 @@ interface HeroButtonsProps {
 const HeroButtons = ({ onContactClick, onLearnMoreClick }: HeroButtonsProps) => {
   const { t } = useTranslation();
   
+  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onContactClick(e);
+    // Prevent any default scrolling behavior
+    return false;
+  };
+  
   return (
     <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 justify-center">
       <motion.button 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        onClick={onContactClick}
+        onClick={handleContactClick}
         className="group w-full sm:w-auto bg-[#4338CA] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#6366F1] transition-all transform hover:-translate-y-1 hover:shadow-lg dark:bg-indigo-600 dark:hover:bg-indigo-700 relative overflow-hidden"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
