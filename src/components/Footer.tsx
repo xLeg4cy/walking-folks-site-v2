@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center">
-              <img src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png" alt="Walking Folks" className="h-8 w-auto" width="32" height="32" />
+              <img src="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png" alt="Walking Folks" className="h-8 w-auto rounded-md" width="32" height="32" />
               <span className="ml-3 font-bold text-xl text-gray-900 dark:text-white">Walking Folks</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">

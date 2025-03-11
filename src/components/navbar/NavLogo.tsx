@@ -13,9 +13,9 @@ const NavLogo = () => {
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          src="/lovable-uploads/c067a121-ecd5-40ee-b6ee-293f2ed14efe.png"
+          src="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png"
           alt="Walking Folks Logo"
-          className="h-8 w-auto"
+          className="h-8 w-auto rounded-md"
         />
         <motion.span 
           className="text-xl font-bold text-gray-900 dark:text-white"
