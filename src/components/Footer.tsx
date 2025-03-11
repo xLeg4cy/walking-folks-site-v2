@@ -1,3 +1,4 @@
+
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -11,15 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center">
-              <div className="h-8 w-auto flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png" 
-                  alt="Walking Folks" 
-                  className="h-full w-auto object-contain mix-blend-normal"
-                  width="32" 
-                  height="32" 
-                />
-              </div>
+              <img src="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png" alt="Walking Folks" className="h-8 w-auto rounded-md" width="32" height="32" />
               <span className="ml-3 font-bold text-xl text-gray-900 dark:text-white">Walking Folks</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
