@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 
 interface HeroButtonsProps {
   onContactClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -13,10 +12,14 @@ const HeroButtons = ({ onContactClick, onLearnMoreClick }: HeroButtonsProps) => 
   const { t } = useTranslation();
   
   const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // Prevent any default behavior 
     e.preventDefault();
     e.stopPropagation();
+    
+    // Call the parent handler
     onContactClick(e);
-    // Prevent any default scrolling behavior
+    
+    // Extra measure to ensure no scrolling happens
     return false;
   };
   
@@ -31,7 +34,6 @@ const HeroButtons = ({ onContactClick, onLearnMoreClick }: HeroButtonsProps) => 
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         type="button"
-        rel="noopener noreferrer"
       >
         <span className="relative z-10 flex items-center justify-center">
           {t('hero.cta.start')}

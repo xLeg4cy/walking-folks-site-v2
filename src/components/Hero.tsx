@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, memo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -38,34 +37,20 @@ const Hero = memo(() => {
   }, []);
 
   const handleContactButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // Prevent any default behavior
+    // Prevent default browser behavior
     e.preventDefault();
     e.stopPropagation();
     
-    // Update URL but don't navigate/scroll
-    const newUrl = `${location.pathname}?contact=true`;
-    window.history.pushState({}, '', newUrl);
+    // Update URL with contact=true parameter
+    window.history.pushState({}, '', `${location.pathname}?contact=true`);
     
-    // Trigger popstate to notify any listeners
-    const popStateEvent = new PopStateEvent('popstate', { state: {} });
-    window.dispatchEvent(popStateEvent);
+    // Manually dispatch popstate to notify listeners without triggering navigation
+    window.dispatchEvent(new PopStateEvent('popstate', { state: {} }));
     
-    // Click the contact button in the navbar after a short delay
-    // but make sure we're not triggering any scroll behavior
-    setTimeout(() => {
-      const navbarContactButton = document.querySelector('nav button:last-child');
-      if (navbarContactButton instanceof HTMLElement) {
-        // Create and dispatch a custom click event that won't trigger scrolling
-        const clickEvent = new MouseEvent('click', {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        });
-        navbarContactButton.dispatchEvent(clickEvent);
-      }
-    }, 100);
+    // Directly trigger the contact dialog to open
+    document.dispatchEvent(new CustomEvent('openContactDialog'));
     
-    // Explicitly return false to prevent any scrolling behavior
+    // Return false to prevent any default behavior
     return false;
   };
 
@@ -107,3 +92,4 @@ const Hero = memo(() => {
 Hero.displayName = 'Hero';
 
 export default Hero;
+

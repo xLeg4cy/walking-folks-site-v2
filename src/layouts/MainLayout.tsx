@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -17,8 +16,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   const location = useLocation();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  // Check for contact=true in URL query params
+  // Check for contact=true in URL query params and listen for custom event
   useEffect(() => {
+    // URL parameter handler
     const params = new URLSearchParams(location.search);
     if (params.get('contact') === 'true') {
       setIsContactOpen(true);
@@ -26,6 +26,17 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       const newUrl = location.pathname;
       window.history.replaceState({}, '', newUrl);
     }
+    
+    // Custom event listener
+    const handleOpenContact = () => {
+      setIsContactOpen(true);
+    };
+    
+    document.addEventListener('openContactDialog', handleOpenContact);
+    
+    return () => {
+      document.removeEventListener('openContactDialog', handleOpenContact);
+    };
   }, [location.search, location.pathname]);
 
   const handleContactClick = () => {
