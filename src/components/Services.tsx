@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Computer, Users, Database, Shield, UserPlus, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Computer, Database, Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -37,18 +37,18 @@ const Services = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Combine software development and project management features
+  const softwareFeatures = [
+    ...t('services.sections.software.features', { returnObjects: true }) as string[],
+    ...t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
+  ];
+
   const services = [
     {
       icon: <Computer className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.software.title'),
       description: t('services.sections.software.description'),
-      features: t('services.sections.software.features', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Users className="w-6 h-6 text-[#4338CA]" />,
-      title: t('services.sections.projectManagement.title'),
-      description: t('services.sections.projectManagement.description'),
-      features: t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
+      features: softwareFeatures
     },
     {
       icon: <Database className="w-6 h-6 text-[#4338CA]" />,
@@ -64,12 +64,6 @@ const Services = () => {
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
       features: t('services.sections.security.features', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <UserPlus className="w-6 h-6 text-[#4338CA]" />,
-      title: t('services.sections.outsourcing.title'),
-      description: t('services.sections.outsourcing.description'),
-      features: t('services.sections.outsourcing.features', { returnObjects: true }) as string[]
     }
   ];
 
