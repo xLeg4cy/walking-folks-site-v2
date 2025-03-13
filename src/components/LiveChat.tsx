@@ -3,8 +3,8 @@ import { MessageCircleMore } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const LiveChat = () => {
-  // Placeholder phone number - replace with your actual WhatsApp business number
-  const phoneNumber = "1234567890";
+  // Use the correct phone number format for WhatsApp - without dashes or spaces
+  const phoneNumber = "19789432457";
   
   const handleWhatsAppClick = () => {
     // Format: https://wa.me/<number>
