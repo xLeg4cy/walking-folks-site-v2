@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 
 const technologies1 = [
   {
@@ -143,10 +144,17 @@ const technologies2 = [
 ];
 
 const TechnologyCarousel = () => {
+  const [isHoveredLane1, setIsHoveredLane1] = useState(false);
+  const [isHoveredLane2, setIsHoveredLane2] = useState(false);
+
   return (
     <div className="mb-8 flex w-full flex-col gap-4 md:gap-3 xl:gap-1">
-      <div className="relative h-20 overflow-hidden md:h-24">
-        <ul className="absolute flex min-w-[200%] justify-around animate-slide-left hover:pause">
+      <div 
+        className="relative h-20 overflow-hidden md:h-24"
+        onMouseEnter={() => setIsHoveredLane1(true)}
+        onMouseLeave={() => setIsHoveredLane1(false)}
+      >
+        <ul className={`absolute flex min-w-[200%] justify-around animate-slide-left ${isHoveredLane1 ? 'animation-play-state-paused' : ''}`}>
           {[...technologies1, ...technologies1].map((tech, index) => (
             <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <div className="flex flex-col items-center">
@@ -159,8 +167,12 @@ const TechnologyCarousel = () => {
           ))}
         </ul>
       </div>
-      <div className="relative h-20 overflow-hidden md:h-24">
-        <ul className="absolute flex min-w-[200%] justify-around animate-slide-right hover:pause">
+      <div 
+        className="relative h-20 overflow-hidden md:h-24"
+        onMouseEnter={() => setIsHoveredLane2(true)}
+        onMouseLeave={() => setIsHoveredLane2(false)}
+      >
+        <ul className={`absolute flex min-w-[200%] justify-around animate-slide-right ${isHoveredLane2 ? 'animation-play-state-paused' : ''}`}>
           {[...technologies2, ...technologies2].map((tech, index) => (
             <li key={index} className="group hover:scale-110 px-4 md:px-6 transition-all duration-300">
               <div className="flex flex-col items-center">
