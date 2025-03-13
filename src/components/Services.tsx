@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Computer, Database, Shield, ArrowRight, CheckCircle2, Network, Lock } from 'lucide-react';
+import { Computer, Database, Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -64,32 +64,6 @@ const Services = () => {
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
       features: t('services.sections.security.features', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Network className="w-6 h-6 text-[#4338CA]" />,
-      title: "Network Security",
-      description: "Comprehensive protection for your entire network infrastructure:",
-      features: [
-        "Firewall configuration and management",
-        "VPN implementation and support",
-        "Network traffic monitoring",
-        "Intrusion detection systems",
-        "Network segmentation strategies",
-        "DDoS attack prevention"
-      ]
-    },
-    {
-      icon: <Lock className="w-6 h-6 text-[#4338CA]" />,
-      title: "Application Security",
-      description: "Secure your applications from development to deployment:",
-      features: [
-        "Code security audits",
-        "OWASP compliance implementation",
-        "Authentication systems security",
-        "API security testing",
-        "Data encryption strategies",
-        "Vulnerability management"
-      ]
     }
   ];
 
