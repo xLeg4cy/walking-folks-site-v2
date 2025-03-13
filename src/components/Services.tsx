@@ -56,14 +56,20 @@ const Services = () => {
       description: t('services.sections.infrastructure.description'),
       features: [
         ...t('services.sections.infrastructure.features', { returnObjects: true }) as string[],
-        "Infrastructure as a Service (IaaS)"
+        "Infrastructure as a Service (IaaS)",
+        "System Administration",
+        "Performance Optimization"
       ]
     },
     {
       icon: <Shield className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
-      features: t('services.sections.security.features', { returnObjects: true }) as string[]
+      features: [
+        ...t('services.sections.security.features', { returnObjects: true }) as string[],
+        "Network Security",
+        "Application Security"
+      ]
     }
   ];
 
