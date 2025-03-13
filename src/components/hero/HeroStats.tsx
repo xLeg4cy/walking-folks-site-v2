@@ -31,7 +31,7 @@ const HeroStats = () => {
         className="group bg-white dark:bg-gray-800/50 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300"
       >
         <div className="flex items-center justify-between mb-2">
-          <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">99.99%</div>
+          <div className="text-2xl md:text-3xl font-bold text-[#4338CA] dark:text-indigo-400">99%</div>
           <Star className="h-5 w-5 text-gray-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300" />
         </div>
         <div className="text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.satisfaction')}</div>
