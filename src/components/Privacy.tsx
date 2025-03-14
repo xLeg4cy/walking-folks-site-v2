@@ -10,7 +10,7 @@ const Privacy = () => {
           
           <section className="mb-8">
             <h3 className="text-xl font-semibold mb-4">1. Information We Collect</h3>
-            <p>We collect information that you provide directly to us, including but not limited to:</p>
+            <p>Walking Folks collects information that you provide directly to us, including but not limited to:</p>
             <ul className="list-disc pl-6 mb-4">
               <li>Name and contact information</li>
               <li>Account credentials</li>
@@ -21,7 +21,7 @@ const Privacy = () => {
 
           <section className="mb-8">
             <h3 className="text-xl font-semibold mb-4">2. How We Use Your Information</h3>
-            <p>We use the information we collect to:</p>
+            <p>Walking Folks uses the information we collect to:</p>
             <ul className="list-disc pl-6 mb-4">
               <li>Provide and maintain our services</li>
               <li>Process your transactions</li>
@@ -32,7 +32,7 @@ const Privacy = () => {
 
           <section className="mb-8">
             <h3 className="text-xl font-semibold mb-4">3. Information Sharing</h3>
-            <p>We do not sell or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+            <p>Walking Folks does not sell or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
             <ul className="list-disc pl-6 mb-4">
               <li>With your consent</li>
               <li>To comply with legal obligations</li>
@@ -42,13 +42,13 @@ const Privacy = () => {
 
           <section className="mb-8">
             <h3 className="text-xl font-semibold mb-4">4. Security</h3>
-            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, modification, or destruction.</p>
+            <p>Walking Folks implements appropriate technical and organizational measures to protect your personal information against unauthorized access, modification, or destruction.</p>
           </section>
 
           <section className="mb-8">
             <h3 className="text-xl font-semibold mb-4">5. Contact Us</h3>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p>Email: privacy@example.com</p>
+            <p>Email: <a href="mailto:contact@walkingfolks.com" className="text-brand-purple-medium hover:underline">contact@walkingfolks.com</a></p>
           </section>
         </div>
       </div>
