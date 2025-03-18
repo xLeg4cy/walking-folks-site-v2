@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -45,7 +46,14 @@ const Blog = () => {
           Back
         </button>
 
-        <h1 className="text-4xl font-bold mb-12">Our Blog</h1>
+        <h1 className="text-4xl font-bold mb-6">Our Blog</h1>
+        
+        <Alert className="bg-brand-purple-light/20 border-brand-purple-medium mb-12">
+          <AlertTitle className="text-brand-purple-dark text-lg font-bold">Coming Soon!</AlertTitle>
+          <AlertDescription className="text-brand-purple-medium">
+            Our blog is currently under development. Stay tuned for insightful articles and updates!
+          </AlertDescription>
+        </Alert>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (

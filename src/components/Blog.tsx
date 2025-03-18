@@ -1,5 +1,6 @@
 
 import { BookOpen } from 'lucide-react';
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const Blog = () => {
   const posts = [
@@ -29,7 +30,7 @@ const Blog = () => {
   return (
     <section id="blog" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center bg-black/5 rounded-full px-6 py-2 text-sm font-medium mb-8">
             <BookOpen size={16} className="mr-2" />
             Latest Insights
@@ -39,6 +40,13 @@ const Blog = () => {
             Stay up to date with the latest trends, insights, and updates from our team
           </p>
         </div>
+
+        <Alert className="bg-brand-purple-light/20 border-brand-purple-medium mb-12 max-w-2xl mx-auto">
+          <AlertTitle className="text-brand-purple-dark text-lg font-bold">Coming Soon!</AlertTitle>
+          <AlertDescription className="text-brand-purple-medium">
+            Our blog is currently under development. Stay tuned for insightful articles and updates!
+          </AlertDescription>
+        </Alert>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
