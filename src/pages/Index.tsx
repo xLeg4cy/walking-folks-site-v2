@@ -1,3 +1,4 @@
+
 import { Suspense, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,6 +8,7 @@ import { HeroSkeleton, ServicesSkeleton, TestimonialSkeleton } from '@/component
 import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import StrategicPartners from '@/components/StrategicPartners';
 import { lazy } from 'react';
 
 // Lazy load non-critical components
@@ -98,6 +100,8 @@ const Index = () => {
               <Suspense fallback={<ServicesSkeleton />}>
                 <Services />
               </Suspense>
+              
+              <StrategicPartners />
 
               <Suspense fallback={<TestimonialSkeleton />}>
                 <Testimonials />
