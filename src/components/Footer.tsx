@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+
+import { Facebook, X, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -30,8 +31,8 @@ const Footer = () => {
               <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter size={20} />
+              <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="X">
+                <X size={20} />
               </a>
               <a href="#" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram size={20} />
