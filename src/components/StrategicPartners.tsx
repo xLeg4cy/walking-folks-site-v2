@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink, Award, Star } from "lucide-react";
+
 interface Partner {
   id: string;
   name: string;
@@ -13,20 +14,23 @@ interface Partner {
   since: string;
   featured: boolean;
 }
+
 const partners: Partner[] = [{
-  id: "acme-corp",
-  name: "ACME Corporation",
-  logo: "/placeholder.svg",
-  description: "A key strategic partner helping us deliver exceptional services and innovative solutions to our clients. Their expertise in technology infrastructure complements our development capabilities.",
+  id: "xcape-tours",
+  name: "Xcape Tours",
+  logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
+  description: "A key strategic partner in the travel industry. Xcape Tours has been working with us to create innovative digital experiences for adventure seekers and travelers worldwide.",
   website: "https://example.com",
-  since: "2023",
+  since: "2024",
   featured: true
 }];
+
 const StrategicPartners = () => {
   const [visiblePartners, setVisiblePartners] = useState<Partner[]>([]);
   useEffect(() => {
     setVisiblePartners(partners);
   }, []);
+
   return <section id="partners" className="py-20 bg-gray-50/50 dark:bg-gray-900/30 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/5 to-transparent dark:from-transparent dark:via-indigo-900/5 dark:to-transparent" />
       
@@ -74,7 +78,6 @@ const StrategicPartners = () => {
         </motion.div>
 
         {visiblePartners.length === 1 ?
-      // Featured partner spotlight for when there's only one partner
       <motion.div initial={{
         opacity: 0,
         y: 20
@@ -137,7 +140,6 @@ const StrategicPartners = () => {
               
             </div>
           </motion.div> :
-      // Grid layout for when there are multiple partners
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {visiblePartners.map(partner => <motion.div key={partner.id} initial={{
           opacity: 0,
@@ -150,7 +152,6 @@ const StrategicPartners = () => {
         }} viewport={{
           once: true
         }} className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
-                {/* Partner card content - will be implemented when multiple partners are added */}
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
@@ -170,4 +171,5 @@ const StrategicPartners = () => {
       </motion.div>
     </section>;
 };
+
 export default StrategicPartners;
