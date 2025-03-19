@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -98,7 +99,8 @@ const StrategicPartners = () => {
                 type: "spring",
                 stiffness: 300
               }} className="relative">
-                    <div className="absolute -top-2 -right-2">
+                    {/* Badge moved above the logo instead of on the right */}
+                    <div className="mb-4 text-center">
                       <Badge className="bg-[#4338CA] hover:bg-[#4338CA]/90 text-white">
                         <Star className="h-3 w-3 mr-1 fill-current" /> Featured Partner
                       </Badge>
