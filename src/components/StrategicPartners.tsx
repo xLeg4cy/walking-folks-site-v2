@@ -16,15 +16,26 @@ interface Partner {
   featured: boolean;
 }
 
-const partners: Partner[] = [{
-  id: "xcape-tours",
-  name: "Xcape Tours",
-  logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
-  description: "A key strategic partner in the travel industry. Xcape Tours has been working with us to create innovative digital experiences for adventure seekers and travelers worldwide.",
-  website: "https://example.com",
-  since: "2024",
-  featured: true
-}];
+const partners: Partner[] = [
+  {
+    id: "xcape-tours",
+    name: "Xcape Tours",
+    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
+    description: "A key strategic partner in the travel industry. Xcape Tours has been working with us to create innovative digital experiences for adventure seekers and travelers worldwide.",
+    website: "https://example.com",
+    since: "2024",
+    featured: true
+  },
+  {
+    id: "global-travels",
+    name: "Global Travels",
+    logo: "/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png",
+    description: "Providing premium travel experiences with a focus on sustainability. Global Travels partners with us to enhance their digital presence and improve customer engagement across their services.",
+    website: "https://example.com",
+    since: "2023",
+    featured: false
+  }
+];
 
 const StrategicPartners = () => {
   const [visiblePartners, setVisiblePartners] = useState<Partner[]>([]);
