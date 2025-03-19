@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -16,26 +15,15 @@ interface Partner {
   featured: boolean;
 }
 
-const partners: Partner[] = [
-  {
-    id: "xcape-tours",
-    name: "Xcape Tours",
-    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
-    description: "A key strategic partner in the travel industry. Xcape Tours has been working with us to create innovative digital experiences for adventure seekers and travelers worldwide.",
-    website: "https://example.com",
-    since: "2024",
-    featured: true
-  },
-  {
-    id: "global-travels",
-    name: "Global Travels",
-    logo: "/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png",
-    description: "Providing premium travel experiences with a focus on sustainability. Global Travels partners with us to enhance their digital presence and improve customer engagement across their services.",
-    website: "https://example.com",
-    since: "2023",
-    featured: false
-  }
-];
+const partners: Partner[] = [{
+  id: "xcape-tours",
+  name: "Xcape Tours",
+  logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
+  description: "A key strategic partner in the travel industry. Xcape Tours has been working with us to create innovative digital experiences for adventure seekers and travelers worldwide.",
+  website: "https://example.com",
+  since: "2024",
+  featured: true
+}];
 
 const StrategicPartners = () => {
   const [visiblePartners, setVisiblePartners] = useState<Partner[]>([]);
@@ -110,7 +98,6 @@ const StrategicPartners = () => {
                 type: "spring",
                 stiffness: 300
               }} className="relative">
-                    {/* Badge moved above the logo instead of on the right */}
                     <div className="mb-4 text-center">
                       <Badge className="bg-[#4338CA] hover:bg-[#4338CA]/90 text-white">
                         <Star className="h-3 w-3 mr-1 fill-current" /> Featured Partner
@@ -139,7 +126,6 @@ const StrategicPartners = () => {
                       {visiblePartners[0].description}
                     </p>
                   </CardContent>
-                  {/* External website link removed */}
                 </div>
               </div>
             </Card>
@@ -169,7 +155,6 @@ const StrategicPartners = () => {
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                     {partner.description}
                   </p>
-                  {/* External website link removed */}
                 </div>
               </motion.div>)}
           </div>}
