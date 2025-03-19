@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Award, Star } from "lucide-react";
+import { Award, Star } from "lucide-react";
 
 interface Partner {
   id: string;
@@ -119,7 +119,7 @@ const StrategicPartners = () => {
                       </Badge>
                     </div>
                     <CardDescription className="text-muted-foreground dark:text-gray-400 mt-1">
-                      Strategic Technology Partner
+                      Strategic Travel Partner
                     </CardDescription>
                   </CardHeader>
                   <Separator className="my-4" />
@@ -128,12 +128,7 @@ const StrategicPartners = () => {
                       {visiblePartners[0].description}
                     </p>
                   </CardContent>
-                  <CardFooter className="p-0 pt-2">
-                    <a href={visiblePartners[0].website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#4338CA] hover:text-[#564ED1] dark:text-brand-purple-light dark:hover:text-white transition-colors">
-                      Visit Partner Website
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </CardFooter>
+                  {/* External website link removed */}
                 </div>
               </div>
             </Card>
@@ -163,10 +158,7 @@ const StrategicPartners = () => {
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                     {partner.description}
                   </p>
-                  <a href={partner.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#4338CA] hover:text-[#564ED1] dark:text-brand-purple-light dark:hover:text-white text-sm">
-                    Learn more
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+                  {/* External website link removed */}
                 </div>
               </motion.div>)}
           </div>}
