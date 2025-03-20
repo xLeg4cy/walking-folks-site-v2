@@ -71,14 +71,7 @@
 
 /* Fix for scroll issues and content jumping */
 html {
-  overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
   scrollbar-gutter: stable; /* Reserve space for scrollbar */
-}
-
-body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  max-width: 100vw;
-  width: 100%;
 }
 
 /* Responsive container fixes */
@@ -89,4 +82,16 @@ body {
 /* Fix for element positioning in framer-motion */
 .relative {
   position: relative;
+}
+
+/* Prevent Radix UI dialog and dropdown shifting layout */
+[data-state="open"] ~ * {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Specific fix for dropdown menus */
+.dropdown-open {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }

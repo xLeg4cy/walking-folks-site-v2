@@ -9,9 +9,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
+  
+  // Reset any overflow styles that might have been set on the body
+  useEffect(() => {
+    const handleDropdownChange = () => {
+      // Force scrollbar to be visible and ensure no layout shift
+      document.documentElement.style.overflow = "scroll";
+      document.body.style.paddingRight = "0";
+      document.body.style.marginRight = "0";
+    };
+    
+    return () => handleDropdownChange();
+  }, []);
 
   return (
     <DropdownMenu>
@@ -28,7 +41,7 @@ export function ThemeToggle() {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-background">
+      <DropdownMenuContent align="end" className="bg-background dropdown-open">
         <DropdownMenuItem 
           onClick={() => setTheme("light")}
           className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}

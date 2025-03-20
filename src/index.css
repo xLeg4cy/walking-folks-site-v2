@@ -56,17 +56,37 @@
 
   html {
     @apply scroll-smooth;
-    scrollbar-gutter: stable both-edges;
-    overflow-y: scroll;
-    margin-right: 0 !important;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent; /* For Firefox */
+    overflow-y: scroll; /* Force scrollbar to always be present */
+    margin-right: 0 !important; /* Prevent shifting when modal opens */
+    padding-right: 0 !important; /* Prevent shifting when modal opens */
+  }
+
+  /* Explicitly set the scrollbar width for WebKit browsers */
+  ::-webkit-scrollbar {
+    width: 8px; /* Thin but visible scrollbar */
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 4px;
   }
 
   body {
     @apply bg-background text-foreground font-['Inter'] antialiased;
-    margin-right: 0 !important;
-    padding-right: 0 !important;
+    margin-right: 0 !important; /* Prevent shifting when modal opens */
+    padding-right: 0 !important; /* Prevent shifting when modal opens */
     max-width: 100vw;
     overflow-x: hidden;
+    /* Prevent Radix from modifying these properties */
+    overflow-y: visible !important;
+    position: relative;
   }
   
   /* Improve focus styles for accessibility */
@@ -181,6 +201,16 @@
   .focus-ring {
     @apply outline-none ring-2 ring-offset-2 ring-[#4338CA] dark:ring-indigo-300 transition-shadow duration-200;
   }
+
+  /* Fix for Radix UI portals */
+  .radix-portal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+  }
   
   /* Reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
@@ -194,6 +224,14 @@
 
   .perspective-1000 {
     perspective: 1000px;
+  }
+  
+  /* When a modal/dialog is open, ensure no layout shift */
+  [data-state="open"] + body,
+  body[data-overflow="hidden"] {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    overflow: auto !important;
   }
 }
 

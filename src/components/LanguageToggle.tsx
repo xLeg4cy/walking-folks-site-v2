@@ -9,9 +9,30 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
+  
+  // Reset any overflow styles that might have been set on the body
+  useEffect(() => {
+    const handleDropdownChange = () => {
+      // Force scrollbar to be visible and ensure no layout shift
+      document.documentElement.style.overflow = "scroll";
+      document.body.style.paddingRight = "0";
+      document.body.style.marginRight = "0";
+    };
+    
+    return () => handleDropdownChange();
+  }, []);
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    // Reset any overflow styles set by Radix
+    document.documentElement.style.overflow = "scroll";
+    document.body.style.paddingRight = "0";
+    document.body.style.marginRight = "0";
+  };
 
   return (
     <DropdownMenu>
@@ -27,15 +48,15 @@ const LanguageToggle = () => {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-background">
+      <DropdownMenuContent align="end" className="bg-background dropdown-open">
         <DropdownMenuItem 
-          onClick={() => i18n.changeLanguage('en')}
+          onClick={() => changeLanguage('en')}
           className="cursor-pointer"
         >
           English
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => i18n.changeLanguage('es')}
+          onClick={() => changeLanguage('es')}
           className="cursor-pointer"
         >
           Español
