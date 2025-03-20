@@ -41,6 +41,30 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
     }, 400); // Half of the flip animation duration
   }, [currentPartnerIndex, partners, flipping]);
 
+  // Auto-rotation effect
+  useEffect(() => {
+    // Start auto-rotation
+    const startAutoRotation = () => {
+      if (autoplayTimerRef.current) clearTimeout(autoplayTimerRef.current);
+      
+      autoplayTimerRef.current = setTimeout(() => {
+        nextPartner();
+      }, 2000); // Rotate every 2 seconds
+    };
+
+    // Start the initial rotation
+    if (partners.length > 1) {
+      startAutoRotation();
+    }
+    
+    // Reset the timer when partner changes
+    return () => {
+      if (autoplayTimerRef.current) {
+        clearTimeout(autoplayTimerRef.current);
+      }
+    };
+  }, [currentPartnerIndex, nextPartner, partners.length]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
