@@ -38,7 +38,7 @@ const FAQ = () => {
             className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 mx-auto"
           >
             <HelpCircle size={16} className="mr-2 animate-bounce-slow" />
-            Common Questions
+            {t('faq.badge')}
           </motion.div>
           
           <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">

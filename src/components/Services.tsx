@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Computer, Database, Shield, ArrowRight, CheckCircle2, Wrench } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -90,7 +91,7 @@ const Services = () => {
             className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 mx-auto"
           >
             <Wrench size={16} className="mr-2 animate-pulse" />
-            Premium Solutions
+            {t('services.badge')}
           </motion.div>
           
           <h2 className="text-4xl font-bold mb-4 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">

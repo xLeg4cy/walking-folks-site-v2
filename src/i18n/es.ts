@@ -38,7 +38,8 @@ export const esTranslation = {
     "quality": {
       "title": "Calidad Asegurada",
       "description": "Comprometidos con la entrega de soluciones de alta calidad."
-    }
+    },
+    "badge": "Quiénes Somos"
   },
   "services": {
     "title": "Nuestros Servicios",
@@ -114,7 +115,8 @@ export const esTranslation = {
         "title": "Nuestro Stack Tecnológico",
         "description": "Utilizamos tecnologías y frameworks de vanguardia para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
       }
-    }
+    },
+    "badge": "Soluciones Premium"
   },
   "partners": {
     "subtitle": "Alianzas Estratégicas",
@@ -150,7 +152,8 @@ export const esTranslation = {
         "question": "¿Cómo manejan la comunicación del proyecto?",
         "answer": "Mantenemos una comunicación clara a través de reuniones regulares, informes de progreso y herramientas dedicadas de gestión de proyectos. Tendrá una línea directa con su equipo de proyecto y actualizaciones regulares sobre los hitos."
       }
-    ]
+    ],
+    "badge": "Preguntas Frecuentes"
   },
   "footer": {
     "slogan": "Creando soluciones innovadoras para los desafíos del mañana",
@@ -178,5 +181,8 @@ export const esTranslation = {
     "title": "Iniciemos una Conversación",
     "subtitle": "Contáctanos",
     "description": "¿Tienes un proyecto en mente o quieres saber más? Nos encantaría escucharte."
+  },
+  "tech": {
+    "badge": "Experiencia Tecnológica"
   }
 };

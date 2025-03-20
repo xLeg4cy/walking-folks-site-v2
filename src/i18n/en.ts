@@ -38,7 +38,8 @@ export const enTranslation = {
     "quality": {
       "title": "Quality Assured",
       "description": "Committed to delivering high-quality solutions."
-    }
+    },
+    "badge": "Who We Are"
   },
   "services": {
     "title": "Our Services",
@@ -114,7 +115,8 @@ export const enTranslation = {
         "title": "Our Technology Stack",
         "description": "We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms."
       }
-    }
+    },
+    "badge": "Premium Solutions"
   },
   "partners": {
     "subtitle": "Strategic Alliances",
@@ -150,7 +152,8 @@ export const enTranslation = {
         "question": "How do you handle project communication?",
         "answer": "We maintain clear communication through regular meetings, progress reports, and dedicated project management tools. You'll have a direct line to your project team and regular updates on milestones."
       }
-    ]
+    ],
+    "badge": "Common Questions"
   },
   "footer": {
     "slogan": "Creating innovative solutions for tomorrow's challenges",
@@ -178,5 +181,8 @@ export const enTranslation = {
     "title": "Let's Start a Conversation",
     "subtitle": "Get in Touch",
     "description": "Have a project in mind or just want to learn more? We'd love to hear from you."
+  },
+  "tech": {
+    "badge": "Technology Expertise"
   }
 };
