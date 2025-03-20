@@ -37,16 +37,16 @@ const LanguageToggle = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <motion.button
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          className="relative w-10 h-10 p-0 border-0 bg-transparent text-foreground dark:text-white hover:bg-[#818CF8]/10 rounded-md focus:outline-none"
-          aria-label="Switch language"
         >
-          <Languages className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Switch language</span>
-        </motion.button>
+          <Button variant="ghost" size="icon" className="relative w-10 h-10 hover:bg-[#818CF8]/10">
+            <Languages className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">Switch language</span>
+          </Button>
+        </motion.div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-background dropdown-open">
         <DropdownMenuItem 
