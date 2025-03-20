@@ -1,6 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Code } from 'lucide-react';
 import TechnologyCarousel from './TechnologyCarousel';
 
 const TechnologyStack = () => {
@@ -24,6 +25,18 @@ const TechnologyStack = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 hover:bg-indigo-200 dark:hover:bg-indigo-800/40 cursor-pointer transition-all mx-auto"
+          >
+            <Code size={16} className="mr-2 animate-spin-slow" />
+            Technology Expertise
+          </motion.div>
+          
           <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8] dark:from-indigo-300 dark:to-indigo-500">
             {t('services.sections.tech.title')}
           </h2>
