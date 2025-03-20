@@ -134,7 +134,7 @@ const resources = {
           },
           {
             "question": "What technologies do you work with?",
-            "answer": "We work with a wide range of modern technologies including React, Node.js, Python, TypeScript, Taildwind CSS, and more. We choose the best tech stack based on your project's specific requirements and goals."
+            "answer": "We work with a wide range of modern technologies including React, Node.js, Python, TypeScript, Tailwind CSS, and more. We choose the best tech stack based on your project's specific requirements and goals."
           },
           {
             "question": "How do you handle project communication?",
@@ -207,7 +207,7 @@ const resources = {
         },
         "globalReach": {
           "title": "Alcance Global",
-          "description": "Startup en crecimiento con base en República Dominicana, expandiéndose al mercado de EE.UU."
+          "description": "Startup en crecimiento con base en EE.UU., expandiéndose al mercado de República Dominicana."
         },
         "quality": {
           "title": "Calidad Asegurada",
@@ -279,7 +279,7 @@ const resources = {
           },
           "tech": {
             "title": "Nuestro Stack Tecnológico",
-            "description": "Llevamos a cabo tecnologías de vanguardia y marcos para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
+            "description": "Utilizamos tecnologías y frameworks de vanguardia para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
           }
         }
       },
@@ -301,7 +301,7 @@ const resources = {
           },
           {
             "question": "¿Con qué tecnologías trabajan?",
-            "answer": "Trabajamos con una amplia gama de tecnologías modernas incluyendo React, Node.js, Python, AWS y más. Elegimos la mejor pila tecnológica según los requisitos y objetivos específicos de su proyecto."
+            "answer": "Trabajamos con una amplia gama de tecnologías modernas incluyendo React, Node.js, Python, TypeScript, Tailwind CSS y más. Elegimos la mejor pila tecnológica según los requisitos y objetivos específicos de su proyecto."
           },
           {
             "question": "¿Cómo manejan la comunicación del proyecto?",
@@ -325,7 +325,7 @@ const resources = {
         },
         "contactUs": {
           "title": "Contáctenos",
-          "address": "300 Canal Street, Lawrence, MA 01840",
+          "address": "Lawrence, MA 01840",
           "phone": "1 (978) 943-2457",
           "email": "contact@walkingfolks.com"
         },
@@ -352,3 +352,4 @@ i18n
   });
 
 export default i18n;
+
