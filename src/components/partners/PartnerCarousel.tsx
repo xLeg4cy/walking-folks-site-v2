@@ -1,7 +1,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Partner } from "@/data/partnersData";
 import { Button } from "@/components/ui/button";
 import PartnerCard from "./PartnerCard";
@@ -14,11 +14,8 @@ interface PartnerCarouselProps {
 const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
   const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
   const [flipping, setFlipping] = useState(false);
-  const [autoplay, setAutoplay] = useState(true);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
-  
-  const rotationInterval = 5000; // 5 seconds per partner
   
   const nextPartner = useCallback(() => {
     if (flipping || !partners.length) return;
@@ -44,45 +41,13 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
     }, 400); // Half of the flip animation duration
   }, [currentPartnerIndex, partners, flipping]);
 
-  // Setup autoplay rotation
-  useEffect(() => {
-    if (autoplay && partners.length > 1) {
-      autoplayTimerRef.current = setInterval(() => {
-        if (!document.hidden) {
-          nextPartner();
-        }
-      }, rotationInterval);
-    }
-    
-    return () => {
-      if (autoplayTimerRef.current) {
-        clearInterval(autoplayTimerRef.current);
-      }
-    };
-  }, [autoplay, nextPartner, partners.length]);
-
-  // Pause autoplay when user interacts with carousel
-  const handleUserInteraction = () => {
-    setAutoplay(false);
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
-    }
-  };
-
-  // Toggle autoplay function
-  const toggleAutoplay = () => {
-    setAutoplay(prev => !prev);
-  };
-
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
         prevPartner();
-        handleUserInteraction();
       } else if (e.key === 'ArrowRight') {
         nextPartner();
-        handleUserInteraction();
       }
     };
 
@@ -129,68 +94,12 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
   return (
     <div className="max-w-4xl mx-auto relative">
       <div className="flex items-center justify-center mb-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
-          <div className="flex items-center">
-            <span className="text-sm text-muted-foreground dark:text-gray-400 mr-2">
-              Partner {currentPartnerIndex + 1} of {partners.length}
-            </span>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleAutoplay}
-              className="h-8 w-8 rounded-full"
-              aria-label={autoplay ? "Pause auto-rotation" : "Play auto-rotation"}
-            >
-              {autoplay ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            </Button>
-          </div>
-          
-          <div className="flex space-x-2">
-            {partners.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  index === currentPartnerIndex 
-                    ? "bg-[#4338CA]" 
-                    : "bg-gray-300 dark:bg-gray-600"
-                }`}
-                aria-label={`Go to partner ${index + 1}`}
-                onClick={() => {
-                  handleUserInteraction();
-                  if (index !== currentPartnerIndex && !flipping) {
-                    setFlipping(true);
-                    setTimeout(() => {
-                      setCurrentPartnerIndex(index);
-                      setFlipping(false);
-                    }, 400);
-                  }
-                }}
-              />
-            ))}
-          </div>
+        <div className="flex items-center">
+          <span className="text-sm text-muted-foreground dark:text-gray-400">
+            Partner {currentPartnerIndex + 1} of {partners.length}
+          </span>
         </div>
       </div>
-
-      {/* Progress indicator showing auto-rotation progress */}
-      {autoplay && (
-        <motion.div 
-          className="h-1 bg-gray-200 dark:bg-gray-700 mb-4 rounded-full overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.div 
-            className="h-full bg-gradient-to-r from-[#4338CA] to-[#818CF8] rounded-full"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ 
-              duration: rotationInterval / 1000, 
-              ease: "linear", 
-              repeat: Infinity 
-            }}
-          />
-        </motion.div>
-      )}
 
       <div 
         className="relative perspective-1000"
@@ -216,10 +125,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
             variant="outline"
             size="icon"
             className="h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-[#4338CA]"
-            onClick={() => {
-              handleUserInteraction();
-              prevPartner();
-            }}
+            onClick={prevPartner}
             disabled={flipping}
             aria-label="Previous partner"
           >
@@ -232,10 +138,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
             variant="outline"
             size="icon"
             className="h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-[#4338CA]"
-            onClick={() => {
-              handleUserInteraction();
-              nextPartner();
-            }}
+            onClick={nextPartner}
             disabled={flipping}
             aria-label="Next partner"
           >

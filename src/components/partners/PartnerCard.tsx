@@ -1,21 +1,16 @@
 
 import { motion } from "framer-motion";
-import { Star, ExternalLink } from "lucide-react";
+import { Star } from "lucide-react";
 import { Partner } from "@/data/partnersData";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 
 interface PartnerCardProps {
   partner: Partner;
 }
 
 const PartnerCard = ({ partner }: PartnerCardProps) => {
-  const handleVisitWebsite = () => {
-    window.open(partner.website, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <Card className="border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800">
       <div className="flex flex-col lg:flex-row">
@@ -69,18 +64,6 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
             <p className="text-foreground dark:text-gray-300 leading-relaxed mb-6">
               {partner.description}
             </p>
-            <motion.div
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                onClick={handleVisitWebsite} 
-                size="sm"
-                className="flex items-center gap-2 bg-[#4338CA] hover:bg-[#4338CA]/90"
-                aria-label={`Visit ${partner.name} website`}
-              >
-                Visit Website <ExternalLink className="h-4 w-4" />
-              </Button>
-            </motion.div>
           </CardContent>
         </div>
       </div>
