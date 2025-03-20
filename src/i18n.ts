@@ -38,7 +38,7 @@ const resources = {
         },
         "globalReach": {
           "title": "Global Reach",
-          "description": "Growing startup based in the Dominican Republic, expanding into the US market."
+          "description": "Growing startup based in the US, expanding into the Dominican Republic market."
         },
         "quality": {
           "title": "Quality Assured",
@@ -132,7 +132,7 @@ const resources = {
           },
           {
             "question": "What technologies do you work with?",
-            "answer": "We work with a wide range of modern technologies including React, Node.js, Python, AWS, and more. We choose the best tech stack based on your project's specific requirements and goals."
+            "answer": "We work with a wide range of modern technologies including React, Node.js, Python, TypeScript, Taildwind CSS, and more. We choose the best tech stack based on your project's specific requirements and goals."
           },
           {
             "question": "How do you handle project communication?",
@@ -156,7 +156,7 @@ const resources = {
         },
         "contactUs": {
           "title": "Contact Us",
-          "address": "300 Canal Street, Lawrence, MA 01840",
+          "address": "Lawrence, MA 01840",
           "phone": "1 (978) 943-2457",
           "email": "contact@walkingfolks.com"
         },
