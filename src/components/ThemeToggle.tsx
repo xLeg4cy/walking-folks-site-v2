@@ -83,7 +83,7 @@ export function ThemeToggle() {
         </motion.div>
       </DropdownMenuTrigger>
       <div ref={dropdownRef}>
-        <DropdownMenuContent align="end" className="bg-background dropdown-open" onOpenAutoFocus={(e) => e.preventDefault()}>
+        <DropdownMenuContent align="end" className="bg-background dropdown-open" onAutoFocusOutside={(e) => e.preventDefault()}>
           <DropdownMenuItem 
             onClick={() => setTheme("light")}
             className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}

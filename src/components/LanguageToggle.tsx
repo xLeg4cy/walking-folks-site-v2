@@ -92,7 +92,7 @@ const LanguageToggle = () => {
         </motion.div>
       </DropdownMenuTrigger>
       <div ref={dropdownRef}>
-        <DropdownMenuContent align="end" className="bg-background dropdown-open" onOpenAutoFocus={(e) => e.preventDefault()}>
+        <DropdownMenuContent align="end" className="bg-background dropdown-open" onAutoFocusOutside={(e) => e.preventDefault()}>
           <DropdownMenuItem 
             onClick={() => changeLanguage('en')}
             className="cursor-pointer"
