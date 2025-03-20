@@ -72,6 +72,13 @@
 /* Fix for scroll issues and content jumping */
 html {
   scrollbar-gutter: stable; /* Reserve space for scrollbar */
+  overflow-y: scroll !important; /* Always show scrollbar */
+}
+
+body {
+  overflow-y: visible !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Responsive container fixes */
@@ -94,4 +101,30 @@ html {
 .dropdown-open {
   margin-right: 0 !important;
   padding-right: 0 !important;
+}
+
+/* Fix for Radix portals to maintain scrollbar visibility */
+[data-radix-portal] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* Ensure animations are visible */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

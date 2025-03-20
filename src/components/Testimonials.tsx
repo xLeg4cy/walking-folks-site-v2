@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -63,7 +64,7 @@ const Testimonials = () => {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 mx-auto"
           >
-            <Star size={16} className="mr-2 animate-bounce-slow" />
+            <Star size={16} className="mr-2 animate-pulse" />
             Client Success Stories
           </motion.div>
           
@@ -87,46 +88,60 @@ const Testimonials = () => {
           <CarouselContent>
             {loadedTestimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-1">
-                <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden">
-                  <CardContent className="p-0">
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ 
-                        borderColor: "#4338CA"
-                      }}
-                      className="p-8 h-full border-t-4 border-transparent transition-colors duration-300"
-                    >
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30">
-                            <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="h-full"
+                >
+                  <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden">
+                    <CardContent className="p-0">
+                      <motion.div 
+                        whileHover={{ 
+                          borderColor: "#4338CA",
+                          y: -5,
+                          boxShadow: "0 10px 25px -5px rgba(67, 56, 202, 0.1), 0 10px 10px -5px rgba(67, 56, 202, 0.05)"
+                        }}
+                        transition={{ 
+                          type: "spring", 
+                          stiffness: 400, 
+                          damping: 10 
+                        }}
+                        className="p-8 h-full border-t-4 border-transparent transition-colors duration-300"
+                      >
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center gap-4">
+                            <motion.div 
+                              whileHover={{ scale: 1.05 }}
+                              className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30"
+                            >
+                              <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
+                            </motion.div>
+                            <div>
+                              <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
+                                {testimonial.name}
+                              </h4>
+                              <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
-                              {testimonial.name}
-                            </h4>
-                            <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>
-                          </div>
+                          <Badge variant="outline" className="bg-indigo-50 dark:bg-indigo-900/30 text-[#4338CA] dark:text-indigo-300 border-indigo-100 dark:border-indigo-800/50">
+                            {testimonial.industry}
+                          </Badge>
                         </div>
-                        <Badge variant="outline" className="bg-indigo-50 dark:bg-indigo-900/30 text-[#4338CA] dark:text-indigo-300 border-indigo-100 dark:border-indigo-800/50">
-                          {testimonial.industry}
-                        </Badge>
-                      </div>
-                      
-                      <Separator className="my-4 bg-gray-100 dark:bg-gray-700" />
-                      
-                      <div className="relative">
-                        <QuoteIcon className="h-8 w-8 text-indigo-200 dark:text-indigo-900/50 mb-2 absolute -top-1 -left-1 opacity-50" />
-                        <p className="text-muted-foreground dark:text-gray-300 mb-0 text-base relative pl-6 pt-2">
-                          "{testimonial.content}"
-                        </p>
-                      </div>
-                    </motion.div>
-                  </CardContent>
-                </Card>
+                        
+                        <Separator className="my-4 bg-gray-100 dark:bg-gray-700" />
+                        
+                        <div className="relative">
+                          <QuoteIcon className="h-8 w-8 text-indigo-200 dark:text-indigo-900/50 mb-2 absolute -top-1 -left-1 opacity-50" />
+                          <p className="text-muted-foreground dark:text-gray-300 mb-0 text-base relative pl-6 pt-2">
+                            "{testimonial.content}"
+                          </p>
+                        </div>
+                      </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
