@@ -38,7 +38,7 @@ const partners: Partner[] = [
   {
     id: "larasoft",
     name: "Larasoft",
-    logo: "/lovable-uploads/0cf2fbf1-6f9e-4500-961e-b7fd60f2c975.png",
+    logo: "/lovable-uploads/46aad1ea-7d79-4b50-9b66-be6cf014bc64.png",
     description: "A software-based company specializing in the lenders and merchants sector. Larasoft has partnered with us to develop innovative financial technology solutions.",
     website: "https://example.com",
     since: "2025",
