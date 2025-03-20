@@ -14,6 +14,7 @@ interface PartnerCarouselProps {
 const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
   const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
   const [flipping, setFlipping] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
   
@@ -43,27 +44,27 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
 
   // Auto-rotation effect
   useEffect(() => {
-    // Start auto-rotation
+    // Only start auto-rotation if not paused
     const startAutoRotation = () => {
       if (autoplayTimerRef.current) clearTimeout(autoplayTimerRef.current);
       
-      autoplayTimerRef.current = setTimeout(() => {
-        nextPartner();
-      }, 2000); // Rotate every 2 seconds
+      if (!isPaused && partners.length > 1) {
+        autoplayTimerRef.current = setTimeout(() => {
+          nextPartner();
+        }, 4000); // Rotate every 4 seconds (changed from 2 seconds)
+      }
     };
 
     // Start the initial rotation
-    if (partners.length > 1) {
-      startAutoRotation();
-    }
+    startAutoRotation();
     
-    // Reset the timer when partner changes
+    // Reset the timer when partner changes or pause state changes
     return () => {
       if (autoplayTimerRef.current) {
         clearTimeout(autoplayTimerRef.current);
       }
     };
-  }, [currentPartnerIndex, nextPartner, partners.length]);
+  }, [currentPartnerIndex, nextPartner, partners.length, isPaused]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -130,6 +131,8 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
         role="region"
         aria-roledescription="carousel"
         aria-label="Partners carousel"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         <AnimatePresence mode="wait">
           <motion.div
