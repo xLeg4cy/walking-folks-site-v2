@@ -9,62 +9,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
-  const dropdownRef = useRef<HTMLDivElement>(null);
   
-  // Handle scrollbar issues when dropdown opens/closes
+  // Reset any overflow styles that might have been set on the body
   useEffect(() => {
-    const preventScrollbarShift = () => {
-      // Force scrollbar to always be visible
+    const handleDropdownChange = () => {
+      // Force scrollbar to be visible and ensure no layout shift
       document.documentElement.style.overflow = "scroll";
-      document.documentElement.style.overflowY = "scroll";
-      
-      // Reset any modified styles that might cause layout shifts
-      document.body.style.paddingRight = "0 !important";
-      document.body.style.overflow = "";
-      document.body.style.overflowY = "";
+      document.body.style.paddingRight = "0";
+      document.body.style.marginRight = "0";
     };
     
-    preventScrollbarShift();
-    
-    // Ensure cleanup on component unmount
-    return () => {
-      preventScrollbarShift();
-    };
-  }, []);
-
-  // Handle click outside to ensure dropdown closes properly
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        preventBodyScroll(false);
-      }
-    };
-    
-    const preventBodyScroll = (prevent: boolean) => {
-      if (prevent) {
-        // When opening dropdown, ensure no layout shift
-        document.documentElement.style.overflow = "scroll";
-        document.documentElement.style.overflowY = "scroll";
-        document.body.style.paddingRight = "0 !important";
-      } else {
-        // When closing dropdown, restore original state
-        document.documentElement.style.overflow = "scroll";
-        document.documentElement.style.overflowY = "scroll";
-        document.body.style.paddingRight = "0 !important";
-        document.body.style.overflow = "";
-        document.body.style.overflowY = "";
-      }
-    };
-    
-    document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-      preventBodyScroll(false);
-    };
+    return () => handleDropdownChange();
   }, []);
 
   return (
@@ -82,22 +41,20 @@ export function ThemeToggle() {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
-      <div ref={dropdownRef}>
-        <DropdownMenuContent align="end" className="bg-background dropdown-open" onAutoFocusOutside={(e) => e.preventDefault()}>
-          <DropdownMenuItem 
-            onClick={() => setTheme("light")}
-            className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}
-          >
-            Light
-          </DropdownMenuItem>
-          <DropdownMenuItem 
-            onClick={() => setTheme("dark")}
-            className={`${theme === "dark" ? "bg-accent" : ""} cursor-pointer`}
-          >
-            Dark
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </div>
+      <DropdownMenuContent align="end" className="bg-background dropdown-open">
+        <DropdownMenuItem 
+          onClick={() => setTheme("light")}
+          className={`${theme === "light" ? "bg-accent" : ""} cursor-pointer`}
+        >
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => setTheme("dark")}
+          className={`${theme === "dark" ? "bg-accent" : ""} cursor-pointer`}
+        >
+          Dark
+        </DropdownMenuItem>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 }

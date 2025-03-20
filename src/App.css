@@ -71,27 +71,7 @@
 
 /* Fix for scroll issues and content jumping */
 html {
-  scrollbar-gutter: stable !important; /* Reserve space for scrollbar */
-  overflow-y: scroll !important; /* Always show scrollbar */
-  overflow-x: hidden;
-  width: 100vw;
-  padding-right: 0 !important; /* Never add padding to html */
-}
-
-/* Force styled scrollbar to be present */
-::-webkit-scrollbar {
-  width: 8px !important;
-  height: 8px !important;
-  background-color: transparent !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(155, 155, 155, 0.5) !important;
-  border-radius: 4px !important;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent !important;
+  scrollbar-gutter: stable; /* Reserve space for scrollbar */
 }
 
 /* Responsive container fixes */
@@ -114,34 +94,4 @@ html {
 .dropdown-open {
   margin-right: 0 !important;
   padding-right: 0 !important;
-}
-
-/* Fix for layout shift by always reserving scrollbar space */
-body {
-  overflow-y: scroll !important;
-  padding-right: 0 !important;
-  margin-right: 0 !important;
-  width: 100% !important;
-  position: relative !important;
-  overflow-x: hidden !important;
-}
-
-/* Prevent any element from changing the scroll behavior */
-[data-radix-popper-content-wrapper],
-[role="dialog"] {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Override any Radix UI styles that might be causing the issue */
-*[style*="overflow: hidden"] {
-  overflow-y: scroll !important;
-  padding-right: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Make sure dropdowns don't affect scrollbar */
-[data-radix-portal] {
-  position: fixed;
-  z-index: 9999;
 }
