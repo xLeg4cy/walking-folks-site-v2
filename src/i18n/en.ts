@@ -1,4 +1,3 @@
-
 export const enTranslation = {
   "nav": {
     "home": "Home",
@@ -116,6 +115,16 @@ export const enTranslation = {
         "description": "We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms."
       }
     }
+  },
+  "partners": {
+    "subtitle": "Strategic Alliances",
+    "title": "Our Trusted Partners",
+    "description": "Collaborating with industry leaders to deliver exceptional value and innovative solutions"
+  },
+  "testimonials": {
+    "subtitle": "Client Success Stories",
+    "title": "What Our Clients Say",
+    "description": "Don't just take our word for it - hear from some of our satisfied clients about their experience working with us."
   },
   "faq": {
     "title": "Frequently Asked Questions",

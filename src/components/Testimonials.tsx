@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -37,8 +38,33 @@ const testimonials = [
   }
 ];
 
+const testimonialsEs = [
+  {
+    name: "Xcape Tours",
+    role: "Empresa de Tours y Viajes",
+    content: "Trabajar con Walking Folks ha sido transformador para nuestro negocio. Sus soluciones innovadoras de diseño web e integración de pagos nos ayudaron a escalar rápidamente y proporcionar una experiencia de reserva perfecta para nuestros clientes.",
+    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
+    industry: "Viajes"
+  },
+  {
+    name: "Larasofts",
+    role: "Servicios para Prestamistas y Comerciantes",
+    content: "La experiencia técnica del equipo en gestión de infraestructura es inigualable. Walking Folks superó nuestras expectativas y se ha convertido en nuestro socio tecnológico de confianza para todos nuestros sistemas críticos.",
+    logo: "/lovable-uploads/46aad1ea-7d79-4b50-9b66-be6cf014bc64.png", 
+    industry: "Software"
+  },
+  {
+    name: "Top Bright Inc",
+    role: "Logística y Almacenamiento",
+    content: "Walking Folks revolucionó nuestro proceso de etiquetado de paquetes con su software de automatización personalizado. Lo que solía llevar a nuestro equipo de 8 a 10 horas diarias ahora toma menos de 30 minutos, mejorando dramáticamente nuestra eficiencia operativa.",
+    logo: "/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png", 
+    industry: "Cadena de Suministro"
+  }
+];
+
 const Testimonials = () => {
-  const [loadedTestimonials] = useState(testimonials);
+  const { t, i18n } = useTranslation();
+  const [loadedTestimonials] = useState(i18n.language === 'es' ? testimonialsEs : testimonials);
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
@@ -66,14 +92,14 @@ const Testimonials = () => {
             className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 mx-auto"
           >
             <Star size={16} className="mr-2 animate-pulse" />
-            Client Success Stories
+            {t('testimonials.subtitle')}
           </motion.div>
           
           <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
-            What Our Clients Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from some of our satisfied clients about their experience working with us.
+            {t('testimonials.description')}
           </p>
           
           <motion.div 
@@ -87,7 +113,7 @@ const Testimonials = () => {
 
         <Carousel className="w-full max-w-5xl mx-auto">
           <CarouselContent>
-            {loadedTestimonials.map((testimonial, index) => (
+            {(i18n.language === 'es' ? testimonialsEs : testimonials).map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-1">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

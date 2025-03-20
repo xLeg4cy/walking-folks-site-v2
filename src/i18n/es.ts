@@ -1,4 +1,3 @@
-
 export const esTranslation = {
   "nav": {
     "home": "Inicio",
@@ -116,6 +115,16 @@ export const esTranslation = {
         "description": "Utilizamos tecnologías y frameworks de vanguardia para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
       }
     }
+  },
+  "partners": {
+    "subtitle": "Alianzas Estratégicas",
+    "title": "Nuestros Socios de Confianza",
+    "description": "Colaborando con líderes de la industria para ofrecer valor excepcional y soluciones innovadoras"
+  },
+  "testimonials": {
+    "subtitle": "Historias de Éxito de Clientes",
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "description": "No solo tome nuestra palabra - escuche a algunos de nuestros clientes satisfechos sobre su experiencia trabajando con nosotros."
   },
   "faq": {
     "title": "Preguntas Frecuentes",
