@@ -43,68 +43,65 @@ export const esTranslation = {
   },
   "services": {
     "title": "Nuestros Servicios",
-    "description": "Soluciones personalizadas para potenciar el crecimiento de su negocio",
+    "description": "Soluciones integrales adaptadas a sus necesidades",
     "sections": {
       "software": {
         "title": "Desarrollo de Software",
-        "description": "Transformamos ideas en soluciones potentes y escalables con nuestra experiencia full-stack:",
+        "description": "Construimos el futuro, de principio a fin. Nuestra experiencia full-stack ofrece:",
         "features": [
-          "Bots de automatización inteligente",
-          "Sistemas back-end robustos",
-          "Interfaces front-end atractivas",
-          "Aplicaciones móviles intuitivas",
-          "Integraciones API perfectas",
-          "QA y pruebas completas",
-          "Diseño UI/UX centrado en el usuario"
+          "Bots que automatizan con precisión",
+          "Aplicaciones back-end, front-end y móviles",
+          "Integración de APIs para conectividad",
+          "Pruebas QA y automatización",
+          "Diseño UI & UX que convierte",
+          "Arquitectura de software escalable"
         ]
       },
       "projectManagement": {
         "title": "Gestión de Proyectos",
-        "description": "Impulsamos el éxito a través de ejecución metódica y supervisión estratégica:",
+        "description": "No solo gestionamos—aceleramos. Espere:",
         "features": [
-          "Metodologías Ágiles adaptativas",
-          "Gestión proactiva de riesgos",
-          "Asignación estratégica de recursos",
-          "Planificación precisa de cronogramas"
+          "Flujos de trabajo ágiles que se adaptan",
+          "Gestión de riesgos que sobresale",
+          "Asignación inteligente de recursos",
+          "Planificación precisa de proyectos"
         ]
       },
       "infrastructure": {
         "title": "Infraestructura",
-        "description": "Arquitectamos cimientos resilientes y escalables para su ecosistema tecnológico:",
+        "description": "Hemos dominado la columna vertebral de la tecnología - y se la traemos toda:",
         "features": [
-          "Experiencia en implementación multi-nube",
-          "Diseño de infraestructura empresarial",
-          "Migración a la nube sin fricciones",
-          "Implementación optimizada de DevOps",
-          "Ingeniería avanzada de Confiabilidad",
-          "Modernización de sistemas heredados",
-          "Respaldo robusto y recuperación de desastres"
+          "Servicios en la nube en principales plataformas",
+          "Infraestructura de nivel empresarial",
+          "Migración perfecta a la nube",
+          "DevOps que optimiza",
+          "Ingeniería de Confiabilidad del Sitio",
+          "Actualizaciones de sistemas heredados",
+          "Respaldo y recuperación ante desastres"
         ]
       },
       "security": {
         "title": "Ciberseguridad",
-        "description": "Protegemos sus activos digitales con estrategias de protección integrales:",
+        "description": "Su seguridad es nuestra obsesión:",
         "features": [
-          "Monitoreo continuo 24/7",
-          "Detección y prevención avanzada de amenazas",
-          "Evaluación y mitigación de riesgos",
-          "Soluciones de seguridad en la nube",
-          "Gestión de Acceso e Identidad (IAM)",
-          "Sistemas seguros de autenticación",
-          "Planificación de respuesta a incidentes",
-          "Supervisión de cumplimiento normativo"
+          "Monitoreo 24/7 de sistemas",
+          "Detección avanzada de amenazas",
+          "Mitigación proactiva de riesgos",
+          "Gestión segura de identidad",
+          "Respuesta rápida a incidentes",
+          "Seguridad de nivel empresarial"
         ]
       },
       "outsourcing": {
         "title": "Tercerización y Ampliación de Equipos",
-        "description": "Potenciamos sus capacidades con talento especializado bajo demanda:",
+        "description": "¿Necesita talento elite? Lo tenemos:",
         "features": [
-          "Desarrolladores de software calificados",
-          "Ingenieros expertos en la nube",
-          "Especialistas certificados en seguridad",
-          "Profesionales meticulosos de QA",
-          "Administradores experimentados de sistemas",
-          "Soporte multinivel receptivo"
+          "Desarrolladores de software expertos",
+          "Ingenieros en la nube calificados",
+          "Especialistas en seguridad",
+          "Expertos en garantía de calidad",
+          "Administradores de sistemas",
+          "Soporte IT multinivel"
         ]
       },
       "tech": {

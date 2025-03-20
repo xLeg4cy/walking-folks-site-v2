@@ -43,68 +43,65 @@ export const enTranslation = {
   },
   "services": {
     "title": "Our Services",
-    "description": "Tailored solutions to empower your business growth",
+    "description": "Comprehensive solutions tailored to your needs",
     "sections": {
       "software": {
         "title": "Software Development",
-        "description": "We transform ideas into powerful, scalable solutions with our full-stack expertise:",
+        "description": "We build the future, end-to-end. Our full-stack expertise delivers:",
         "features": [
-          "Intelligent automation bots",
-          "Robust back-end systems",
-          "Engaging front-end interfaces",
-          "Intuitive mobile applications",
-          "Seamless API integrations",
-          "Comprehensive QA & testing",
-          "User-centric UI/UX design"
+          "Bots that automate with precision",
+          "Back-end, front-end, and mobile apps",
+          "API integration for connectivity",
+          "QA testing and automation",
+          "UI & UX design that converts",
+          "Scalable software architecture"
         ]
       },
       "projectManagement": {
         "title": "Project Management",
-        "description": "We drive success through methodical execution and strategic oversight:",
+        "description": "We don't just manage—we accelerate. Expect:",
         "features": [
-          "Adaptive Agile methodologies",
-          "Proactive risk management",
-          "Strategic resource allocation",
-          "Precise timeline planning"
+          "Agile workflows that adapt",
+          "Risk management that excels",
+          "Smart resource allocation",
+          "Precision project planning"
         ]
       },
       "infrastructure": {
         "title": "Infrastructure",
-        "description": "We architect resilient, scalable foundations for your technology ecosystem:",
+        "description": "We've mastered the backbone of tech - and we bring it all to you:",
         "features": [
-          "Multi-cloud deployment expertise",
-          "Enterprise-grade infrastructure design",
-          "Frictionless cloud migration",
-          "Streamlined DevOps implementation",
-          "Advanced Site Reliability Engineering",
-          "Legacy system modernization",
-          "Robust backup & disaster recovery"
+          "Cloud services across major platforms",
+          "Enterprise-grade infrastructure",
+          "Seamless cloud migration",
+          "DevOps that streamlines",
+          "Site Reliability Engineering",
+          "Legacy system upgrades",
+          "Backup and disaster recovery"
         ]
       },
       "security": {
         "title": "Cybersecurity",
-        "description": "We safeguard your digital assets with comprehensive protection strategies:",
+        "description": "Your security is our obsession:",
         "features": [
-          "24/7 continuous monitoring",
-          "Advanced threat detection & prevention",
-          "Risk assessment & mitigation",
-          "Cloud security solutions",
-          "Identity Access Management (IAM)",
-          "Secure authentication systems",
-          "Incident response planning",
-          "Regulatory compliance oversight"
+          "24/7 system monitoring",
+          "Advanced threat detection",
+          "Proactive risk mitigation",
+          "Secure identity management",
+          "Rapid incident response",
+          "Enterprise-grade security"
         ]
       },
       "outsourcing": {
         "title": "Outsourcing & Team Augmentation",
-        "description": "We enhance your capabilities with specialized talent on demand:",
+        "description": "Need elite talent? We've got you:",
         "features": [
-          "Skilled software developers",
-          "Expert cloud engineers",
-          "Certified security specialists",
-          "Meticulous QA professionals",
-          "Experienced system administrators",
-          "Responsive multi-tier support"
+          "Expert software developers",
+          "Skilled cloud engineers",
+          "Security specialists",
+          "Quality assurance experts",
+          "System administrators",
+          "Multi-tier IT support"
         ]
       },
       "tech": {
