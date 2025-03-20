@@ -15,25 +15,25 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "TechStart",
-    role: "Software Development",
-    content: "Working with Lovable has been transformative for our business. Their innovative solutions helped us scale rapidly and achieve our technical goals ahead of schedule.",
-    logo: "https://i.pravatar.cc/150?img=1",
-    industry: "Technology"
+    name: "Xcape Tours",
+    role: "Tours and Travel Company",
+    content: "Working with Walking Folks has been transformative for our business. Their innovative website design and payment integration solutions helped us scale rapidly and provide a seamless booking experience for our customers.",
+    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
+    industry: "Travel"
   },
   {
-    name: "InnovateCorp",
-    role: "Enterprise Solutions",
-    content: "The team's technical expertise and attention to detail are unmatched. They delivered beyond our expectations and have become a trusted development partner.",
-    logo: "https://i.pravatar.cc/150?img=2",
-    industry: "Innovation"
+    name: "Larasofts",
+    role: "Lenders and Merchant Services",
+    content: "The team's technical expertise in infrastructure management is unmatched. Walking Folks delivered beyond our expectations and has become our trusted technology partner for all our critical systems.",
+    logo: "/lovable-uploads/46aad1ea-7d79-4b50-9b66-be6cf014bc64.png", 
+    industry: "Software"
   },
   {
-    name: "DesignPro",
-    role: "UX/UI Design Agency",
-    content: "Exceptional service and outstanding results. Lovable truly understands modern web development and helped us modernize our entire digital presence.",
-    logo: "https://i.pravatar.cc/150?img=3",
-    industry: "Design"
+    name: "Top Bright Inc",
+    role: "Logistics and Warehouse",
+    content: "Walking Folks revolutionized our parcel labeling process with their custom automation software. What used to take our team 8-10 hours daily now takes less than 30 minutes, dramatically improving our operational efficiency.",
+    logo: "/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png", 
+    industry: "Supply Chain"
   }
 ];
 
