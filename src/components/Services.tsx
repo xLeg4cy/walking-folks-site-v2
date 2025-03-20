@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Computer, Database, Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -54,22 +53,13 @@ const Services = () => {
       icon: <Database className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
-      features: [
-        ...t('services.sections.infrastructure.features', { returnObjects: true }) as string[],
-        "Infrastructure as a Service (IaaS)",
-        "System Administration",
-        "Performance Optimization"
-      ]
+      features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
     },
     {
       icon: <Shield className="w-6 h-6 text-[#4338CA]" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
-      features: [
-        ...t('services.sections.security.features', { returnObjects: true }) as string[],
-        "Network Security",
-        "Application Security"
-      ]
+      features: t('services.sections.security.features', { returnObjects: true }) as string[]
     }
   ];
 
