@@ -77,7 +77,10 @@ export const enTranslation = {
           "DevOps that streamlines",
           "Site Reliability Engineering",
           "Legacy system upgrades",
-          "Backup and disaster recovery"
+          "Backup and disaster recovery",
+          "Infrastructure as a Service (IaaS) that scales",
+          "System Administration that empowers",
+          "Performance Optimization that exceeds"
         ]
       },
       "security": {
@@ -87,9 +90,13 @@ export const enTranslation = {
           "24/7 system monitoring",
           "Advanced threat detection",
           "Proactive risk mitigation",
-          "Secure identity management",
+          "Identity Access Management (IAM)",
+          "Multi-factor Authentication (MFA)",
           "Rapid incident response",
-          "Enterprise-grade security"
+          "Enterprise-grade security",
+          "Network Security that protects",
+          "Application Security that shields",
+          "Cloud Security that safeguards"
         ]
       },
       "outsourcing": {

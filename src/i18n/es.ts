@@ -77,7 +77,10 @@ export const esTranslation = {
           "DevOps que optimiza",
           "Ingeniería de Confiabilidad del Sitio",
           "Actualizaciones de sistemas heredados",
-          "Respaldo y recuperación ante desastres"
+          "Respaldo y recuperación ante desastres",
+          "Infraestructura como Servicio (IaaS) que escala",
+          "Administración de Sistemas que empodera",
+          "Optimización de Rendimiento que supera expectativas"
         ]
       },
       "security": {
@@ -87,9 +90,13 @@ export const esTranslation = {
           "Monitoreo 24/7 de sistemas",
           "Detección avanzada de amenazas",
           "Mitigación proactiva de riesgos",
-          "Gestión segura de identidad",
+          "Gestión de Acceso e Identidad (IAM)",
+          "Autenticación Multifactor (MFA)",
           "Respuesta rápida a incidentes",
-          "Seguridad de nivel empresarial"
+          "Seguridad de nivel empresarial",
+          "Seguridad de Red que protege",
+          "Seguridad de Aplicaciones que resguarda",
+          "Seguridad en la Nube que salvaguarda"
         ]
       },
       "outsourcing": {
