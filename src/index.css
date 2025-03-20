@@ -56,26 +56,29 @@
 
   html {
     @apply scroll-smooth;
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: rgba(155, 155, 155, 0.5) transparent; /* For Firefox */
-    overflow-y: scroll; /* Force scrollbar to always be present */
+    scrollbar-width: thin !important; /* For Firefox */
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent !important; /* For Firefox */
+    overflow-y: scroll !important; /* Force scrollbar to always be present */
     margin-right: 0 !important; /* Prevent shifting when modal opens */
     padding-right: 0 !important; /* Prevent shifting when modal opens */
+    width: 100vw;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   /* Explicitly set the scrollbar width for WebKit browsers */
   ::-webkit-scrollbar {
-    width: 8px; /* Thin but visible scrollbar */
-    height: 8px;
+    width: 8px !important; /* Thin but visible scrollbar */
+    height: 8px !important;
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: transparent !important;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(155, 155, 155, 0.5);
-    border-radius: 4px;
+    background-color: rgba(155, 155, 155, 0.5) !important;
+    border-radius: 4px !important;
   }
 
   body {
@@ -85,8 +88,9 @@
     max-width: 100vw;
     overflow-x: hidden;
     /* Prevent Radix from modifying these properties */
-    overflow-y: visible !important;
-    position: relative;
+    overflow-y: scroll !important;
+    position: relative !important;
+    width: 100% !important;
   }
   
   /* Improve focus styles for accessibility */
@@ -97,6 +101,38 @@
   /* Improve button and interactive element accessibility */
   button, a, [role="button"] {
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4338CA] dark:focus-visible:outline-indigo-300;
+  }
+
+  /* Fix for radix portals */
+  [data-radix-portal] {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+  }
+
+  [data-radix-portal] > * {
+    pointer-events: auto !important;
+  }
+
+  /* Override Radix dropdown styles */
+  [data-radix-popper-content-wrapper] {
+    position: fixed !important;
+    z-index: 50 !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Fix for all portal-based components */
+  [role="dialog"],
+  [role="menu"],
+  [role="tooltip"] {
+    position: fixed !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
