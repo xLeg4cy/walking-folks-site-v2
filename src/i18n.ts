@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -9,6 +10,7 @@ const resources = {
         "home": "Home",
         "about": "About",
         "services": "Services",
+        "partners": "Partners",
         "blog": "Blog",
         "contact": "Contact Us"
       },
@@ -175,6 +177,7 @@ const resources = {
         "home": "Inicio",
         "about": "Nosotros",
         "services": "Servicios",
+        "partners": "Socios",
         "blog": "Blog",
         "contact": "Contáctanos"
       },
