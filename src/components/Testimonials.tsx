@@ -41,8 +41,9 @@ const Testimonials = () => {
   const [loadedTestimonials] = useState(testimonials);
 
   return (
-    <section id="testimonials" className="py-20 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
+    <section id="testimonials" className="py-20 relative overflow-hidden">
+      {/* Removed background-specific classes */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
       <motion.div 
         initial={{ opacity: 0 }}

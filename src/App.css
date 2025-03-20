@@ -128,3 +128,72 @@ body {
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Consistent section background styling */
+section {
+  background-color: hsl(var(--background)) !important;
+}
+
+.dark section {
+  background-color: hsl(var(--background)) !important;
+}
+
+/* Remove color overrides in specific sections */
+.bg-background, 
+.bg-gray-50, 
+.bg-gray-900,
+[class*="bg-gradient-to-b"] {
+  background-color: hsl(var(--background)) !important;
+  background-image: none !important;
+}
+
+/* Simplify background gradients to use theme colors */
+.absolute.inset-0.bg-gradient-to-b {
+  opacity: 0.05;
+  background: hsl(var(--primary)) !important;
+}
+
+.dark .absolute.inset-0.bg-gradient-to-b {
+  opacity: 0.02;
+  background: hsl(var(--primary)) !important;
+}
+
+/* Override section-specific background colors */
+#testimonials, 
+#faq, 
+#tech, 
+#about, 
+#services, 
+#partners,
+#blog,
+#privacy,
+#team,
+#home {
+  background-color: hsl(var(--background)) !important;
+}
+
+.dark #testimonials, 
+.dark #faq, 
+.dark #tech, 
+.dark #about, 
+.dark #services, 
+.dark #partners,
+.dark #blog,
+.dark #privacy,
+.dark #team,
+.dark #home {
+  background-color: hsl(var(--background)) !important;
+}
+
+/* Fix subtle background gradient overrides */
+.py-20.bg-background,
+.py-16.bg-background,
+.min-h-[90vh].bg-background {
+  background: hsl(var(--background)) !important;
+}
+
+.dark .py-20.bg-background,
+.dark .py-16.bg-background,
+.dark .min-h-[90vh].bg-background {
+  background: hsl(var(--background)) !important;
+}

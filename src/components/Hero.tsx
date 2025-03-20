@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, memo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -63,7 +64,8 @@ const Hero = memo(() => {
   };
 
   return (
-    <div id="home" className="min-h-[90vh] flex items-center justify-center bg-background dark:bg-gray-900 py-8 md:py-16 relative overflow-hidden">
+    <div id="home" className="min-h-[90vh] flex items-center justify-center py-8 md:py-16 relative overflow-hidden">
+      {/* Removed background-specific classes */}
       <ParticlesBackground />
       
       <div 
@@ -92,4 +94,3 @@ const Hero = memo(() => {
 Hero.displayName = 'Hero';
 
 export default Hero;
-
