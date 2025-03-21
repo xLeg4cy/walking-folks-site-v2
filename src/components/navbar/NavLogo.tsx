@@ -2,6 +2,19 @@
 import { motion } from 'framer-motion';
 
 const NavLogo = () => {
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Scroll to hero section
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Update URL without page reload
+    window.history.pushState({}, '', '/');
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -9,7 +22,7 @@ const NavLogo = () => {
       transition={{ duration: 0.5 }}
       className="flex items-center relative" // Added relative positioning to fix framer-motion warning
     >
-      <a href="/" className="flex items-center space-x-2 group">
+      <a href="/" onClick={handleLogoClick} className="flex items-center space-x-2 group">
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
