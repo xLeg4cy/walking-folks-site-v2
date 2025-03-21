@@ -20,7 +20,6 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="py-20 relative overflow-hidden">
-      {/* Removed background-specific classes */}
       <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
       <motion.div 

@@ -153,7 +153,7 @@ export const enTranslation = {
         "answer": "We maintain clear communication through regular meetings, progress reports, and dedicated project management tools. You'll have a direct line to your project team and regular updates on milestones."
       }
     ],
-    "badge": "Common Questions"
+    "badge": "FAQs"
   },
   "footer": {
     "slogan": "Creating innovative solutions for tomorrow's challenges",

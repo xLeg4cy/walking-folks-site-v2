@@ -1,4 +1,3 @@
-
 export const esTranslation = {
   "nav": {
     "home": "Inicio",
@@ -154,7 +153,7 @@ export const esTranslation = {
         "answer": "Mantenemos una comunicación clara a través de reuniones regulares, informes de progreso y herramientas dedicadas de gestión de proyectos. Tendrá una línea directa con su equipo de proyecto y actualizaciones regulares sobre los hitos."
       }
     ],
-    "badge": "Consultas Comunes"
+    "badge": "FAQs"
   },
   "footer": {
     "slogan": "Creando soluciones innovadoras para los desafíos del mañana",
