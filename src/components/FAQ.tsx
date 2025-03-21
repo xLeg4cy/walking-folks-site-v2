@@ -15,12 +15,8 @@ interface FAQItem {
 }
 
 const FAQ = () => {  
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
-  
-  // Get FAQ items in both languages
-  const faqItemsEnglish = t('faq.items', { lng: 'en', returnObjects: true }) as FAQItem[];
-  const faqItemsSpanish = t('faq.items', { lng: 'es', returnObjects: true }) as FAQItem[];
+  const { t } = useTranslation();
+  const faqItems = t('faq.items', { returnObjects: true }) as FAQItem[];
 
   return (
     <section id="faq" className="py-20 relative overflow-hidden">
@@ -54,37 +50,29 @@ const FAQ = () => {
         </div>
 
         <Accordion type="single" collapsible className="space-y-4">
-          {faqItemsEnglish.map((faq: FAQItem, index: number) => {
-            const spanishFaq = faqItemsSpanish[index];
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: true }}
+          {faqItems.map((faq: FAQItem, index: number) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <AccordionItem 
+                value={`item-${index}`}
+                className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all group"
               >
-                <AccordionItem 
-                  value={`item-${index}`}
-                  className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all group"
-                >
-                  <AccordionTrigger className="px-4 py-4 hover:no-underline group-hover:text-[#4338CA] transition-colors">
-                    <span className="text-left">
-                      <span className="font-medium">{faq.question}</span>
-                      <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">{spanishFaq.question}</span>
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4 pt-0 text-muted-foreground dark:text-gray-300">
-                    <div className="border-t border-gray-100 dark:border-gray-700 pt-4">
-                      <p className="mb-2">{faq.answer}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 pt-2 border-t border-gray-50 dark:border-gray-700">{spanishFaq.answer}</p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </motion.div>
-            );
-          })}
+                <AccordionTrigger className="px-4 py-4 hover:no-underline group-hover:text-[#4338CA] transition-colors">
+                  <span className="text-left">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 pt-0 text-muted-foreground dark:text-gray-300">
+                  <div className="border-t border-gray-100 dark:border-gray-700 pt-4">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
+          ))}
         </Accordion>
       </motion.div>
     </section>
