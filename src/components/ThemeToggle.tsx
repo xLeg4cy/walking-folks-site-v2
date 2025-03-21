@@ -23,8 +23,29 @@ export function ThemeToggle() {
       document.body.style.marginRight = "0";
     };
     
-    return () => handleDropdownChange();
-  }, []);
+    // Apply theme to the document element
+    const onThemeChange = () => {
+      const isDark = theme === 'dark' || 
+        (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+    
+    // Initialize theme
+    onThemeChange();
+    
+    // Listen for theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', onThemeChange);
+    
+    return () => {
+      handleDropdownChange();
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', onThemeChange);
+    };
+  }, [theme]);
 
   return (
     <DropdownMenu>

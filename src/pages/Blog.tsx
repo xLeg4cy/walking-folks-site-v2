@@ -36,17 +36,17 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24">
+    <div className="min-h-screen bg-background pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <button 
           onClick={() => navigate(-1)} 
-          className="flex items-center text-gray-600 hover:text-gray-900 mb-8"
+          className="flex items-center text-muted-foreground hover:text-foreground mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </button>
 
-        <h1 className="text-4xl font-bold mb-6">Our Blog</h1>
+        <h1 className="text-4xl font-bold mb-6 text-foreground">Our Blog</h1>
         
         <Alert className="bg-brand-purple-light/20 border-brand-purple-medium mb-12">
           <AlertTitle className="text-brand-purple-dark text-lg font-bold">Coming Soon!</AlertTitle>
@@ -59,7 +59,7 @@ const Blog = () => {
           {posts.map((post, index) => (
             <article 
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <img 
                 src={post.image} 
@@ -71,14 +71,14 @@ const Blog = () => {
                   <span className="text-sm text-brand-blue font-medium">
                     {post.category}
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-muted-foreground">
                     {post.date}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 hover:text-brand-blue transition-colors">
+                <h3 className="text-xl font-semibold mb-2 text-foreground hover:text-brand-blue transition-colors">
                   <a href="#">{post.title}</a>
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   {post.excerpt}
                 </p>
                 <a 

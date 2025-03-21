@@ -1,8 +1,11 @@
 
 import { BookOpen } from 'lucide-react';
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
+  const { t } = useTranslation();
+  
   const posts = [
     {
       title: "The Future of Web Development",
@@ -28,15 +31,15 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-24 bg-gray-50">
+    <section id="blog" className="py-24 bg-background dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center bg-black/5 rounded-full px-6 py-2 text-sm font-medium mb-8">
+          <div className="inline-flex items-center bg-black/5 dark:bg-white/5 rounded-full px-6 py-2 text-sm font-medium mb-8">
             <BookOpen size={16} className="mr-2" />
             Latest Insights
           </div>
-          <h2 className="text-3xl font-bold mb-4">Our Blog</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Our Blog</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Stay up to date with the latest trends, insights, and updates from our team
           </p>
         </div>
@@ -52,7 +55,7 @@ const Blog = () => {
           {posts.map((post, index) => (
             <article 
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <img 
                 src={post.image} 
@@ -64,14 +67,14 @@ const Blog = () => {
                   <span className="text-sm text-brand-blue font-medium">
                     {post.category}
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-muted-foreground">
                     {post.date}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 hover:text-brand-blue transition-colors">
+                <h3 className="text-xl font-semibold mb-2 text-foreground hover:text-brand-blue transition-colors">
                   <a href="#">{post.title}</a>
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   {post.excerpt}
                 </p>
                 <a 
