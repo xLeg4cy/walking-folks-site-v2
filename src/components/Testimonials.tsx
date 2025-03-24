@@ -139,12 +139,17 @@ const Testimonials = () => {
                       >
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-4">
-                            <motion.div 
-                              whileHover={{ scale: 1.05 }}
-                              className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30"
-                            >
-                              <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
-                            </motion.div>
+                            <div className="w-12 h-12 rounded-md overflow-hidden bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center">
+                              {testimonial.logo ? (
+                                <img 
+                                  src={testimonial.logo} 
+                                  alt={`${testimonial.name} logo`}
+                                  className="w-10 h-10 object-contain"
+                                />
+                              ) : (
+                                <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
+                              )}
+                            </div>
                             <div>
                               <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
                                 {testimonial.name}
