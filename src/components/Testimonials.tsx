@@ -33,7 +33,7 @@ const testimonials = [
     name: "Top Bright Inc",
     role: "Logistics and Warehouse",
     content: "Walking Folks revolutionized our parcel labeling process with their custom automation software. What used to take our team 8-10 hours daily now takes less than 30 minutes, dramatically improving our operational efficiency.",
-    logo: "/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png", 
+    logo: "/lovable-uploads/f82f72d7-5a40-4845-b98b-28d08b62c65e.png", 
     industry: "Supply Chain"
   }
 ];
@@ -57,7 +57,7 @@ const testimonialsEs = [
     name: "Top Bright Inc",
     role: "Logística y Almacenamiento",
     content: "Walking Folks revolucionó nuestro proceso de etiquetado de paquetes con su software de automatización personalizado. Lo que solía llevar a nuestro equipo de 8 a 10 horas diarias ahora toma menos de 30 minutos, mejorando dramáticamente nuestra eficiencia operativa.",
-    logo: "/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png", 
+    logo: "/lovable-uploads/f82f72d7-5a40-4845-b98b-28d08b62c65e.png", 
     industry: "Cadena de Suministro"
   }
 ];
