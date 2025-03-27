@@ -16,6 +16,7 @@ const About = lazy(() => import('@/components/About'));
 const TechnologyStack = lazy(() => import('@/components/TechnologyStack'));
 const Contact = lazy(() => import('@/components/Contact'));
 const LiveChat = lazy(() => import('@/components/LiveChat'));
+// const Blog = lazy(() => import('@/components/Blog')); // Commented out blog component
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
