@@ -1,3 +1,4 @@
+
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -56,11 +57,12 @@ const Footer = () => {
                   {t('footer.services')}
                 </a>
               </li>
-              <li>
+              {/* Commented out blog link */}
+              {/* <li>
                 <Link to="/blog" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
                   {t('footer.blog')}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/privacy" className="text-gray-600 hover:text-brand-purple-medium dark:text-gray-400 dark:hover:text-brand-purple-light transition-colors flex items-center">
                   {t('footer.privacyPolicy')}
@@ -117,3 +119,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
