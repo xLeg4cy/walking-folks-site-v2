@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
-import { QuoteIcon, Building2, Star } from "lucide-react";
+import { QuoteIcon, Star, Airplane, Brackets, Boxes } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -55,6 +55,22 @@ const testimonialsEs = [
     industry: "Cadena de Suministro"
   }
 ];
+
+// Function to get the appropriate icon based on industry
+const getIndustryIcon = (industry: string) => {
+  switch (industry.toLowerCase()) {
+    case 'travel':
+    case 'viajes':
+      return <Airplane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+    case 'software':
+      return <Brackets className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+    case 'supply chain':
+    case 'cadena de suministro':
+      return <Boxes className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+    default:
+      return <Airplane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+  }
+};
 
 const Testimonials = () => {
   const { t, i18n } = useTranslation();
@@ -137,7 +153,7 @@ const Testimonials = () => {
                               whileHover={{ scale: 1.05 }}
                               className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30"
                             >
-                              <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
+                              {getIndustryIcon(testimonial.industry)}
                             </motion.div>
                             <div>
                               <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
