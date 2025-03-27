@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import { QuoteIcon, Star, Plane, Code, Package } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
@@ -73,7 +73,14 @@ const getIndustryIcon = (industry: string) => {
 
 const Testimonials = () => {
   const { t, i18n } = useTranslation();
-  const [loadedTestimonials] = useState(i18n.language === 'es' ? testimonialsEs : testimonials);
+  const [loadedTestimonials, setLoadedTestimonials] = useState(
+    i18n.language === 'es' ? testimonialsEs : testimonials
+  );
+
+  // Update testimonials when language changes
+  useEffect(() => {
+    setLoadedTestimonials(i18n.language === 'es' ? testimonialsEs : testimonials);
+  }, [i18n.language]);
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">

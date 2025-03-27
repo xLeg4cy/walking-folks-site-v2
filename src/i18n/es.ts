@@ -1,3 +1,4 @@
+
 export const esTranslation = {
   "nav": {
     "home": "Inicio",
@@ -121,7 +122,10 @@ export const esTranslation = {
   "partners": {
     "subtitle": "Alianzas Estratégicas",
     "title": "Nuestros Socios de Confianza",
-    "description": "Colaborando con líderes de la industria para ofrecer valor excepcional y soluciones innovadoras"
+    "description": "Colaborando con líderes de la industria para ofrecer valor excepcional y soluciones innovadoras",
+    "featured": "Socio Destacado",
+    "since": "Socio desde",
+    "partnerOf": "Socio de"
   },
   "testimonials": {
     "subtitle": "Historias de Éxito de Clientes",

@@ -5,12 +5,21 @@ import { Partner } from "@/data/partnersData";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 interface PartnerCardProps {
   partner: Partner;
 }
 
 const PartnerCard = ({ partner }: PartnerCardProps) => {
+  const { i18n, t } = useTranslation();
+  const description = i18n.language === 'es' ? partner.descriptionEs : partner.description;
+  const featuredText = i18n.language === 'es' ? "Socio Destacado" : "Featured Partner";
+  const partnerSinceText = i18n.language === 'es' ? "Socio desde" : "Partner since";
+  const partnerType = partner.id === "xcape-tours" 
+    ? (i18n.language === 'es' ? "Socio Estratégico de Viajes" : "Strategic Travel Partner")
+    : (i18n.language === 'es' ? "Socio Estratégico de Software" : "Strategic Software Partner");
+
   return (
     <Card className="border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800">
       <div className="flex flex-col lg:flex-row">
@@ -24,7 +33,7 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
               {partner.featured && (
                 <Badge className="bg-[#4338CA] hover:bg-[#4338CA]/90 text-white">
                   <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" /> 
-                  <span>Featured Partner</span>
+                  <span>{featuredText}</span>
                 </Badge>
               )}
             </div>
@@ -50,19 +59,17 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
                 {partner.name}
               </CardTitle>
               <Badge variant="outline" className="text-muted-foreground">
-                Partner since {partner.since}
+                {partnerSinceText} {partner.since}
               </Badge>
             </div>
             <CardDescription className="text-muted-foreground dark:text-gray-400 mt-1">
-              {partner.id === "xcape-tours" 
-                ? "Strategic Travel Partner" 
-                : "Strategic Software Partner"}
+              {partnerType}
             </CardDescription>
           </CardHeader>
           <Separator className="my-4" />
           <CardContent className="p-0 py-4">
             <p className="text-foreground dark:text-gray-300 leading-relaxed mb-6">
-              {partner.description}
+              {description}
             </p>
           </CardContent>
         </div>

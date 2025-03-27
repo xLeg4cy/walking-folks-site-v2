@@ -6,6 +6,7 @@ import { Partner } from "@/data/partnersData";
 import { Button } from "@/components/ui/button";
 import PartnerCard from "./PartnerCard";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTranslation } from "react-i18next";
 
 interface PartnerCarouselProps {
   partners: Partner[];
@@ -17,6 +18,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
   const [isPaused, setIsPaused] = useState(false);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
+  const { t, i18n } = useTranslation();
   
   const nextPartner = useCallback(() => {
     if (flipping || !partners.length) return;
@@ -116,12 +118,21 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
     return null;
   }
 
+  // Translated text based on current language
+  const partnerText = i18n.language === 'es' ? "Socio" : "Partner";
+  const ofText = i18n.language === 'es' ? "de" : "of";
+  const prevText = i18n.language === 'es' ? "Socio anterior" : "Previous partner";
+  const nextText = i18n.language === 'es' ? "Siguiente socio" : "Next partner";
+  const accessibilityText = i18n.language === 'es' 
+    ? "Utilice las teclas de flecha izquierda y derecha para navegar entre los socios" 
+    : "Use left and right arrow keys to navigate between partners";
+
   return (
     <div className="max-w-4xl mx-auto relative">
       <div className="flex items-center justify-center mb-8">
         <div className="flex items-center">
           <span className="text-sm text-muted-foreground dark:text-gray-400">
-            Partner {currentPartnerIndex + 1} of {partners.length}
+            {partnerText} {currentPartnerIndex + 1} {ofText} {partners.length}
           </span>
         </div>
       </div>
@@ -154,7 +165,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
             className="h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-[#4338CA]"
             onClick={prevPartner}
             disabled={flipping}
-            aria-label="Previous partner"
+            aria-label={prevText}
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
@@ -167,7 +178,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
             className="h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-[#4338CA]"
             onClick={nextPartner}
             disabled={flipping}
-            aria-label="Next partner"
+            aria-label={nextText}
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
@@ -176,7 +187,7 @@ const PartnerCarousel = ({ partners }: PartnerCarouselProps) => {
       
       {/* Accessibility instructions */}
       <div className="sr-only">
-        Use left and right arrow keys to navigate between partners
+        {accessibilityText}
       </div>
     </div>
   );
