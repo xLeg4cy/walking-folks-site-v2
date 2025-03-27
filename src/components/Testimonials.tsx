@@ -19,21 +19,18 @@ const testimonials = [
     name: "Xcape Tours",
     role: "Tours and Travel Company",
     content: "Working with Walking Folks has been transformative for our business. Their innovative website design and payment integration solutions helped us scale rapidly and provide a seamless booking experience for our customers.",
-    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
     industry: "Travel"
   },
   {
     name: "Larasofts",
     role: "Lenders and Merchant Services",
     content: "The team's technical expertise in infrastructure management is unmatched. Walking Folks delivered beyond our expectations and has become our trusted technology partner for all our critical systems.",
-    logo: "/lovable-uploads/46aad1ea-7d79-4b50-9b66-be6cf014bc64.png", 
     industry: "Software"
   },
   {
     name: "Top Bright Inc",
     role: "Logistics and Warehouse",
     content: "Walking Folks revolutionized our parcel labeling process with their custom automation software. What used to take our team 8-10 hours daily now takes less than 30 minutes, dramatically improving our operational efficiency.",
-    logo: "/lovable-uploads/f82f72d7-5a40-4845-b98b-28d08b62c65e.png", 
     industry: "Supply Chain"
   }
 ];
@@ -43,21 +40,18 @@ const testimonialsEs = [
     name: "Xcape Tours",
     role: "Empresa de Tours y Viajes",
     content: "Trabajar con Walking Folks ha sido transformador para nuestro negocio. Sus soluciones innovadoras de diseño web e integración de pagos nos ayudaron a escalar rápidamente y proporcionar una experiencia de reserva perfecta para nuestros clientes.",
-    logo: "/lovable-uploads/db5fc616-d92f-40d8-a9f1-0c815842db57.png",
     industry: "Viajes"
   },
   {
     name: "Larasofts",
     role: "Servicios para Prestamistas y Comerciantes",
     content: "La experiencia técnica del equipo en gestión de infraestructura es inigualable. Walking Folks superó nuestras expectativas y se ha convertido en nuestro socio tecnológico de confianza para todos nuestros sistemas críticos.",
-    logo: "/lovable-uploads/46aad1ea-7d79-4b50-9b66-be6cf014bc64.png", 
     industry: "Software"
   },
   {
     name: "Top Bright Inc",
     role: "Logística y Almacenamiento",
     content: "Walking Folks revolucionó nuestro proceso de etiquetado de paquetes con su software de automatización personalizado. Lo que solía llevar a nuestro equipo de 8 a 10 horas diarias ahora toma menos de 30 minutos, mejorando dramáticamente nuestra eficiencia operativa.",
-    logo: "/lovable-uploads/f82f72d7-5a40-4845-b98b-28d08b62c65e.png", 
     industry: "Cadena de Suministro"
   }
 ];
@@ -139,17 +133,12 @@ const Testimonials = () => {
                       >
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-md overflow-hidden bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center">
-                              {testimonial.logo ? (
-                                <img 
-                                  src={testimonial.logo} 
-                                  alt={`${testimonial.name} logo`}
-                                  className="w-10 h-10 object-contain"
-                                />
-                              ) : (
-                                <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
-                              )}
-                            </div>
+                            <motion.div 
+                              whileHover={{ scale: 1.05 }}
+                              className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30"
+                            >
+                              <Building2 className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />
+                            </motion.div>
                             <div>
                               <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
                                 {testimonial.name}
