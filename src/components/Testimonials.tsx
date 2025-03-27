@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
-import { QuoteIcon, Star } from "lucide-react";
+import { QuoteIcon, Star, Plane, Code, Package } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -59,14 +60,14 @@ const getIndustryIcon = (industry: string) => {
   switch (industry.toLowerCase()) {
     case 'travel':
     case 'viajes':
-      return <Airplane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+      return <Plane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
     case 'software':
-      return <Brackets className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+      return <Code className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
     case 'supply chain':
     case 'cadena de suministro':
-      return <Boxes className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+      return <Package className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
     default:
-      return <Airplane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
+      return <Plane className="h-6 w-6 text-[#4338CA] dark:text-indigo-300" />;
   }
 };
 
