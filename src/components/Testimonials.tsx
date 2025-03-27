@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
-import { QuoteIcon, Star, Airplane, Brackets, Boxes } from "lucide-react";
+import { QuoteIcon, Star } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -56,7 +55,6 @@ const testimonialsEs = [
   }
 ];
 
-// Function to get the appropriate icon based on industry
 const getIndustryIcon = (industry: string) => {
   switch (industry.toLowerCase()) {
     case 'travel':
@@ -78,7 +76,6 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
-      {/* Removed background-specific classes */}
       <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
       <motion.div 
@@ -123,7 +120,7 @@ const Testimonials = () => {
 
         <Carousel className="w-full max-w-5xl mx-auto">
           <CarouselContent>
-            {(i18n.language === 'es' ? testimonialsEs : testimonials).map((testimonial, index) => (
+            {loadedTestimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-1">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -148,19 +145,11 @@ const Testimonials = () => {
                         className="p-8 h-full border-t-4 border-transparent transition-colors duration-300"
                       >
                         <div className="flex items-center justify-between mb-4">
-                          <div className="flex items-center gap-4">
-                            <motion.div 
-                              whileHover={{ scale: 1.05 }}
-                              className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 dark:bg-indigo-900/30"
-                            >
-                              {getIndustryIcon(testimonial.industry)}
-                            </motion.div>
-                            <div>
-                              <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
-                                {testimonial.name}
-                              </h4>
-                              <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>
-                            </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground dark:text-white group-hover:text-[#4338CA] transition-colors duration-300">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-muted-foreground dark:text-gray-400 text-sm">{testimonial.role}</p>
                           </div>
                           <Badge variant="outline" className="bg-indigo-50 dark:bg-indigo-900/30 text-[#4338CA] dark:text-indigo-300 border-indigo-100 dark:border-indigo-800/50">
                             {testimonial.industry}
