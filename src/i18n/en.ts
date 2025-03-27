@@ -171,7 +171,6 @@ export const enTranslation = {
     },
     "contactUs": {
       "title": "Contact Us",
-      "address": "Lawrence, MA 01840",
       "phone": "1 (978) 943-2457",
       "email": "contact@walkingfolks.com"
     },

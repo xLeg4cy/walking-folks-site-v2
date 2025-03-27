@@ -1,4 +1,3 @@
-
 export const esTranslation = {
   "nav": {
     "home": "Inicio",
@@ -175,7 +174,6 @@ export const esTranslation = {
     },
     "contactUs": {
       "title": "Contáctenos",
-      "address": "Lawrence, MA 01840",
       "phone": "1 (978) 943-2457",
       "email": "contact@walkingfolks.com"
     },
