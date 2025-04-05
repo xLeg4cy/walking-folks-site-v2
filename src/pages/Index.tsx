@@ -60,10 +60,11 @@ const Index = () => {
 
             // Report metrics if Web Vitals API is available
             if ('web-vitals' in window) {
-              import('web-vitals').then(({ getCLS, getFID, getLCP }) => {
-                getCLS(console.info);
-                getFID(console.info);
-                getLCP(console.info);
+              import('web-vitals').then((webVitals) => {
+                // Use correct method names available in web-vitals
+                if (webVitals.onCLS) webVitals.onCLS(console.info);
+                if (webVitals.onFID) webVitals.onFID(console.info);
+                if (webVitals.onLCP) webVitals.onLCP(console.info);
               });
             }
           }

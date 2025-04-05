@@ -4,10 +4,10 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 import { useMemo } from 'react';
-import { useMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ParticlesBackground = () => {
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
@@ -45,7 +45,7 @@ const ParticlesBackground = () => {
         },
         move: {
           enable: true,
-          direction: "none",
+          direction: "none" as const, // Type assertion to fix the error
           outModes: {
             default: "bounce",
           },
