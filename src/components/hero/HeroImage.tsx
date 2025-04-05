@@ -20,9 +20,12 @@ const HeroImage = () => {
       >
         <img 
           src="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png" 
+          srcSet="/lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png 1x, /lovable-uploads/e92ee987-29bd-48b1-9ef2-a07dc0b8e844.png 2x"
           alt="Illustration of person working"
           width="600"
           height="400"
+          loading="eager" 
+          fetchPriority="high"
           className="w-full h-auto rounded-xl"
         />
         <motion.div 

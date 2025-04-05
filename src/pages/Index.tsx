@@ -20,16 +20,15 @@ const LiveChat = lazy(() => import('@/components/LiveChat'));
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
 
-    const fontPreloadLink = document.createElement('link');
-    fontPreloadLink.rel = 'preload';
-    fontPreloadLink.as = 'font';
-    fontPreloadLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
-    fontPreloadLink.crossOrigin = 'anonymous';
-    document.head.appendChild(fontPreloadLink);
+    // Track if user has interacted with the page
+    const handleInteraction = () => setHasInteracted(true);
+    window.addEventListener('scroll', handleInteraction, { once: true });
+    window.addEventListener('click', handleInteraction, { once: true });
 
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -46,10 +45,37 @@ const Index = () => {
       }, 1500); // Give time for components to load
     }
 
+    // Register performance metrics
+    if ('performance' in window && 'getEntriesByType' in performance) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const perfEntries = performance.getEntriesByType('navigation');
+          if (perfEntries.length > 0) {
+            const metrics = perfEntries[0] as PerformanceNavigationTiming;
+            console.info('Page Load Metrics:', {
+              'TTFB (ms)': Math.round(metrics.responseStart),
+              'DOM Content Loaded (ms)': Math.round(metrics.domContentLoadedEventEnd),
+              'Load Event (ms)': Math.round(metrics.loadEventEnd),
+            });
+
+            // Report metrics if Web Vitals API is available
+            if ('web-vitals' in window) {
+              import('web-vitals').then(({ getCLS, getFID, getLCP }) => {
+                getCLS(console.info);
+                getFID(console.info);
+                getLCP(console.info);
+              });
+            }
+          }
+        }, 0);
+      });
+    }
+
     return () => {
       clearTimeout(timer);
       document.documentElement.style.scrollBehavior = '';
-      document.head.removeChild(fontPreloadLink);
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('click', handleInteraction);
     };
   }, []);
 
@@ -66,8 +92,8 @@ const Index = () => {
         className="min-h-screen bg-background text-foreground dark:bg-gray-900"
       >
         <Helmet>
-          <title>Lovable - Modern Web Solutions</title>
-          <meta name="description" content="Professional web development services with modern solutions" />
+          <title>Walking Folks - Modern Web Solutions</title>
+          <meta name="description" content="Professional web development services with modern solutions and expert consulting by Walking Folks." />
           <meta httpEquiv="Content-Security-Policy" 
                 content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com;" 
           />
@@ -75,11 +101,8 @@ const Index = () => {
           <meta httpEquiv="X-Frame-Options" content="DENY" />
           <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
           <meta name="referrer" content="strict-origin-when-cross-origin" />
-          <link 
-            rel="preload" 
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-            as="style"
-          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         </Helmet>
         
         <main>
@@ -113,9 +136,12 @@ const Index = () => {
           </Suspense>
         </main>
 
-        <Suspense fallback={null}>
-          <LiveChat />
-        </Suspense>
+        {/* Only load LiveChat once user has interacted with the page */}
+        {hasInteracted && (
+          <Suspense fallback={null}>
+            <LiveChat />
+          </Suspense>
+        )}
       </motion.div>
     </AnimatePresence>
   );
