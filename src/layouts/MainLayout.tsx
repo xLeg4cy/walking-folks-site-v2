@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
-import TopProgressBar from '@/components/TopProgressBar';
 import Contact from '@/components/Contact';
 
 interface MainLayoutProps {
@@ -56,7 +55,6 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <TopProgressBar />
       <Navbar onContactClick={handleContactClick} onSectionClick={handleNavigation} />
       
       <main className="flex-grow pt-16 md:pt-20">
