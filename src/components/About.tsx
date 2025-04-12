@@ -24,10 +24,10 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about" className="py-24 bg-background dark:bg-gray-900 relative overflow-hidden">
+    <div id="about" className="bg-background dark:bg-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
       
-      <div ref={aboutRef} className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div ref={aboutRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <motion.div 

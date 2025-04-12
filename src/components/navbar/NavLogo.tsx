@@ -1,5 +1,7 @@
 
 import { motion } from 'framer-motion';
+import LogoMark from '../svg/LogoMark';
+import LogoLetters from '../svg/LogoLetters';
 
 const NavLogo = () => {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,18 +30,15 @@ const NavLogo = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
           className="h-8 w-auto flex items-center justify-center"
         >
-          <img
-            src="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png"
-            alt="Walking Folks Logo"
-            className="h-full w-auto object-contain mix-blend-normal"
-          />
+          <LogoMark size={32} />
         </motion.div>
+
         <motion.span 
           className="text-xl font-bold text-gray-900 dark:text-white"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          Walking Folks
+          <LogoLetters />
         </motion.span>
       </a>
     </motion.div>

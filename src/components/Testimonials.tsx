@@ -83,7 +83,7 @@ const Testimonials = () => {
   }, [i18n.language]);
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden">
+    <section id="testimonials" className="relative overflow-hidden">
       <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
       <motion.div 

@@ -93,7 +93,9 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
               className="flex items-center space-x-2"
             >
               <ThemeToggle />
+
               <LanguageToggle />
+
               <motion.button
                 onClick={onContactClick}
                 className="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-[#4338CA] hover:bg-[#818CF8] dark:bg-[#818CF8] dark:hover:bg-[#4338CA] transition-colors"
@@ -102,7 +104,7 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
               >
                 {t('nav.contact')}
               </motion.button>
-              
+
               {/* Mobile Menu Toggle */}
               <MobileMenuToggle 
                 isOpen={isMobileMenuOpen}

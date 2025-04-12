@@ -7,8 +7,7 @@ const LiveChat = () => {
   const phoneNumber = "19789432457";
   
   const handleWhatsAppClick = () => {
-    // Format: https://wa.me/<number>
-    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 

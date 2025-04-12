@@ -4,33 +4,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Walking Folks Hub - Modern Web Solutions</title>
+    <title>Walking Folks - Modern Web Solutions</title>
     <meta name="description" content="Professional web development services with modern solutions and expert consulting by Walking Folks." />
     <meta name="author" content="Walking Folks" />
+    <!--TODO: replace this image with one shareable-->
     <meta property="og:image" content="/og-image.png" />
-    <meta property="og:title" content="Walking Folks Hub - Modern Web Solutions" />
+    <meta property="og:title" content="Walking Folks - Modern Web Solutions" />
     <meta property="og:description" content="Professional web development services with modern solutions and expert consulting by Walking Folks." />
     <meta property="og:type" content="website" />
+    <!--TODO: create a tailwind color and reuse it everywhere-->
     <meta name="theme-color" content="#4338CA" />
     
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     
     <!-- Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-    
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/lovable-uploads/1d6e29f4-c548-4f24-8ec4-75d830188ac3.png" />
   </head>
 
   <body>
+    <style>
+      /*radix-ui thing*/
+      body[data-scroll-locked] {
+        margin-right: 0 !important;
+      }
+    </style>
+
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

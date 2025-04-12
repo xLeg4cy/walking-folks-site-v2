@@ -1,4 +1,3 @@
-
 import { Suspense, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -29,6 +28,7 @@ const Index = () => {
     const handleInteraction = () => setHasInteracted(true);
     window.addEventListener('scroll', handleInteraction, { once: true });
     window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('keydown', handleInteraction, { once: true });
 
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -90,7 +90,6 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="min-h-screen bg-background text-foreground dark:bg-gray-900"
       >
         <Helmet>
           <title>Walking Folks - Modern Web Solutions</title>
@@ -102,8 +101,6 @@ const Index = () => {
           <meta httpEquiv="X-Frame-Options" content="DENY" />
           <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
           <meta name="referrer" content="strict-origin-when-cross-origin" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         </Helmet>
         
         <main>
@@ -117,9 +114,10 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-20"
+              className="grid gap-y-20 mt-20"
             >
               <About />
+
               <TechnologyStack />
               
               <Suspense fallback={<ServicesSkeleton />}>

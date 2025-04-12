@@ -48,6 +48,7 @@ const LanguageToggle = () => {
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent align="end" className="bg-background dropdown-open">
         <DropdownMenuItem 
           onClick={() => changeLanguage('en')}

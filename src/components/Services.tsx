@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Computer, Database, Shield, ArrowRight, CheckCircle2, Wrench } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -68,14 +67,14 @@ const Services = () => {
     <motion.div 
       style={{ opacity }}
       id="services" 
-      className="py-24 bg-background text-foreground dark:bg-gray-900 relative overflow-hidden"
+      className="bg-background text-foreground dark:bg-gray-900 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
       
       <motion.div
         ref={servicesRef}
         style={{ y }}
-        className="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

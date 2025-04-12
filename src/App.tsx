@@ -47,7 +47,7 @@ const App = () => (
                     <Route element={<MainLayout />}>
                       <Route path="/" element={<Index />} />
                       <Route path="/privacy" element={<Privacy />} />
-                      {/* <Route path="/blog" element={<Blog />} /> */} {/* Commented out blog route */}
+                      {/* <Route path="/blog" element={<Blog />} /> */}
                       <Route path="*" element={<NotFound />} />
                     </Route>
                   </Routes>

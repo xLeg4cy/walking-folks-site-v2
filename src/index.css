@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@import './css/utils.css';
+@import './css/animation.css';
+@import './css/keyframes.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +30,9 @@
     --input: 240 5.9% 90%;
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.75rem;
+
+    --th-primary: #4338ca; /* indigo-700 */
+    --th-foreground: rgb(209, 213, 219);
   }
 
   .dark {
@@ -48,6 +55,9 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;
+
+    --th-primary: #6366f1;
+    --th-foreground: rgb(209, 213, 219);
   }
  
   * {
@@ -100,209 +110,3 @@
   }
 }
 
-@layer utilities {
-  .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-gray-200 shadow-light;
-  }
-
-  .dark .glass {
-    @apply bg-black/10 backdrop-blur-lg border border-white/10;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-[#0A2647] to-[#3498db] bg-clip-text text-transparent;
-  }
-
-  .dark .text-gradient {
-    @apply bg-gradient-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent;
-  }
-
-  .animate-slide-left {
-    animation: slideLeft 25s linear infinite;
-  }
-
-  .animate-slide-right {
-    animation: slideRight 25s linear infinite;
-  }
-
-  .animation-play-state-paused {
-    animation-play-state: paused;
-  }
-
-  .hover\:pause:hover {
-    animation-play-state: paused;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out;
-  }
-
-  .animate-bounce {
-    animation: bounce 2s infinite;
-  }
-
-  .light-card {
-    @apply bg-white border border-gray-100 shadow-light hover:shadow-light-md transition-shadow;
-  }
-
-  .dark .light-card {
-    @apply bg-gray-800 border-gray-700 shadow-none hover:shadow-none;
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 8s ease infinite;
-  }
-
-  .animate-typing {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 0.15em solid;
-    width: 0;
-    animation: typing 3.5s steps(40, end) forwards,
-               blink 1s step-end infinite;
-  }
-
-  .section {
-    @apply py-12 relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-
-  .section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .dark [class*="border"] {
-    border-color: rgb(31 41 55);
-  }
-  
-  /* Improved hover effects for entire site */
-  .hover-gradient-border {
-    @apply relative;
-  }
-  
-  .hover-gradient-border::after {
-    @apply content-[''] absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-[#4338CA] to-[#818CF8] transition-all duration-300 rounded-full;
-  }
-  
-  .hover-gradient-border:hover::after {
-    @apply w-full;
-  }
-  
-  /* Enhanced button states */
-  .button-glow:hover {
-    box-shadow: 0 0 15px rgba(67, 56, 202, 0.5);
-  }
-  
-  /* Focus visible enhancements */
-  .focus-ring {
-    @apply outline-none ring-2 ring-offset-2 ring-[#4338CA] dark:ring-indigo-300 transition-shadow duration-200;
-  }
-
-  /* Fix for Radix UI portals */
-  .radix-portal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 50;
-  }
-  
-  /* Reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  /* When a modal/dialog is open, ensure no layout shift */
-  [data-state="open"] + body,
-  body[data-overflow="hidden"] {
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-    overflow: auto !important;
-  }
-}
-
-@keyframes slideLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes slideRight {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}

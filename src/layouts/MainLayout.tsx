@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
-import TopProgressBar from '@/components/TopProgressBar';
 import Contact from '@/components/Contact';
 
 interface MainLayoutProps {
@@ -49,14 +48,15 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     } else {
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          window.scrollTo(0, section.offsetTop - 90)
+        }, 100);
       }
     }
   };
 
   return (
     <div className="flex flex-col min-h-screen">
-      <TopProgressBar />
       <Navbar onContactClick={handleContactClick} onSectionClick={handleNavigation} />
       
       <main className="flex-grow pt-16 md:pt-20">

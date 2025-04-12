@@ -1,14 +1,9 @@
-
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Laptop, Smartphone } from 'lucide-react';
 
 const HeroImage = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, 50]);
-
   return (
     <motion.div 
-      style={{ y }}
       className="flex-1 relative w-full px-4 sm:px-0"
     >
       <motion.div 
@@ -28,6 +23,7 @@ const HeroImage = () => {
           fetchPriority="high"
           className="w-full h-auto rounded-xl"
         />
+
         <motion.div 
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -37,6 +33,7 @@ const HeroImage = () => {
         >
           <Laptop className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
         </motion.div>
+
         <motion.div 
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -46,7 +43,7 @@ const HeroImage = () => {
         >
           <Smartphone className="text-[#4338CA] dark:text-indigo-400 w-6 h-6 md:w-8 md:h-8" />
         </motion.div>
-        
+
         <div className="absolute inset-0 bg-gradient-to-tr from-[#4338CA]/20 via-[#6366F1]/20 to-[#9b87f5]/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </motion.div>
     </motion.div>
