@@ -48,7 +48,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     } else {
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          window.scrollTo(0, section.offsetTop - 90)
+        }, 100);
       }
     }
   };

@@ -30,6 +30,9 @@
     --input: 240 5.9% 90%;
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.75rem;
+
+    --th-primary: #4338ca; /* indigo-700 */
+    --th-foreground: rgb(209, 213, 219);
   }
 
   .dark {
@@ -52,6 +55,9 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;
+
+    --th-primary: #6366f1;
+    --th-foreground: rgb(209, 213, 219);
   }
  
   * {
