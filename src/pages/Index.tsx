@@ -28,6 +28,7 @@ const Index = () => {
     const handleInteraction = () => setHasInteracted(true);
     window.addEventListener('scroll', handleInteraction, { once: true });
     window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('keydown', handleInteraction, { once: true });
 
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -89,7 +90,6 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="min-h-screen bg-background text-foreground dark:bg-gray-900"
       >
         <Helmet>
           <title>Walking Folks - Modern Web Solutions</title>
@@ -114,9 +114,10 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-20"
+              className="grid gap-y-20"
             >
               <About />
+
               <TechnologyStack />
               
               <Suspense fallback={<ServicesSkeleton />}>

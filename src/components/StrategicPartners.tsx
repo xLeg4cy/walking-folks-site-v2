@@ -39,7 +39,7 @@ const StrategicPartners = () => {
   return (
     <section 
       id="partners" 
-      className="py-20 bg-gray-50/50 dark:bg-gray-900/30 relative overflow-hidden"
+      className="bg-gray-50/50 dark:bg-gray-900/30 relative overflow-hidden"
       aria-labelledby="partners-heading"
     >
       {/* Background patterns for visual enhancement */}

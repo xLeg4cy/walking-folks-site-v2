@@ -19,7 +19,7 @@ const FAQ = () => {
   const faqItems = t('faq.items', { returnObjects: true }) as FAQItem[];
 
   return (
-    <section id="faq" className="py-20 relative overflow-hidden">
+    <section id="faq" className="relative overflow-hidden">
       <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
       <motion.div 

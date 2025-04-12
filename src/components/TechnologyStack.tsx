@@ -8,7 +8,7 @@ const TechnologyStack = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="tech" className="py-16 relative overflow-hidden">
+    <div id="tech" className="relative overflow-hidden">
       {/* Removed background-specific classes */}
       <div className="absolute inset-0 opacity-5 dark:opacity-2" />
       
