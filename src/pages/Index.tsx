@@ -95,7 +95,7 @@ const Index = () => {
           <title>Walking Folks - Modern Web Solutions</title>
           <meta name="description" content="Professional web development services with modern solutions and expert consulting by Walking Folks." />
           <meta httpEquiv="Content-Security-Policy" 
-                content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com;" 
+                content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com https://resend.walkingfolks.com/api/contact;" 
           />
           <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
           <meta httpEquiv="X-Frame-Options" content="DENY" />

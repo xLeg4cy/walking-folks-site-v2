@@ -85,7 +85,19 @@ export function ContactForm() {
         return;
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const res = await fetch('https://resend.walkingfolks.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status !== 200) {
+        return;
+      }
+
       setSubmissionCount(prev => prev + 1);
       
       toast.success("Message sent successfully!");
