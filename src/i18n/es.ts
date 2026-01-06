@@ -8,25 +8,25 @@ export const esTranslation = {
     "contact": "Contáctanos"
   },
   "hero": {
-    "subtitle": "Transformando Ideas en Realidad",
+    "subtitle": "Tecnología Empresarial. Agilidad de Startup.",
     "title": {
-      "part1": "Soluciones Innovadoras para",
-      "part2": "Empresas Modernas"
+      "part1": "Software e Infraestructura",
+      "part2": "de Primera Calidad"
     },
-    "description": "¿Cansado de soluciones tecnológicas complejas? Nosotros simplificamos. Entregamos soluciones de software, nube y ciberseguridad rentables, minimalistas e innovadoras.",
+    "description": "Obtén la tecnología de una gran empresa sin el precio alto. Construimos apps, aseguramos tus datos y manejamos tu nube.",
     "cta": {
-      "start": "Contáctanos",
-      "learn": "Más Info"
+      "start": "Inicia Tu Proyecto",
+      "learn": "Explorar Servicios"
     },
     "stats": {
-      "projects": "Proyectos Completados",
-      "satisfaction": "Satisfacción del Cliente",
-      "support": "Soporte Disponible"
+      "projects": "Implementaciones Exitosas",
+      "satisfaction": "Retención de Clientes",
+      "support": "Soporte Experto 24/7"
     }
   },
   "about": {
     "title": "Sobre Nosotros",
-    "description": "Contamos con más de una década de experiencia real en empresas tecnológicas líderes, aportando esa experiencia para ofrecer soluciones inteligentes y rentables. Como startup dinámica, combinamos conocimiento experimentado con innovación fresca para crear tecnología que marca la diferencia - sin complejidad.",
+    "description": "Somos ingenieros con más de 10 años de experiencia en grandes empresas tecnológicas. Dejamos el mundo corporativo para darte la misma calidad de tecnología—simple, accesible y bien hecha.",
     "expertTeam": {
       "title": "Equipo Experto",
       "description": "Nuestros profesionales experimentados aportan un amplio conocimiento a cada proyecto."
@@ -43,60 +43,64 @@ export const esTranslation = {
   },
   "services": {
     "title": "Nuestros Servicios",
-    "description": "Soluciones integrales adaptadas a sus necesidades",
+    "description": "Lo que mejor hacemos",
     "sections": {
       "software": {
-        "title": "Desarrollo de Software",
-        "description": "Construimos el futuro, de principio a fin. Nuestra experiencia full-stack ofrece:",
+        "title": "Ingeniería de Software",
+        "description": "Apps y sitios web que funcionan de verdad.",
         "features": [
-          "Bots que automatizan con precisión",
-          "Aplicaciones back-end, front-end y móviles",
-          "Integración de APIs para conectividad",
-          "Pruebas QA y automatización",
-          "Diseño UI & UX que convierte",
-          "Arquitectura de software escalable"
+          "Apps Rápidas y Modernas",
+          "Bots para ahorrarte tiempo",
+          "Conectamos tus sistemas (API)",
+          "Arquitectura de Nivel Empresarial",
+          "Diseño Fácil de Usar",
+          "Optimización y Monitoreo de Rendimiento",
+          "Software hecho a la medida",
+          "Gestión de bases de datos",
+          "Aseguramiento de calidad",
+          "Mejores prácticas de código"
         ]
       },
       "projectManagement": {
-        "title": "Gestión de Proyectos",
-        "description": "No solo gestionamos—aceleramos. Espere:",
+        "title": "Gestión Ágil",
+        "description": "Entregas a la velocidad de su negocio.",
         "features": [
-          "Flujos de trabajo ágiles que se adaptan",
-          "Gestión de riesgos que sobresale",
-          "Asignación inteligente de recursos",
-          "Planificación precisa de proyectos"
+          "Trabajamos como tú trabajas",
+          "Detectamos problemas temprano",
+          "Siempre sabes qué está pasando",
+          "Haz más con menos"
         ]
       },
       "infrastructure": {
         "title": "Infraestructura",
-        "description": "Hemos dominado la columna vertebral de la tecnología - y se la traemos toda:",
+        "description": "Nos encargamos de los servidores por ti.",
         "features": [
-          "Servicios en la nube en principales plataformas",
-          "Infraestructura de nivel empresarial",
-          "Migración perfecta a la nube",
-          "DevOps que optimiza",
-          "Ingeniería de Confiabilidad del Sitio",
-          "Actualizaciones de sistemas heredados",
+          "Mudanza a la Nube",
+          "Infraestructura súper sólida",
+          "Mudanza suave a la nube",
+          "DevOps que simplemente funciona",
+          "Tu sitio corriendo 24/7",
+          "Moderniza sistemas viejos",
           "Respaldo y recuperación ante desastres",
-          "Infraestructura como Servicio (IaaS) que escala",
-          "Administración de Sistemas que empodera",
-          "Optimización de Rendimiento que supera expectativas"
+          "Infraestructura como Servicio (IaaS)",
+          "Soporte de Admin de Sistemas",
+          "Optimización de Rendimiento"
         ]
       },
       "security": {
         "title": "Ciberseguridad",
-        "description": "Su seguridad es nuestra obsesión:",
+        "description": "Duerme tranquilo sabiendo que tus datos están seguros.",
         "features": [
           "Monitoreo 24/7 de sistemas",
-          "Detección avanzada de amenazas",
-          "Mitigación proactiva de riesgos",
+          "Frenamos ataques antes de que pasen",
+          "Detectamos amenazas temprano",
           "Gestión de Acceso e Identidad (IAM)",
           "Autenticación Multifactor (MFA)",
           "Respuesta rápida a incidentes",
-          "Seguridad de nivel empresarial",
-          "Seguridad de Red que protege",
-          "Seguridad de Aplicaciones que resguarda",
-          "Seguridad en la Nube que salvaguarda"
+          "Seguridad nivel bancario",
+          "Seguridad de Red",
+          "Seguridad de Aplicaciones",
+          "Seguridad en la Nube"
         ]
       },
       "outsourcing": {
@@ -113,7 +117,7 @@ export const esTranslation = {
       },
       "tech": {
         "title": "Nuestro Stack Tecnológico",
-        "description": "Utilizamos tecnologías y frameworks de vanguardia para construir soluciones robustas, escalables y eficientes para nuestros clientes. Nuestra experiencia abarca múltiples tecnologías y plataformas."
+        "description": "Usamos tecnología moderna para crear software rápido y confiable. Lo que tu proyecto necesite, tenemos las herramientas y el conocimiento."
       }
     },
     "badge": "Soluciones Premium"
@@ -186,5 +190,50 @@ export const esTranslation = {
   },
   "tech": {
     "badge": "Experiencia Tecnológica"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización",
+    "back": "Volver",
+    "sections": {
+      "informationWeCollect": {
+        "title": "1. Información que Recopilamos",
+        "description": "Walking Folks recopila información que usted nos proporciona directamente, incluyendo pero no limitado a:",
+        "items": [
+          "Nombre e información de contacto",
+          "Credenciales de cuenta",
+          "Información de pago",
+          "Comunicaciones con nosotros"
+        ]
+      },
+      "howWeUse": {
+        "title": "2. Cómo Usamos Su Información",
+        "description": "Walking Folks utiliza la información que recopilamos para:",
+        "items": [
+          "Proporcionar y mantener nuestros servicios",
+          "Procesar sus transacciones",
+          "Enviarle avisos técnicos y mensajes de soporte",
+          "Responder a sus comentarios y preguntas"
+        ]
+      },
+      "informationSharing": {
+        "title": "3. Compartir Información",
+        "description": "Walking Folks no vende ni alquila su información personal a terceros. Podemos compartir su información solo en las siguientes circunstancias:",
+        "items": [
+          "Con su consentimiento",
+          "Para cumplir con obligaciones legales",
+          "Para proteger nuestros derechos e intereses"
+        ]
+      },
+      "security": {
+        "title": "4. Seguridad",
+        "description": "Walking Folks implementa medidas técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, modificación o destrucción."
+      },
+      "contactUs": {
+        "title": "5. Contáctenos",
+        "description": "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en:",
+        "email": "Correo electrónico"
+      }
+    }
   }
 };

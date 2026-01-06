@@ -19,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['Outfit', 'Inter', 'sans-serif'],
+      },
       colors: {
         th: {
           primary: "var(--th-primary)",
@@ -58,8 +62,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          navy: "#0A2647",
+          navy: {
+            DEFAULT: "#0A2647",
+            dark: "#020817", // Deep Navy for background
+            light: "#112240", // Lighter navy for cards
+          },
           blue: "#3498db",
+          electric: "#6366f1", // Electric Blue accent
           gray: "#2c3e50",
           lightBlue: "#00b4d8",
           lightGray: "#f8f9fa",
@@ -121,6 +130,10 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -128,7 +141,15 @@ export default {
         fadeIn: "fadeIn 0.5s ease-out forwards",
         gradient: "gradient 8s ease infinite",
         typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
-        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+        "bounce-slow": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "spin-slow": "spin-slow 6s linear infinite",
       },
       boxShadow: {
         'light': '0 2px 8px rgba(0, 0, 0, 0.05)',
@@ -136,6 +157,6 @@ export default {
       }
     },
   },
-   
+
   plugins: [animate],
 } satisfies Config;

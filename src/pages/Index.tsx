@@ -9,6 +9,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import StrategicPartners from '@/components/StrategicPartners';
 import { lazy } from 'react';
+import { usePerformanceMetrics } from '@/hooks/usePerformanceMetrics';
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
@@ -46,31 +47,7 @@ const Index = () => {
     }
 
     // Register performance metrics
-    if ('performance' in window && 'getEntriesByType' in performance) {
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const perfEntries = performance.getEntriesByType('navigation');
-          if (perfEntries.length > 0) {
-            const metrics = perfEntries[0] as PerformanceNavigationTiming;
-            console.info('Page Load Metrics:', {
-              'TTFB (ms)': Math.round(metrics.responseStart),
-              'DOM Content Loaded (ms)': Math.round(metrics.domContentLoadedEventEnd),
-              'Load Event (ms)': Math.round(metrics.loadEventEnd),
-            });
-
-            // Report metrics if Web Vitals API is available
-            if ('web-vitals' in window) {
-              import('web-vitals').then((webVitals) => {
-                // Use correct method names available in web-vitals
-                if (webVitals.onCLS) webVitals.onCLS(console.info);
-                if (webVitals.onFID) webVitals.onFID(console.info);
-                if (webVitals.onLCP) webVitals.onLCP(console.info);
-              });
-            }
-          }
-        }, 0);
-      });
-    }
+    // Logic moved to usePerformanceMetrics hook logic
 
     return () => {
       clearTimeout(timer);
@@ -79,6 +56,8 @@ const Index = () => {
       window.removeEventListener('click', handleInteraction);
     };
   }, []);
+
+  usePerformanceMetrics();
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -94,15 +73,15 @@ const Index = () => {
         <Helmet>
           <title>Walking Folks - Modern Web Solutions</title>
           <meta name="description" content="Professional web development services with modern solutions and expert consulting by Walking Folks." />
-          <meta httpEquiv="Content-Security-Policy" 
-                content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com https://resend.walkingfolks.com/api/contact;" 
+          <meta httpEquiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com https://resend.walkingfolks.com/api/contact;"
           />
           <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
           <meta httpEquiv="X-Frame-Options" content="DENY" />
           <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
           <meta name="referrer" content="strict-origin-when-cross-origin" />
         </Helmet>
-        
+
         <main>
           <Suspense fallback={<HeroSkeleton />}>
             <Hero />
@@ -119,11 +98,11 @@ const Index = () => {
               <About />
 
               <TechnologyStack />
-              
+
               <Suspense fallback={<ServicesSkeleton />}>
                 <Services />
               </Suspense>
-              
+
               <StrategicPartners />
 
               <Suspense fallback={<TestimonialSkeleton />}>

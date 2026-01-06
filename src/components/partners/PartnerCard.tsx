@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 interface PartnerCardProps {
   partner: Partner;
@@ -16,37 +17,38 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
   const description = i18n.language === 'es' ? partner.descriptionEs : partner.description;
   const featuredText = i18n.language === 'es' ? "Socio Destacado" : "Featured Partner";
   const partnerSinceText = i18n.language === 'es' ? "Socio desde" : "Partner since";
-  const partnerType = partner.id === "xcape-tours" 
+  const partnerType = partner.id === "xcape-tours"
     ? (i18n.language === 'es' ? "Socio Estratégico de Viajes" : "Strategic Travel Partner")
     : (i18n.language === 'es' ? "Socio Estratégico de Software" : "Strategic Software Partner");
 
   return (
-    <Card className="border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800">
+    <SpotlightCard className="overflow-hidden group">
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-1/3 flex items-center justify-center p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/80 dark:to-gray-800">
-          <motion.div 
-            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }} 
-            transition={{ type: "spring", stiffness: 300 }} 
+          <motion.div
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }}
+            transition={{ type: "spring", stiffness: 300 }}
             className="relative"
           >
             <div className="mb-4 text-center">
               {partner.featured && (
                 <Badge className="bg-[#4338CA] hover:bg-[#4338CA]/90 text-white">
-                  <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" /> 
+                  <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
                   <span>{featuredText}</span>
                 </Badge>
               )}
             </div>
             <motion.div
-              whileHover={{ 
+              whileHover={{
                 boxShadow: "0 10px 25px -5px rgba(67, 56, 202, 0.2)",
+                y: -5
               }}
               transition={{ duration: 0.3 }}
             >
-              <img 
-                src={partner.logo} 
-                alt={`${partner.name} logo`} 
-                className="max-w-[180px] max-h-[120px] object-contain" 
+              <img
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                className="max-w-[180px] max-h-[120px] object-contain opacity-90 hover:opacity-100 transition-opacity"
                 loading="lazy"
               />
             </motion.div>
@@ -74,7 +76,7 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
           </CardContent>
         </div>
       </div>
-    </Card>
+    </SpotlightCard>
   );
 };
 

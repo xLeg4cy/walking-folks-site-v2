@@ -3,18 +3,28 @@ import { motion } from 'framer-motion';
 import LogoMark from '../svg/LogoMark';
 import LogoLetters from '../svg/LogoLetters';
 
+
+import { useNavigate, useLocation } from 'react-router-dom';
+
 const NavLogo = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
-    // Scroll to hero section
-    const heroSection = document.getElementById('home');
-    if (heroSection) {
-      heroSection.scrollIntoView({ behavior: 'smooth' });
+
+    if (location.pathname === '/') {
+      // Scroll to hero section if on home page
+      const heroSection = document.getElementById('home');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Update URL to remove any hash or query
+      window.history.pushState({}, '', '/');
+    } else {
+      // Navigate to home if on other pages
+      navigate('/');
     }
-    
-    // Update URL without page reload
-    window.history.pushState({}, '', '/');
   };
 
   return (
@@ -33,7 +43,7 @@ const NavLogo = () => {
           <LogoMark size={32} />
         </motion.div>
 
-        <motion.span 
+        <motion.span
           className="text-xl font-bold text-gray-900 dark:text-white"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}

@@ -10,6 +10,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorBoundary from "./components/ErrorBoundary";
 import MainLayout from "./layouts/MainLayout";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 const Index = lazy(() => import("./pages/Index"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -26,39 +27,44 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <ErrorBoundary>
-        <ThemeProvider 
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-          themes={["light", "dark"]}
-        >
-          <div className="min-h-screen bg-background font-sans antialiased dark:bg-gray-900">
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Routes>
-                    <Route element={<MainLayout />}>
-                      <Route path="/" element={<Index />} />
-                      <Route path="/privacy" element={<Privacy />} />
-                      {/* <Route path="/blog" element={<Blog />} /> */}
-                      <Route path="*" element={<NotFound />} />
-                    </Route>
-                  </Routes>
-                </Suspense>
-              </BrowserRouter>
-            </TooltipProvider>
-          </div>
-        </ThemeProvider>
-      </ErrorBoundary>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+const App = () => {
+  // Enable smooth scrolling
+  useSmoothScroll();
+
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <ErrorBoundary>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            themes={["light", "dark"]}
+          >
+            <div className="min-h-screen bg-background font-sans antialiased dark:bg-gray-900">
+              <TooltipProvider>
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                      <Route element={<MainLayout />}>
+                        <Route path="/" element={<Index />} />
+                        <Route path="/privacy" element={<Privacy />} />
+                        {/* <Route path="/blog" element={<Blog />} /> */}
+                        <Route path="*" element={<NotFound />} />
+                      </Route>
+                    </Routes>
+                  </Suspense>
+                </BrowserRouter>
+              </TooltipProvider>
+            </div>
+          </ThemeProvider>
+        </ErrorBoundary>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+};
 
 export default App;

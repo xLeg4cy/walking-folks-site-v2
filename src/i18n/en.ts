@@ -8,25 +8,25 @@ export const enTranslation = {
     "contact": "Contact Us"
   },
   "hero": {
-    "subtitle": "Transforming Ideas into Reality",
+    "subtitle": "Enterprise Tech. Startup Agility.",
     "title": {
-      "part1": "Innovative Solutions for",
-      "part2": "Modern Businesses"
+      "part1": "Premium Software &",
+      "part2": "Cloud Infrastructure"
     },
-    "description": "Tired of complex tech solutions? We simplify. Delivering cost-efficient, minimalist, and innovative software, cloud, and cybersecurity solutions.",
+    "description": "Get the tech stack of a big company without the price tag. We build apps, secure your data, and manage your cloud.",
     "cta": {
-      "start": "Contact Us",
-      "learn": "Learn More"
+      "start": "Start Your Project",
+      "learn": "Explore Services"
     },
     "stats": {
-      "projects": "Completed Projects",
-      "satisfaction": "Customer Satisfaction",
-      "support": "Support Available"
+      "projects": "Successful Deployments",
+      "satisfaction": "Client Retention",
+      "support": "24/7 Expert Support"
     }
   },
   "about": {
     "title": "About Us",
-    "description": "We've got over a decade of real-world experience from leading tech companies, bringing that expertise to deliver smart, cost-efficient solutions. As a dynamic startup, we combine seasoned knowledge with fresh innovation to create technology that makes a real difference - without the complexity.",
+    "description": "We are engineers with 10+ years of experience at top tech companies. We left the corporate world to give growing businesses the same quality technology—simple, affordable, and done right.",
     "expertTeam": {
       "title": "Expert Team",
       "description": "Our experienced professionals bring extensive knowledge to every project."
@@ -43,60 +43,64 @@ export const enTranslation = {
   },
   "services": {
     "title": "Our Services",
-    "description": "Comprehensive solutions tailored to your needs",
+    "description": "What we do best",
     "sections": {
       "software": {
-        "title": "Software Development",
-        "description": "We build the future, end-to-end. Our full-stack expertise delivers:",
+        "title": "Software Engineering",
+        "description": "Apps and websites that actually work.",
         "features": [
-          "Bots that automate with precision",
-          "Back-end, front-end, and mobile apps",
-          "API integration for connectivity",
-          "QA testing and automation",
-          "UI & UX design that converts",
-          "Scalable software architecture"
+          "Fast Web & Mobile Apps",
+          "Bots to save you time",
+          "Connecting your systems (API)",
+          "Enterprise-grade Architecture",
+          "Easy-to-use Design",
+          "Performance Optimization & Monitoring",
+          "Custom Software Solutions",
+          "Database Design & Management",
+          "Testing & Quality Assurance",
+          "Code Reviews & Best Practices"
         ]
       },
       "projectManagement": {
-        "title": "Project Management",
-        "description": "We don't just manage—we accelerate. Expect:",
+        "title": "Agile Management",
+        "description": "Delivery that moves at the speed of business.",
         "features": [
-          "Agile workflows that adapt",
-          "Risk management that excels",
-          "Smart resource allocation",
-          "Precision project planning"
+          "We work the way you work",
+          "Catch problems early",
+          "You always know what's happening",
+          "Get more done with less"
         ]
       },
       "infrastructure": {
         "title": "Infrastructure",
-        "description": "We've mastered the backbone of tech - and we bring it all to you:",
+        "description": "We handle the servers so you don't have to.",
         "features": [
-          "Cloud services across major platforms",
-          "Enterprise-grade infrastructure",
-          "Seamless cloud migration",
-          "DevOps that streamlines",
-          "Site Reliability Engineering",
-          "Legacy system upgrades",
+          "Moving to the Cloud",
+          "Rock-solid infrastructure",
+          "Smooth move to the cloud",
+          "DevOps that just works",
+          "Keep your site running 24/7",
+          "Modernize old systems",
           "Backup and disaster recovery",
-          "Infrastructure as a Service (IaaS) that scales",
-          "System Administration that empowers",
-          "Performance Optimization that exceeds"
+          "Infrastructure as a Service (IaaS)",
+          "System Admin Support",
+          "Performance Optimization"
         ]
       },
       "security": {
         "title": "Cybersecurity",
-        "description": "Your security is our obsession:",
+        "description": "Sleep safe knowing your data is locked down.",
         "features": [
           "24/7 system monitoring",
-          "Advanced threat detection",
-          "Proactive risk mitigation",
+          "Stopping hacks before they happen",
+          "Catch threats early",
           "Identity Access Management (IAM)",
           "Multi-factor Authentication (MFA)",
           "Rapid incident response",
-          "Enterprise-grade security",
-          "Network Security that protects",
-          "Application Security that shields",
-          "Cloud Security that safeguards"
+          "Bank-level security",
+          "Network Security",
+          "Application Security",
+          "Cloud Security"
         ]
       },
       "outsourcing": {
@@ -113,7 +117,7 @@ export const enTranslation = {
       },
       "tech": {
         "title": "Our Technology Stack",
-        "description": "We leverage cutting-edge technologies and frameworks to build robust, scalable, and efficient solutions for our clients. Our expertise spans across multiple technologies and platforms."
+        "description": "We use modern tech to build fast, reliable software. Whatever your project needs, we've got the tools and know-how."
       }
     },
     "badge": "Premium Solutions"
@@ -183,5 +187,50 @@ export const enTranslation = {
   },
   "tech": {
     "badge": "Technology Expertise"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "back": "Back",
+    "sections": {
+      "informationWeCollect": {
+        "title": "1. Information We Collect",
+        "description": "Walking Folks collects information that you provide directly to us, including but not limited to:",
+        "items": [
+          "Name and contact information",
+          "Account credentials",
+          "Payment information",
+          "Communications with us"
+        ]
+      },
+      "howWeUse": {
+        "title": "2. How We Use Your Information",
+        "description": "Walking Folks uses the information we collect to:",
+        "items": [
+          "Provide and maintain our services",
+          "Process your transactions",
+          "Send you technical notices and support messages",
+          "Respond to your comments and questions"
+        ]
+      },
+      "informationSharing": {
+        "title": "3. Information Sharing",
+        "description": "Walking Folks does not sell or rent your personal information to third parties. We may share your information only in the following circumstances:",
+        "items": [
+          "With your consent",
+          "To comply with legal obligations",
+          "To protect our rights and interests"
+        ]
+      },
+      "security": {
+        "title": "4. Security",
+        "description": "Walking Folks implements appropriate technical and organizational measures to protect your personal information against unauthorized access, modification, or destruction."
+      },
+      "contactUs": {
+        "title": "5. Contact Us",
+        "description": "If you have any questions about this Privacy Policy, please contact us at:",
+        "email": "Email"
+      }
+    }
   }
 };

@@ -66,18 +66,28 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 shadow-lg" : ""
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled
+          ? "pt-4" // Add padding when scrolled to create floating effect
+          : ""
       )}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <nav className={cn(
+        "transition-all duration-500 ease-out",
+        isScrolled
+          ? "max-w-4xl mx-auto px-6 rounded-full backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 shadow-2xl border border-gray-200/50 dark:border-gray-700/50"
+          : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 shadow-lg"
+      )}>
+        <div className={cn(
+          "flex items-center justify-between transition-all duration-500",
+          isScrolled ? "h-14" : "h-16 md:h-20"
+        )}>
           {/* Left side - Logo */}
           <NavLogo />
 
           {/* Center - Navigation Items (desktop only) */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            <DesktopNav 
+            <DesktopNav
               navItems={navItems}
               activeSection={activeSection}
               onSectionClick={scrollToSection}
@@ -106,7 +116,7 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
               </motion.button>
 
               {/* Mobile Menu Toggle */}
-              <MobileMenuToggle 
+              <MobileMenuToggle
                 isOpen={isMobileMenuOpen}
                 onClick={toggleMobileMenu}
               />
@@ -115,7 +125,7 @@ const Navbar = ({ onContactClick, onSectionClick }: NavProps) => {
         </div>
 
         {/* Mobile Menu */}
-        <MobileMenu 
+        <MobileMenu
           isOpen={isMobileMenuOpen}
           activeSection={activeSection}
           navItems={navItems}

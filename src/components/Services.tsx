@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { Computer, Database, Shield, ArrowRight, CheckCircle2, Wrench } from 'lucide-react';
+import { Sparkles, Layers, Lock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import PremiumIcon from '@/components/ui/PremiumIcon';
+import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -36,27 +38,21 @@ const Services = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Combine software development and project management features
-  const softwareFeatures = [
-    ...t('services.sections.software.features', { returnObjects: true }) as string[],
-    ...t('services.sections.projectManagement.features', { returnObjects: true }) as string[]
-  ];
-
   const services = [
     {
-      icon: <Computer className="w-6 h-6 text-[#4338CA]" />,
+      icon: <PremiumIcon icon={Sparkles} size="md" />,
       title: t('services.sections.software.title'),
       description: t('services.sections.software.description'),
-      features: softwareFeatures
+      features: t('services.sections.software.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <Database className="w-6 h-6 text-[#4338CA]" />,
+      icon: <PremiumIcon icon={Layers} size="md" />,
       title: t('services.sections.infrastructure.title'),
       description: t('services.sections.infrastructure.description'),
       features: t('services.sections.infrastructure.features', { returnObjects: true }) as string[]
     },
     {
-      icon: <Shield className="w-6 h-6 text-[#4338CA]" />,
+      icon: <PremiumIcon icon={Lock} size="md" />,
       title: t('services.sections.security.title'),
       description: t('services.sections.security.description'),
       features: t('services.sections.security.features', { returnObjects: true }) as string[]
@@ -64,36 +60,26 @@ const Services = () => {
   ];
 
   return (
-    <motion.div 
+    <motion.div
       style={{ opacity }}
-      id="services" 
+      id="services"
       className="bg-background text-foreground dark:bg-gray-900 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/10 via-transparent to-indigo-50/10 dark:from-indigo-900/5 dark:via-transparent dark:to-indigo-900/5" />
-      
+
       <motion.div
         ref={servicesRef}
         style={{ y }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center bg-indigo-100 dark:bg-indigo-900/30 rounded-full px-4 py-2 text-sm font-medium mb-6 text-[#4338CA] dark:text-indigo-300 mx-auto"
-          >
-            <Wrench size={16} className="mr-2 animate-pulse" />
-            {t('services.badge')}
-          </motion.div>
-          
-          <h2 className="text-4xl font-bold mb-4 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
+          <h2 className="text-4xl font-bold mb-10 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-[#4338CA] to-[#818CF8]">
             {t('services.title')}
           </h2>
           <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto text-lg">
@@ -102,59 +88,50 @@ const Services = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 1,
+                delay: index * 0.1
               }}
-              className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-[#4338CA] dark:hover:border-[#4338CA] transition-all"
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/5 to-transparent dark:from-indigo-900/10 rounded-2xl" />
-              <div className="absolute inset-0 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-              
-              <div className="relative z-10">
-                <motion.div 
-                  whileHover={{ scale: 1.1 }}
-                  className="w-12 h-12 bg-indigo-50/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-100/50 transition-colors dark:bg-indigo-900/20 dark:group-hover:bg-indigo-900/30"
-                >
-                  {service.icon}
-                </motion.div>
-                
-                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 group-hover:text-[#4338CA] transition-colors dark:text-white">
-                  {service.title}
-                  <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                </h3>
-                
-                <p className="text-muted-foreground dark:text-gray-300 mb-6">{service.description}</p>
-                
-                <ul className="space-y-3">
-                  {service.features.map((feature: string, fIndex: number) => (
-                    <motion.li
-                      key={fIndex}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: (index * 0.1) + (fIndex * 0.05) }}
-                      viewport={{ once: true }}
-                      className="text-sm text-muted-foreground dark:text-gray-400 flex items-center group/item"
-                    >
-                      <CheckCircle2 className="w-4 h-4 mr-2 text-[#4338CA] opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                      <span className="group-hover/item:translate-x-1 transition-transform line-clamp-1">
-                        {feature}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#4338CA] to-[#818CF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl" />
+              <SpotlightCard className="h-full p-8 border-border/50 bg-card/50 backdrop-blur-sm">
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2 group-hover:text-[#4338CA] transition-colors dark:text-white">
+                    {service.title}
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  </h3>
+
+                  <p className="text-muted-foreground dark:text-gray-300 mb-8 flex-grow leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-3 mt-auto">
+                    {service.features.map((feature: string, fIndex: number) => (
+                      <li
+                        key={fIndex}
+                        className="text-sm text-muted-foreground dark:text-gray-400 flex items-start"
+                      >
+                        <CheckCircle2 className="w-5 h-5 mr-3 text-[#4338CA] opacity-60 group-hover:opacity-100 transition-opacity shrink-0 mt-0.5" />
+                        <span className="group-hover:text-foreground dark:group-hover:text-gray-200 transition-colors">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
+
         </div>
       </motion.div>
     </motion.div>

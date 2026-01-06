@@ -19,10 +19,9 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Use scrollIntoView for better compatibility with Lenis
+    const topElement = document.getElementById('home') || document.body;
+    topElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
