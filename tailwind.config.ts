@@ -140,15 +140,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
         gradient: "gradient 8s ease infinite",
-        typing: "typing 3.5s steps(40, end), blink 1s step-end infinite",
-        "bounce-slow": {
-          "0%, 100%": {
-            transform: "translateY(0)",
-          },
-          "50%": {
-            transform: "translateY(-10px)",
-          },
-        },
+        "bounce-slow": "bounce-slow 2s ease-in-out infinite",
         "spin-slow": "spin-slow 6s linear infinite",
       },
       boxShadow: {
